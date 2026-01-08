@@ -1128,9 +1128,39 @@ body {
 }
 
 /* Legal Pages */
-.legal-content {
-    max-width: 800px;
+/* Legal Hero */
+.legal-hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background: #ffffff;
+    background-image: 
+        radial-gradient(ellipse at center, transparent 0%, transparent 40%, rgba(255, 255, 255, 0.8) 70%, rgba(255, 255, 255, 1) 100%),
+        repeating-linear-gradient(0deg, transparent, transparent 24px, rgba(0, 0, 0, 0.1) 24px, rgba(0, 0, 0, 0.1) 25px),
+        repeating-linear-gradient(90deg, transparent, transparent 24px, rgba(0, 0, 0, 0.1) 24px, rgba(0, 0, 0, 0.1) 25px);
+    background-size: 100% 100%, 25px 25px, 25px 25px;
+    margin-top: 0;
+    padding-top: 70px;
+    text-align: center;
+}
+
+.legal-hero .container {
+    width: 100%;
+}
+
+.legal-hero .page-title {
+    font-size: 3rem;
+    font-weight: 400;
+}
+
+.legal-hero .page-subtitle {
+    font-size: 1.25rem;
+    max-width: 500px;
     margin: 0 auto;
+}
+
+.legal-content {
+    max-width: 100%;
 }
 
 .legal-section {
