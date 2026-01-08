@@ -220,10 +220,19 @@ body {
 
 .nav-link.active {
     color: rgba(30, 41, 59, 1);
+    position: relative;
 }
 
 .nav-link.active::after {
-    display: none;
+    content: '●';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--primary-color);
+    font-size: 0.5rem;
+    line-height: 1;
+    display: block;
 }
 
 .btn-contact {
