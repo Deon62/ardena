@@ -1837,6 +1837,12 @@ body {
         width: 100%;
         text-align: center;
     }
+    
+    .btn-download {
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
 
     /* Apps page responsive */
     .app-content,
