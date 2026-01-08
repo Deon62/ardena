@@ -2458,10 +2458,14 @@ body {
         gap: 2rem;
         width: 100%;
         box-sizing: border-box;
+        align-items: center;
+        justify-content: center;
     }
 
     .problem-item {
         width: 100%;
+        max-width: 300px;
+        margin: 0 auto;
     }
 
     .problem-circle {
