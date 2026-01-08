@@ -107,45 +107,40 @@
             </div>
         </section>
 
-        <section class="blogs-section">
+        <section class="help-section">
             <div class="container">
-                <h2 class="section-title">Blogs</h2>
-                <div class="blogs-grid">
-                    <article class="blog-card">
-                        <div class="blog-image-placeholder">
-                            <span>Blog Image</span>
-                        </div>
-                        <div class="blog-content">
-                            <span class="blog-date">January 15, 2025</span>
-                            <h3 class="blog-title">Getting Started with Car Rental in Kenya</h3>
-                            <p class="blog-excerpt">Everything you need to know about renting a car in Kenya, from booking to returning your vehicle.</p>
-                            <a href="#" class="blog-link">Read more →</a>
-                        </div>
-                    </article>
-
-                    <article class="blog-card">
-                        <div class="blog-image-placeholder">
-                            <span>Blog Image</span>
-                        </div>
-                        <div class="blog-content">
-                            <span class="blog-date">January 10, 2025</span>
-                            <h3 class="blog-title">Top Destinations to Explore in Kenya</h3>
-                            <p class="blog-excerpt">Discover amazing places to visit with your rental car, from Nairobi to the coast.</p>
-                            <a href="#" class="blog-link">Read more →</a>
-                        </div>
-                    </article>
-
-                    <article class="blog-card">
-                        <div class="blog-image-placeholder">
-                            <span>Blog Image</span>
-                        </div>
-                        <div class="blog-content">
-                            <span class="blog-date">January 5, 2025</span>
-                            <h3 class="blog-title">Host Success Stories</h3>
-                            <p class="blog-excerpt">Meet car owners who are earning extra income by sharing their vehicles on ardena.</p>
-                            <a href="#" class="blog-link">Read more →</a>
-                        </div>
-                    </article>
+                <h2 class="section-title">Get Help</h2>
+                <p class="help-intro">Have questions or need assistance? We're here to help. Send us a message using the form below.</p>
+                
+                <div class="help-wrapper">
+                    <div class="help-contact-form-wrapper">
+                        <h3>Send us a Message</h3>
+                        <form class="contact-form" id="helpContactForm">
+                            <div class="form-group">
+                                <label for="helpName">Name</label>
+                                <input type="text" id="helpName" name="name" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="helpEmail">Email</label>
+                                <input type="email" id="helpEmail" name="email" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="helpSubject">Subject</label>
+                                <input type="text" id="helpSubject" name="subject" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="helpMessage">Message</label>
+                                <textarea id="helpMessage" name="message" rows="5" required></textarea>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary btn-large">Send Message</button>
+                            
+                            <div class="form-message" id="helpFormMessage"></div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </section>

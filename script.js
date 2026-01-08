@@ -88,6 +88,53 @@ function showFormMessage(message, type) {
     }
 }
 
+// Help Contact Form Handling
+const helpContactForm = document.getElementById('helpContactForm');
+const helpFormMessage = document.getElementById('helpFormMessage');
+
+if (helpContactForm) {
+    helpContactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        // Get form data
+        const formData = new FormData(helpContactForm);
+        const data = Object.fromEntries(formData);
+        
+        // Simple validation
+        if (!data.name || !data.email || !data.subject || !data.message) {
+            showHelpFormMessage('Please fill in all required fields.', 'error');
+            return;
+        }
+
+        // Email validation
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(data.email)) {
+            showHelpFormMessage('Please enter a valid email address.', 'error');
+            return;
+        }
+
+        // Simulate form submission (in production, this would send to a server)
+        showHelpFormMessage('Thank you for your message! We will get back to you soon.', 'success');
+        helpContactForm.reset();
+    });
+}
+
+function showHelpFormMessage(message, type) {
+    if (helpFormMessage) {
+        helpFormMessage.textContent = message;
+        helpFormMessage.className = `form-message ${type}`;
+        helpFormMessage.style.display = 'block';
+        
+        // Scroll to message
+        helpFormMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        
+        // Hide message after 5 seconds
+        setTimeout(() => {
+            helpFormMessage.style.display = 'none';
+        }, 5000);
+    }
+}
+
 // Smooth scroll for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
@@ -172,6 +219,7 @@ document.addEventListener('DOMContentLoaded', () => {
         .host-step-card,
         .finance-info-card,
         .booking-feature-item,
+        .help-contact-form-wrapper,
         .blog-card,
         .car-item,
         .benefit-content,
@@ -222,6 +270,7 @@ document.addEventListener('DOMContentLoaded', () => {
         .problems-section,
         .differentiators-section,
         .story-section,
+        .help-section,
         .blogs-section,
         .host-content-section,
         .fleet-grid-section,
