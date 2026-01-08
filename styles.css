@@ -940,11 +940,16 @@ body {
         width: 100%;
         box-sizing: border-box;
         overflow-x: hidden;
+        min-height: 100vh;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
     }
     
     .fleet-grid-section .container {
         width: 100%;
         box-sizing: border-box;
+        padding-top: 2rem;
     }
 
 .fleet-section-title {
@@ -1782,24 +1787,40 @@ body {
 
     /* Fleet page responsive */
     .fleet-hero {
-        min-height: auto;
-        padding: 120px 0 60px;
+        min-height: 100vh;
+        padding-top: 100px;
+        padding-bottom: 0;
         width: 100%;
         box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
     
     .fleet-hero .container {
         width: 100%;
         box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
     }
 
     .fleet-title {
         font-size: 2rem;
+        text-align: center;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .fleet-subtitle {
         font-size: 1rem;
         max-width: 100%;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
     }
     
     .fleet-notice {
@@ -1811,13 +1832,16 @@ body {
 
     .fleet-grid {
         grid-template-columns: repeat(2, 1fr);
-        gap: 1rem;
+        gap: 1.25rem;
         width: 100%;
         box-sizing: border-box;
     }
 
     .car-image {
-        height: 120px;
+        height: 200px;
+        width: 100%;
+        object-fit: cover;
+        object-position: center;
     }
 
     .car-name {
@@ -1842,32 +1866,47 @@ body {
 
     /* About page responsive */
     .about-hero {
-        min-height: auto;
-        padding: 120px 0 60px;
+        min-height: 100vh;
+        padding-top: 100px;
+        padding-bottom: 0;
         width: 100%;
         box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
     
     .about-hero .container {
         width: 100%;
         box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
     }
 
     .about-title {
         font-size: 1.75rem;
         line-height: 1.4;
+        width: 100%;
+        max-width: 100%;
     }
 
     .about-subtitle {
         font-size: 1rem;
         max-width: 100%;
+        width: 100%;
     }
 
     .problems-section {
-        min-height: auto;
-        padding: 3rem 0;
+        min-height: 100vh;
+        padding: 4rem 0;
         width: 100%;
         box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
     
     .problems-section .container {
@@ -1897,10 +1936,13 @@ body {
     }
 
     .differentiators-section {
-        min-height: auto;
-        padding: 3rem 0;
+        min-height: 100vh;
+        padding: 4rem 0;
         width: 100%;
         box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
     
     .differentiators-section .container {
@@ -1926,8 +1968,11 @@ body {
     }
 
     .story-section {
-        min-height: auto;
-        padding: 3rem 0;
+        min-height: 100vh;
+        padding: 4rem 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     .content-block {
@@ -2019,9 +2064,26 @@ body {
         box-sizing: border-box;
     }
     
+    .car-image {
+        height: 200px;
+        width: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+    
     .fleet-grid {
         grid-template-columns: 1fr;
         gap: 1rem;
+    }
+    
+    /* Ensure full viewport sections on very small screens */
+    .fleet-hero,
+    .about-hero,
+    .problems-section,
+    .differentiators-section,
+    .story-section,
+    .fleet-grid-section {
+        min-height: 100vh;
     }
 
     .hero {
