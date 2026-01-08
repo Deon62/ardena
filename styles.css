@@ -438,7 +438,7 @@ body {
     flex: 1;
     max-width: 300px;
     padding: 2.5rem 2rem;
-    background: #fafafa;
+    background: #000000;
     border-radius: 1.5rem;
     position: relative;
     overflow: hidden;
@@ -447,7 +447,7 @@ body {
 
 .host-benefit-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
 .host-benefit-card:nth-child(1) .benefit-number {
@@ -505,14 +505,14 @@ body {
 .benefit-title {
     font-size: 1.15rem;
     font-weight: 600;
-    color: var(--text-primary);
+    color: #ffffff;
     margin-bottom: 0.5rem;
     line-height: 1.4;
 }
 
 .benefit-text {
     font-size: 0.95rem;
-    color: var(--text-secondary);
+    color: rgba(255, 255, 255, 0.8);
     line-height: 1.7;
 }
 
