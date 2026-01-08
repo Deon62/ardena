@@ -478,19 +478,27 @@ body {
 }
 
 .trust-item {
-    padding: 0;
+    background: #000000;
+    padding: 2rem;
+    border-radius: 1rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.trust-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
 .trust-title {
     font-size: 1.125rem;
     font-weight: 600;
     margin-bottom: 0.75rem;
-    color: var(--text-primary);
+    color: #ffffff;
     line-height: 1.4;
 }
 
 .trust-description {
-    color: var(--text-secondary);
+    color: rgba(255, 255, 255, 0.8);
     line-height: 1.7;
     font-size: 0.95rem;
 }
@@ -608,6 +616,7 @@ body {
 
 .host-cta-container {
     text-align: center;
+    margin-top: 2rem;
 }
 
 /* FAQ Section */
@@ -705,6 +714,7 @@ body {
     gap: 1rem;
     justify-content: center;
     flex-wrap: wrap;
+    margin-top: 1.5rem;
 }
 
 .btn-download {
