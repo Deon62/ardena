@@ -728,6 +728,131 @@ body {
     line-height: 1.8;
 }
 
+/* Fleet Page */
+.fleet-hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background: #ffffff;
+    background-image: 
+        radial-gradient(ellipse at center, transparent 0%, transparent 40%, rgba(255, 255, 255, 0.8) 70%, rgba(255, 255, 255, 1) 100%),
+        repeating-linear-gradient(0deg, transparent, transparent 24px, rgba(0, 0, 0, 0.1) 24px, rgba(0, 0, 0, 0.1) 25px),
+        repeating-linear-gradient(90deg, transparent, transparent 24px, rgba(0, 0, 0, 0.1) 24px, rgba(0, 0, 0, 0.1) 25px);
+    background-size: 100% 100%, 25px 25px, 25px 25px;
+    margin-top: 0;
+    padding-top: 100px;
+    text-align: center;
+}
+
+.fleet-hero .container {
+    width: 100%;
+}
+
+.fleet-title {
+    font-size: 2.75rem;
+    font-weight: 400;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+}
+
+.fleet-subtitle {
+    font-size: 1.15rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    max-width: 600px;
+    margin: 0 auto 2rem;
+}
+
+.fleet-notice {
+    background: white;
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+    display: inline-block;
+    border: 1px solid var(--border-color);
+}
+
+.fleet-notice p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+.fleet-grid-section {
+    padding: 4rem 0;
+    background: white;
+}
+
+.fleet-section-title {
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: var(--text-primary);
+    margin-bottom: 2rem;
+}
+
+.fleet-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
+}
+
+.car-item {
+    display: block;
+}
+
+.car-image {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 1rem;
+}
+
+.car-details {
+    padding: 1rem 0.25rem;
+}
+
+.car-name {
+    font-size: 1.15rem;
+    font-weight: 500;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+}
+
+.car-price-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.car-price {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.car-rating {
+    font-size: 0.95rem;
+    color: var(--text-primary);
+}
+
+.fleet-cta {
+    padding: 5rem 0;
+    background: #f5f5f5;
+    text-align: center;
+}
+
+.fleet-cta h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+}
+
+.fleet-cta p {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+}
+
 .features-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
