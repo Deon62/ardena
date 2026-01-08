@@ -505,6 +505,15 @@ body {
     background: white;
 }
 
+.host-intro-text {
+    font-size: 1.15rem;
+    color: var(--text-secondary);
+    line-height: 1.8;
+    max-width: 700px;
+    margin: 0 auto 3rem;
+    text-align: center;
+}
+
 .host-benefits {
     display: flex;
     gap: 2rem;
