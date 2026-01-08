@@ -127,6 +127,24 @@ if (header) {
     });
 }
 
+// Optimize hero image loading
+const heroImage = document.querySelector('.hero-image');
+if (heroImage) {
+    // Check if image is already loaded (cached)
+    if (heroImage.complete && heroImage.naturalHeight !== 0) {
+        heroImage.classList.add('loaded');
+    } else {
+        // Wait for image to load
+        heroImage.addEventListener('load', () => {
+            heroImage.classList.add('loaded');
+        });
+        // Fallback: show image after timeout even if load event doesn't fire
+        setTimeout(() => {
+            heroImage.classList.add('loaded');
+        }, 100);
+    }
+}
+
 // Intersection Observer for scroll animations
 const observerOptions = {
     threshold: 0.1,

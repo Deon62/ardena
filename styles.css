@@ -327,6 +327,7 @@ body {
     text-align: left;
     padding: 0;
     overflow: hidden;
+    background-color: #1a1a1a;
 }
 
 .hero-image {
@@ -346,6 +347,12 @@ body {
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     will-change: transform;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.hero-image.loaded {
+    opacity: 1;
 }
 
 .hero-overlay {
