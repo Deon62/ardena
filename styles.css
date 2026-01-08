@@ -5,6 +5,75 @@
     box-sizing: border-box;
 }
 
+*:focus,
+*:active {
+    outline: none !important;
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* Remove highlights and outlines from all interactive elements */
+a,
+button,
+.nav-link,
+.btn,
+.btn-contact,
+.btn-primary,
+.btn-secondary,
+.faq-question,
+.nav-toggle,
+.footer-icon,
+.social-link {
+    outline: none !important;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+a:focus,
+a:active,
+a:focus-visible,
+button:focus,
+button:active,
+button:focus-visible,
+.nav-link:focus,
+.nav-link:active,
+.nav-link:focus-visible,
+.btn:focus,
+.btn:active,
+.btn:focus-visible,
+.btn-contact:focus,
+.btn-contact:active,
+.btn-contact:focus-visible,
+.faq-question:focus,
+.faq-question:active,
+.faq-question:focus-visible,
+.nav-toggle:focus,
+.nav-toggle:active,
+.nav-toggle:focus-visible,
+.footer-icon:focus,
+.footer-icon:active,
+.footer-icon:focus-visible,
+.social-link:focus,
+.social-link:active,
+.social-link:focus-visible {
+    outline: none !important;
+    -webkit-tap-highlight-color: transparent;
+    box-shadow: none !important;
+}
+
+/* Prevent text selection on buttons and interactive elements */
+button,
+.btn,
+.btn-contact,
+.nav-toggle {
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    cursor: pointer;
+}
+
 :root {
     --primary-color: #2563eb;
     --primary-dark: #1e40af;
@@ -25,6 +94,7 @@
 html {
     scroll-behavior: smooth;
     overflow-x: hidden;
+    -webkit-tap-highlight-color: transparent;
 }
 
 body {
@@ -34,6 +104,8 @@ body {
     background-color: var(--background);
     font-size: 16px;
     overflow-x: hidden;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
 }
 
 .container {
@@ -138,6 +210,8 @@ body {
     transition: var(--transition);
     position: relative;
     white-space: nowrap;
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
 }
 
 .nav-link:hover {
@@ -166,6 +240,9 @@ body {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     flex-shrink: 0;
     border: 1px solid rgba(255, 255, 255, 0.3);
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
+    cursor: pointer;
 }
 
 .btn-contact:hover {
@@ -183,6 +260,8 @@ body {
     border: none;
     cursor: pointer;
     padding: 5px;
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
 }
 
 .nav-toggle span {
@@ -285,6 +364,8 @@ body {
     border: none;
     cursor: pointer;
     font-size: 1rem;
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
 }
 
 .btn-primary {
@@ -553,6 +634,8 @@ body {
     font-weight: 500;
     color: var(--text-primary);
     font-family: inherit;
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
 }
 
 .faq-question:hover {
@@ -1408,6 +1491,8 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
 }
 
 .footer-icon:hover {
@@ -2015,9 +2100,44 @@ body {
     }
 
     /* Legal page responsive */
-    .legal-hero {
-        min-height: auto;
-        padding: 120px 0 60px;
+    .legal-hero,
+    .page-header {
+        min-height: 100vh;
+        padding-top: 100px;
+        padding-bottom: 0;
+        width: 100%;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 0;
+    }
+    
+    .legal-hero .container,
+    .page-header .container {
+        width: 100%;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+    
+    .legal-hero .page-title,
+    .page-header .page-title {
+        text-align: center;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .legal-hero .page-subtitle,
+    .page-header .page-subtitle {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 100%;
     }
 
     .legal-section h2 {
@@ -2079,10 +2199,13 @@ body {
     /* Ensure full viewport sections on very small screens */
     .fleet-hero,
     .about-hero,
+    .legal-hero,
+    .page-header,
     .problems-section,
     .differentiators-section,
     .story-section,
-    .fleet-grid-section {
+    .fleet-grid-section,
+    .content-section {
         min-height: 100vh;
     }
 
@@ -2101,6 +2224,15 @@ body {
     }
 
     .content-section {
-        padding: 3rem 0;
+        padding: 4rem 0;
+        min-height: 100vh;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+    }
+    
+    .content-section .container {
+        width: 100%;
+        box-sizing: border-box;
     }
 }
