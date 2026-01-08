@@ -1377,6 +1377,199 @@ body {
     font-size: 0.85rem;
 }
 
+/* Apps Page Styles */
+.apps-hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: #fafafa;
+    background-image:
+        repeating-linear-gradient(
+            0deg,
+            transparent,
+            transparent 39px,
+            rgba(0, 0, 0, 0.03) 39px,
+            rgba(0, 0, 0, 0.03) 40px
+        ),
+        repeating-linear-gradient(
+            90deg,
+            transparent,
+            transparent 39px,
+            rgba(0, 0, 0, 0.03) 39px,
+            rgba(0, 0, 0, 0.03) 40px
+        );
+    background-size: 40px 40px;
+    position: relative;
+}
+
+.apps-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at center, transparent 30%, #fafafa 70%);
+    pointer-events: none;
+}
+
+.apps-hero .container {
+    position: relative;
+    z-index: 1;
+}
+
+.apps-title {
+    font-size: 3rem;
+    font-weight: 400;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+}
+
+.apps-subtitle {
+    font-size: 1.25rem;
+    color: var(--text-secondary);
+    max-width: 500px;
+    margin: 0 auto;
+    line-height: 1.7;
+}
+
+.app-section {
+    padding: 6rem 0;
+}
+
+.client-section {
+    background: white;
+}
+
+.host-section {
+    background: #f5f5f5;
+}
+
+.app-content {
+    display: flex;
+    align-items: center;
+    gap: 5rem;
+}
+
+.app-content.reverse {
+    flex-direction: row-reverse;
+}
+
+.app-info {
+    flex: 1;
+}
+
+.app-badge {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-radius: 2rem;
+    margin-bottom: 1rem;
+}
+
+.app-badge.host-badge {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+}
+
+.app-name {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+}
+
+.app-description {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    line-height: 1.8;
+    margin-bottom: 2rem;
+}
+
+.app-features {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+}
+
+.app-feature {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 1rem;
+    color: var(--text-primary);
+}
+
+.feature-check {
+    color: #10b981;
+    font-weight: 600;
+}
+
+.app-screenshots {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    position: relative;
+}
+
+.phone-mockup {
+    width: 220px;
+    height: 450px;
+    background: #1a1a1a;
+    border-radius: 2.5rem;
+    padding: 0.75rem;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+}
+
+.phone-mockup.phone-secondary {
+    transform: translateY(30px);
+}
+
+.phone-screen {
+    width: 100%;
+    height: 100%;
+    background: #f0f0f0;
+    border-radius: 2rem;
+    overflow: hidden;
+}
+
+.screenshot-placeholder {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #e0e7ff 0%, #c7d2fe 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 1rem;
+}
+
+.screenshot-placeholder span {
+    color: #6366f1;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.screenshot-placeholder.host-placeholder {
+    background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);
+}
+
+.screenshot-placeholder.host-placeholder span {
+    color: #059669;
+}
+
+.screenshot-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .header {
@@ -1491,6 +1684,38 @@ body {
     .btn {
         width: 100%;
         text-align: center;
+    }
+
+    /* Apps page responsive */
+    .app-content,
+    .app-content.reverse {
+        flex-direction: column;
+        gap: 3rem;
+    }
+
+    .app-screenshots {
+        order: -1;
+    }
+
+    .phone-mockup {
+        width: 160px;
+        height: 330px;
+    }
+
+    .app-name {
+        font-size: 2rem;
+    }
+
+    .apps-title {
+        font-size: 2rem;
+    }
+
+    .host-benefits {
+        flex-direction: column;
+    }
+
+    .host-benefit-card {
+        max-width: 100%;
     }
 }
 
