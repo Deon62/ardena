@@ -791,8 +791,8 @@ body {
 
 .fleet-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2.5rem;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1.5rem;
 }
 
 .car-item {
@@ -801,9 +801,9 @@ body {
 
 .car-image {
     width: 100%;
-    height: 220px;
+    height: 160px;
     object-fit: cover;
-    border-radius: 1rem;
+    border-radius: 0.75rem;
 }
 
 .car-details {
@@ -811,10 +811,10 @@ body {
 }
 
 .car-name {
-    font-size: 1.15rem;
+    font-size: 1rem;
     font-weight: 500;
     color: var(--text-primary);
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.25rem;
 }
 
 .car-price-row {
@@ -824,13 +824,13 @@ body {
 }
 
 .car-price {
-    font-size: 1rem;
+    font-size: 0.9rem;
     font-weight: 600;
     color: var(--text-primary);
 }
 
 .car-rating {
-    font-size: 0.95rem;
+    font-size: 0.85rem;
     color: var(--text-primary);
 }
 
@@ -1206,59 +1206,45 @@ body {
 .footer {
     background: var(--text-primary);
     color: white;
-    padding: 3rem 0 1.5rem;
+    padding: 1.5rem 0;
     margin-top: 4rem;
 }
 
 .footer-content {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    display: flex;
+    justify-content: center;
+    align-items: center;
     gap: 2rem;
-    margin-bottom: 2rem;
 }
 
-.footer-title {
-    font-size: 1.5rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
+.footer-icons {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
 }
 
-.footer-section p {
+.footer-icon {
     color: rgba(255, 255, 255, 0.8);
-    line-height: 1.6;
-    margin-bottom: 1rem;
-}
-
-.footer-heading {
-    font-size: 1.1rem;
-    font-weight: 600;
-    margin-bottom: 1rem;
-}
-
-.footer-links {
-    list-style: none;
-}
-
-.footer-links li {
-    margin-bottom: 0.5rem;
-}
-
-.footer-links a {
-    color: rgba(255, 255, 255, 0.8);
-    text-decoration: none;
     transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.footer-links a:hover {
+.footer-icon:hover {
     color: white;
-    text-decoration: underline;
+}
+
+.footer-icon svg {
+    width: 24px;
+    height: 24px;
 }
 
 .footer-bottom {
     text-align: center;
-    padding-top: 2rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    color: rgba(255, 255, 255, 0.6);
+    margin-top: 1rem;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.85rem;
 }
 
 /* Responsive Design */
