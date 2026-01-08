@@ -127,29 +127,101 @@ if (header) {
     });
 }
 
-// Intersection Observer for fade-in animations (optional enhancement)
+// Intersection Observer for scroll animations
 const observerOptions = {
     threshold: 0.1,
     rootMargin: '0px 0px -50px 0px'
 };
 
-const observer = new IntersectionObserver((entries) => {
+const scrollObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
+            entry.target.classList.add('animate');
+            scrollObserver.unobserve(entry.target);
         }
     });
 }, observerOptions);
 
-// Observe feature cards and service cards
+// Initialize scroll animations on page load
 document.addEventListener('DOMContentLoaded', () => {
-    const animatedElements = document.querySelectorAll('.feature-card, .service-card, .service-detail-card');
-    animatedElements.forEach(el => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(20px)';
-        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        observer.observe(el);
+    // Add scroll-fade-in class to all cards and interactive elements
+    const animatedElements = document.querySelectorAll(`
+        .feature-card,
+        .trust-item,
+        .host-benefit-card,
+        .problem-item,
+        .differentiator-item,
+        .host-step-card,
+        .finance-info-card,
+        .booking-feature-item,
+        .blog-card,
+        .car-item,
+        .benefit-content,
+        .faq-item,
+        .host-section-block,
+        .content-block,
+        .legal-section
+    `);
+    
+    animatedElements.forEach((el, index) => {
+        // Skip if element is in a hero section
+        if (el.closest('.hero, .about-hero, .fleet-hero, .host-page-hero, .legal-hero, .page-header, .apps-hero')) {
+            return;
+        }
+        
+        el.classList.add('scroll-fade-in');
+        
+        // Add staggered delay for cards in grids (only for direct children)
+        const parent = el.parentElement;
+        if (parent && (
+            parent.classList.contains('features-grid') ||
+            parent.classList.contains('trust-grid') ||
+            parent.classList.contains('problems-grid') ||
+            parent.classList.contains('differentiators-grid') ||
+            parent.classList.contains('host-steps-grid') ||
+            parent.classList.contains('finances-info-grid') ||
+            parent.classList.contains('bookings-features-grid') ||
+            parent.classList.contains('blogs-grid') ||
+            parent.classList.contains('fleet-grid') ||
+            parent.classList.contains('host-benefits')
+        )) {
+            const siblings = Array.from(parent.children);
+            const delayIndex = siblings.indexOf(el) % 3;
+            if (delayIndex === 1) el.classList.add('scroll-fade-in-delay-1');
+            if (delayIndex === 2) el.classList.add('scroll-fade-in-delay-2');
+        }
+        
+        scrollObserver.observe(el);
+    });
+    
+    // Animate sections (excluding hero sections)
+    const sections = document.querySelectorAll(`
+        .features,
+        .safety-trust,
+        .become-host,
+        .faq-section,
+        .cta,
+        .problems-section,
+        .differentiators-section,
+        .story-section,
+        .blogs-section,
+        .host-content-section,
+        .fleet-grid-section,
+        .content-section
+    `);
+    
+    sections.forEach(section => {
+        section.classList.add('scroll-fade-in');
+        scrollObserver.observe(section);
+    });
+    
+    // Animate section titles
+    const sectionTitles = document.querySelectorAll('.section-title');
+    sectionTitles.forEach(title => {
+        if (!title.closest('.hero, .about-hero, .fleet-hero, .host-page-hero, .legal-hero, .page-header, .apps-hero')) {
+            title.classList.add('scroll-fade-in');
+            scrollObserver.observe(title);
+        }
     });
 });
 
