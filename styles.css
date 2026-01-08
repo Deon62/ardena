@@ -966,6 +966,319 @@ body {
     line-height: 1.8;
 }
 
+/* Host Page */
+.host-page-hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background: #ffffff;
+    background-image: 
+        radial-gradient(ellipse at center, transparent 0%, transparent 40%, rgba(255, 255, 255, 0.8) 70%, rgba(255, 255, 255, 1) 100%),
+        repeating-linear-gradient(0deg, transparent, transparent 24px, rgba(0, 0, 0, 0.1) 24px, rgba(0, 0, 0, 0.1) 25px),
+        repeating-linear-gradient(90deg, transparent, transparent 24px, rgba(0, 0, 0, 0.1) 24px, rgba(0, 0, 0, 0.1) 25px);
+    background-size: 100% 100%, 25px 25px, 25px 25px;
+    margin-top: 0;
+    padding-top: 100px;
+}
+
+.host-page-hero .container {
+    width: 100%;
+}
+
+.host-page-title {
+    font-size: 3.5rem;
+    font-weight: 400;
+    color: var(--text-primary);
+    margin-bottom: 2rem;
+    line-height: 1.2;
+    max-width: 800px;
+}
+
+.host-page-subtitle {
+    font-size: 1.35rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    max-width: 700px;
+}
+
+.host-content-section {
+    padding: 4rem 0;
+    background: white;
+}
+
+.host-content-wrapper {
+    max-width: 100%;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.host-section-block {
+    margin-bottom: 5rem;
+}
+
+.host-section-block h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+.host-section-intro {
+    font-size: 1.15rem;
+    color: var(--text-secondary);
+    line-height: 1.8;
+    margin-bottom: 3rem;
+    max-width: 800px;
+}
+
+.host-steps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.host-step-card {
+    background: var(--background-light);
+    padding: 2rem;
+    border-radius: 1rem;
+    border: 1px solid var(--border-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.host-step-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.host-step-number {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+.host-step-card:nth-child(2) .host-step-number {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+}
+
+.host-step-card:nth-child(3) .host-step-number {
+    background: linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%);
+}
+
+.host-step-card:nth-child(4) .host-step-number {
+    background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+}
+
+.host-step-card:nth-child(5) .host-step-number {
+    background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+}
+
+.host-step-card:nth-child(6) .host-step-number {
+    background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%);
+}
+
+.host-step-card h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 0.75rem;
+}
+
+.host-step-card p {
+    color: var(--text-secondary);
+    line-height: 1.7;
+    font-size: 0.95rem;
+}
+
+.finances-info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.finance-info-card {
+    background: var(--background-light);
+    padding: 2rem;
+    border-radius: 1rem;
+    border: 1px solid var(--border-color);
+    text-align: center;
+}
+
+.finance-icon {
+    width: 64px;
+    height: 64px;
+    margin: 0 auto 1.5rem;
+}
+
+.finance-info-card h3 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 0.75rem;
+}
+
+.finance-info-card p {
+    color: var(--text-secondary);
+    line-height: 1.7;
+    font-size: 0.95rem;
+}
+
+.host-earnings-note {
+    background: var(--background-light);
+    padding: 2rem;
+    border-radius: 1rem;
+    border: 1px solid var(--border-color);
+}
+
+.host-earnings-note h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+}
+
+.host-earnings-note ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.host-earnings-note ul li {
+    padding: 0.75rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+    color: var(--text-secondary);
+    line-height: 1.7;
+}
+
+.host-earnings-note ul li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.bookings-features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.booking-feature-item {
+    background: var(--background-light);
+    padding: 2rem;
+    border-radius: 1rem;
+    border: 1px solid var(--border-color);
+}
+
+.booking-feature-item h3 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 0.75rem;
+}
+
+.booking-feature-item p {
+    color: var(--text-secondary);
+    line-height: 1.7;
+    font-size: 0.95rem;
+}
+
+.host-tips-section {
+    background: var(--background-light);
+    padding: 2rem;
+    border-radius: 1rem;
+    border: 1px solid var(--border-color);
+}
+
+.host-tips-section h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+}
+
+.host-tips-section ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.host-tips-section ul li {
+    padding: 0.75rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+    color: var(--text-secondary);
+    line-height: 1.7;
+}
+
+.host-tips-section ul li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+.host-download-section {
+    background: #f5f5f5;
+    padding: 4rem 2rem;
+    border-radius: 1.5rem;
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.host-download-section h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+}
+
+.host-download-section > p {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.host-download-buttons {
+    margin-bottom: 2rem;
+}
+
+.host-contact-info {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.host-contact-info p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
+.host-contact-info a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.host-contact-info a:hover {
+    text-decoration: underline;
+}
+
 /* Fleet Page */
 .fleet-hero {
     min-height: 100vh;
@@ -1956,7 +2269,8 @@ body {
     }
 
     /* About page responsive */
-    .about-hero {
+    .about-hero,
+    .host-page-hero {
         min-height: 100vh;
         padding-top: 100px;
         padding-bottom: 0;
@@ -1967,7 +2281,8 @@ body {
         justify-content: center;
     }
     
-    .about-hero .container {
+    .about-hero .container,
+    .host-page-hero .container {
         width: 100%;
         box-sizing: border-box;
         display: flex;
@@ -1977,17 +2292,59 @@ body {
         text-align: center;
     }
 
-    .about-title {
+    .about-title,
+    .host-page-title {
         font-size: 1.75rem;
         line-height: 1.4;
         width: 100%;
         max-width: 100%;
+        text-align: center;
     }
 
-    .about-subtitle {
+    .about-subtitle,
+    .host-page-subtitle {
         font-size: 1rem;
         max-width: 100%;
         width: 100%;
+        text-align: center;
+    }
+    
+    .host-content-section {
+        padding: 3rem 0;
+    }
+    
+    .host-section-block {
+        margin-bottom: 3rem;
+    }
+    
+    .host-section-block h2 {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+    
+    .host-section-intro {
+        font-size: 1rem;
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+    
+    .host-steps-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .finances-info-grid,
+    .bookings-features-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .host-download-section {
+        padding: 3rem 1.5rem;
+    }
+    
+    .host-download-section h2 {
+        font-size: 1.5rem;
     }
 
     .problems-section {
@@ -2205,6 +2562,7 @@ body {
     /* Ensure full viewport sections on very small screens */
     .fleet-hero,
     .about-hero,
+    .host-page-hero,
     .legal-hero,
     .page-header,
     .problems-section,
