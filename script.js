@@ -244,6 +244,7 @@ document.addEventListener('DOMContentLoaded', () => {
             parent.classList.contains('trust-grid') ||
             parent.classList.contains('problems-grid') ||
             parent.classList.contains('differentiators-grid') ||
+            parent.classList.contains('differentiators-list') ||
             parent.classList.contains('host-steps-grid') ||
             parent.classList.contains('finances-info-grid') ||
             parent.classList.contains('bookings-features-grid') ||
