@@ -231,7 +231,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     animatedElements.forEach((el, index) => {
         // Skip if element is in a hero section
-        if (el.closest('.hero, .about-hero, .fleet-hero, .host-page-hero, .legal-hero, .page-header, .apps-hero')) {
+        if (el.closest('.hero, .about-hero, .host-page-hero, .legal-hero, .page-header, .apps-hero')) {
             return;
         }
         
@@ -248,7 +248,6 @@ document.addEventListener('DOMContentLoaded', () => {
             parent.classList.contains('finances-info-grid') ||
             parent.classList.contains('bookings-features-grid') ||
             parent.classList.contains('blogs-grid') ||
-            parent.classList.contains('fleet-grid') ||
             parent.classList.contains('host-benefits')
         )) {
             const siblings = Array.from(parent.children);
@@ -273,7 +272,6 @@ document.addEventListener('DOMContentLoaded', () => {
         .help-section,
         .blogs-section,
         .host-content-section,
-        .fleet-grid-section,
         .content-section
     `);
     
@@ -285,7 +283,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Animate section titles
     const sectionTitles = document.querySelectorAll('.section-title');
     sectionTitles.forEach(title => {
-        if (!title.closest('.hero, .about-hero, .fleet-hero, .host-page-hero, .legal-hero, .page-header, .apps-hero')) {
+        if (!title.closest('.hero, .about-hero, .host-page-hero, .legal-hero, .page-header, .apps-hero')) {
             title.classList.add('scroll-fade-in');
             scrollObserver.observe(title);
         }

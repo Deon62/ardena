@@ -32,7 +32,6 @@
 /* Prevent animation on initial hero sections */
 .hero,
 .about-hero,
-.fleet-hero,
 .host-page-hero,
 .legal-hero,
 .page-header,
@@ -114,6 +113,8 @@ button,
     --primary-color: #1e293b;
     --primary-dark: #0f172a;
     --accent-green: #8AE13C;
+    --cream: #F5F0E8;
+    --cream-dark: #E8E2D8;
     --secondary-color: #64748b;
     --text-primary: #1e293b;
     --text-secondary: #475569;
@@ -588,13 +589,100 @@ body {
     font-size: 1rem;
 }
 
-/* Services Preview */
-/* Safety & Trust Section - text on background, no cards */
+/* Safety & Trust Section - minimal, cream background, two columns */
 .safety-trust {
     padding: 5rem 0;
-    background: var(--background);
+    background: var(--cream);
 }
 
+.safety-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.safety-intro {
+    position: sticky;
+    top: 120px;
+}
+
+.safety-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+    opacity: 0.9;
+}
+
+.safety-heading {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 1.25rem;
+    line-height: 1.2;
+}
+
+.safety-description {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+}
+
+.safety-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2.25rem;
+}
+
+.safety-trust .trust-item {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1.25rem;
+    align-items: start;
+    padding-bottom: 2.25rem;
+    border-bottom: 1px solid var(--cream-dark);
+}
+
+.safety-trust .trust-item:last-child {
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.trust-marker {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    opacity: 0.35;
+    line-height: 1;
+    font-family: 'DM Sans', sans-serif;
+}
+
+.trust-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.trust-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-bottom: 0;
+    color: var(--text-primary);
+    line-height: 1.35;
+}
+
+.trust-description {
+    color: var(--text-secondary);
+    line-height: 1.65;
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+/* Legacy trust-grid (if used elsewhere) */
 .trust-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -614,20 +702,6 @@ body {
 .trust-item:hover {
     transform: none;
     box-shadow: none;
-}
-
-.trust-title {
-    font-size: 1.125rem;
-    font-weight: 600;
-    margin-bottom: 0.75rem;
-    color: var(--text-primary);
-    line-height: 1.4;
-}
-
-.trust-description {
-    color: var(--text-secondary);
-    line-height: 1.7;
-    font-size: 0.95rem;
 }
 
 .text-center {
@@ -1511,155 +1585,6 @@ body {
     text-decoration: underline;
 }
 
-/* Fleet Page */
-.fleet-hero {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    background: #ffffff;
-    background-image: 
-        radial-gradient(ellipse at center, transparent 0%, transparent 40%, rgba(255, 255, 255, 0.8) 70%, rgba(255, 255, 255, 1) 100%),
-        repeating-linear-gradient(0deg, transparent, transparent 24px, rgba(0, 0, 0, 0.1) 24px, rgba(0, 0, 0, 0.1) 25px),
-        repeating-linear-gradient(90deg, transparent, transparent 24px, rgba(0, 0, 0, 0.1) 24px, rgba(0, 0, 0, 0.1) 25px);
-    background-size: 100% 100%, 25px 25px, 25px 25px;
-    margin-top: 0;
-    padding-top: 100px;
-    text-align: center;
-}
-
-.fleet-hero .container {
-    width: 100%;
-}
-
-.fleet-title {
-    font-size: 2.75rem;
-    font-weight: 400;
-    color: var(--text-primary);
-    margin-bottom: 1rem;
-}
-
-.fleet-subtitle {
-    font-size: 1.15rem;
-    color: var(--text-secondary);
-    line-height: 1.7;
-    max-width: 600px;
-    margin: 0 auto 2rem;
-}
-
-.fleet-notice {
-    background: transparent;
-    padding: 0;
-    border: none;
-    border-radius: 0;
-    display: inline-block;
-    max-width: 100%;
-    box-sizing: border-box;
-}
-
-.fleet-notice p {
-    color: var(--text-secondary);
-    font-size: 0.95rem;
-    margin: 0;
-}
-
-    .fleet-grid-section {
-        padding: 4rem 0;
-        background: white;
-        width: 100%;
-        box-sizing: border-box;
-        overflow-x: hidden;
-        min-height: 100vh;
-        display: flex;
-        align-items: flex-start;
-        justify-content: center;
-    }
-    
-    .fleet-grid-section .container {
-        width: 100%;
-        box-sizing: border-box;
-        padding-top: 2rem;
-    }
-
-.fleet-section-title {
-    font-size: 1.25rem;
-    font-weight: 500;
-    color: var(--text-primary);
-    margin-bottom: 2rem;
-}
-
-.fleet-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-    gap: 1.5rem;
-    width: 100%;
-    box-sizing: border-box;
-}
-
-    .car-item {
-        display: block;
-        width: 100%;
-        max-width: 100%;
-        box-sizing: border-box;
-    }
-
-.car-image {
-    width: 100%;
-    max-width: 100%;
-    height: 160px;
-    object-fit: cover;
-    border-radius: 0.75rem;
-    box-sizing: border-box;
-}
-
-.car-details {
-    padding: 1rem 0.25rem;
-    width: 100%;
-    box-sizing: border-box;
-}
-
-.car-name {
-    font-size: 1rem;
-    font-weight: 500;
-    color: var(--text-primary);
-    margin-bottom: 0.25rem;
-}
-
-.car-price-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.car-price {
-    font-size: 0.9rem;
-    font-weight: 600;
-    color: var(--text-primary);
-}
-
-.car-rating {
-    font-size: 0.85rem;
-    color: var(--text-primary);
-}
-
-.fleet-cta {
-    padding: 5rem 0;
-    background: #f5f5f5;
-    text-align: center;
-}
-
-.fleet-cta h2 {
-    font-size: 2rem;
-    font-weight: 600;
-    color: var(--text-primary);
-    margin-bottom: 1rem;
-}
-
-.fleet-cta p {
-    font-size: 1.1rem;
-    color: var(--text-secondary);
-    margin-bottom: 2rem;
-}
-
 .features-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -2380,6 +2305,27 @@ body {
         gap: 2rem;
     }
 
+    .safety-inner {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .safety-intro {
+        position: static;
+    }
+
+    .safety-heading {
+        font-size: 2rem;
+    }
+
+    .safety-list {
+        gap: 1.75rem;
+    }
+
+    .safety-trust .trust-item {
+        padding-bottom: 1.75rem;
+    }
+
     .page-title {
         font-size: 2rem;
     }
@@ -2440,85 +2386,6 @@ body {
 
     .host-benefit-card {
         max-width: 100%;
-    }
-
-    /* Fleet page responsive */
-    .fleet-hero {
-        min-height: 100vh;
-        padding-top: 100px;
-        padding-bottom: 0;
-        width: 100%;
-        box-sizing: border-box;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    
-    .fleet-hero .container {
-        width: 100%;
-        box-sizing: border-box;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-    }
-
-    .fleet-title {
-        font-size: 2rem;
-        text-align: center;
-        width: 100%;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .fleet-subtitle {
-        font-size: 1rem;
-        max-width: 100%;
-        text-align: center;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    
-    .fleet-notice {
-        max-width: calc(100% - 40px);
-        padding: 1rem 1.5rem;
-        display: block;
-        margin: 0 auto;
-    }
-
-    .fleet-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1.25rem;
-        width: 100%;
-        box-sizing: border-box;
-    }
-
-    .car-image {
-        height: 200px;
-        width: 100%;
-        object-fit: cover;
-        object-position: center;
-    }
-
-    .car-name {
-        font-size: 0.85rem;
-    }
-
-    .car-price {
-        font-size: 0.8rem;
-    }
-
-    .car-rating {
-        font-size: 0.75rem;
-    }
-
-    .fleet-cta {
-        padding: 3rem 0;
-    }
-
-    .fleet-cta h2 {
-        font-size: 1.5rem;
     }
 
     /* About page responsive */
@@ -2814,27 +2681,13 @@ body {
         box-sizing: border-box;
     }
     
-    .car-image,
     .differentiator-icon,
     .problem-circle {
         max-width: 100%;
         box-sizing: border-box;
     }
     
-    .car-image {
-        height: 200px;
-        width: 100%;
-        object-fit: cover;
-        object-position: center;
-    }
-    
-    .fleet-grid {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-    }
-    
     /* Ensure full viewport sections on very small screens */
-    .fleet-hero,
     .about-hero,
     .host-page-hero,
     .legal-hero,
@@ -2842,7 +2695,6 @@ body {
     .problems-section,
     .differentiators-section,
     .story-section,
-    .fleet-grid-section,
     .content-section {
         min-height: 100vh;
     }
