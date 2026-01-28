@@ -1401,6 +1401,98 @@ body {
     max-width: 700px;
 }
 
+/* How to Host Your Car - cute, minimal, cream section, two columns */
+.host-steps-section {
+    padding: 5rem 0;
+    background: var(--cream);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.host-steps-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+    max-width: 1100px;
+    margin: 0 auto;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.host-steps-intro {
+    position: sticky;
+    top: 120px;
+}
+
+.host-steps-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+    opacity: 0.9;
+}
+
+.host-steps-heading {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 1.25rem;
+    line-height: 1.2;
+}
+
+.host-steps-tagline {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+.host-steps-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.host-step-item {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1.25rem;
+    align-items: start;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid var(--cream-dark);
+    text-align: left;
+}
+
+.host-step-item:last-child {
+    border-bottom: none;
+}
+
+.host-step-marker {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    opacity: 0.4;
+    line-height: 1;
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+.host-step-content h3 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 0.4rem;
+    line-height: 1.35;
+}
+
+.host-step-content p {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.65;
+    margin: 0;
+}
+
 .host-content-section {
     padding: 4rem 0;
     background: white;
@@ -2572,6 +2664,27 @@ body {
         margin-bottom: 2rem;
     }
     
+    .host-steps-inner {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .host-steps-intro {
+        position: static;
+    }
+
+    .host-steps-heading {
+        font-size: 2rem;
+    }
+
+    .host-steps-list {
+        gap: 0;
+    }
+
+    .host-step-item {
+        padding: 1.25rem 0;
+    }
+
     .host-steps-grid {
         grid-template-columns: 1fr;
         gap: 1.5rem;

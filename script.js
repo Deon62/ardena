@@ -217,6 +217,7 @@ document.addEventListener('DOMContentLoaded', () => {
         .problem-item,
         .differentiator-item,
         .host-step-card,
+        .host-step-item,
         .finance-info-card,
         .booking-feature-item,
         .help-contact-form-wrapper,
@@ -245,6 +246,7 @@ document.addEventListener('DOMContentLoaded', () => {
             parent.classList.contains('problems-grid') ||
             parent.classList.contains('differentiators-grid') ||
             parent.classList.contains('differentiators-list') ||
+            parent.classList.contains('host-steps-list') ||
             parent.classList.contains('host-steps-grid') ||
             parent.classList.contains('finances-info-grid') ||
             parent.classList.contains('bookings-features-grid') ||
@@ -273,6 +275,7 @@ document.addEventListener('DOMContentLoaded', () => {
         .help-section,
         .blogs-section,
         .host-content-section,
+        .host-steps-section,
         .content-section
     `);
     
