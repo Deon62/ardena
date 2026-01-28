@@ -218,6 +218,7 @@ document.addEventListener('DOMContentLoaded', () => {
         .differentiator-item,
         .host-step-card,
         .host-step-item,
+        .booking-item,
         .finance-info-card,
         .booking-feature-item,
         .help-contact-form-wrapper,
@@ -276,6 +277,7 @@ document.addEventListener('DOMContentLoaded', () => {
         .blogs-section,
         .host-content-section,
         .host-steps-section,
+        .bookings-section,
         .content-section
     `);
     

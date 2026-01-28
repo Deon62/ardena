@@ -708,19 +708,67 @@ body {
     text-align: center;
 }
 
-/* Become a Host Section */
+/* Become a Host Section - full-width two-column: content left, carowner.svg right */
 .become-host {
     padding: 5rem 0;
-    background: white;
+    background: var(--cream);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.become-host-container {
+    max-width: 100%;
+    width: 100%;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+.become-host-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.become-host-content {
+    min-width: 0;
+}
+
+.become-host-title {
+    text-align: left;
+    margin-bottom: 1rem;
+}
+
+.become-host-visual {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    min-width: 0;
+}
+
+.become-host-svg {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
 }
 
 .host-intro-text {
     font-size: 1.15rem;
     color: var(--text-secondary);
     line-height: 1.8;
-    max-width: 700px;
-    margin: 0 auto 3rem;
-    text-align: center;
+    max-width: 100%;
+    margin: 0 0 2rem;
+    text-align: left;
+}
+
+.become-host .host-cta-container {
+    text-align: left;
+    margin-top: 0;
 }
 
 .host-benefits {
@@ -1690,6 +1738,95 @@ body {
     font-size: 1.5rem;
 }
 
+/* Managing Bookings - full-width left to right, two-column: content left, SVG right */
+.bookings-section {
+    padding: 5rem 0;
+    background: #fafafa;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.bookings-section .container {
+    max-width: 100%;
+    width: 100%;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+.bookings-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.bookings-content {
+    min-width: 0;
+}
+
+.bookings-visual {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    min-width: 0;
+}
+
+.bookings-svg {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.bookings-title {
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 0.75rem;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+}
+
+.bookings-intro {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+    margin-bottom: 3rem;
+}
+
+.bookings-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+.booking-item {
+    padding-left: 1.5rem;
+    border-left: 4px solid var(--primary-color);
+    margin: 0;
+    background: transparent;
+    border-radius: 0;
+}
+
+.booking-item h3 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+    line-height: 1.35;
+}
+
+.booking-item p {
+    font-size: 0.95rem;
+    line-height: 1.65;
+    color: var(--text-secondary);
+    margin: 0;
+}
+
 .bookings-features-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -2500,6 +2637,32 @@ body {
         font-size: 2rem;
     }
 
+    .become-host-inner {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .become-host-visual {
+        justify-content: center;
+        order: 1;
+    }
+
+    .become-host-content {
+        order: 0;
+    }
+
+    .become-host-title {
+        text-align: center;
+    }
+
+    .become-host .host-intro-text {
+        text-align: center;
+    }
+
+    .become-host .host-cta-container {
+        text-align: center;
+    }
+
     .features-inner {
         grid-template-columns: 1fr;
         gap: 3rem;
@@ -2705,6 +2868,40 @@ body {
 
     .finances-pricing-section .finance-info-card {
         padding: 2rem 1.5rem;
+    }
+
+    .bookings-section {
+        padding: 3rem 0;
+    }
+
+    .bookings-inner {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .bookings-visual {
+        justify-content: center;
+        order: 1;
+    }
+
+    .bookings-content {
+        order: 0;
+    }
+
+    .bookings-title {
+        font-size: 1.75rem;
+    }
+
+    .bookings-intro {
+        margin-bottom: 2rem;
+    }
+
+    .bookings-list {
+        gap: 2rem;
+    }
+
+    .booking-item {
+        padding-left: 1.25rem;
     }
 
     .finances-info-grid,
