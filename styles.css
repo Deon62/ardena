@@ -203,20 +203,18 @@ body {
     align-items: center;
     text-decoration: none;
     transition: var(--transition);
-    background: rgba(26, 26, 26, 0.92);
-    padding: 0.5rem 0.75rem;
-    border-radius: 10px;
 }
 
 .nav-brand-link:hover {
-    background: rgba(26, 26, 26, 0.98);
+    opacity: 0.85;
 }
 
 .nav-logo {
     display: block;
-    height: 32px;
+    height: 48px;
     width: auto;
     object-fit: contain;
+    filter: invert(1);
 }
 
 .nav-menu {
@@ -463,7 +461,7 @@ body {
 /* Features Section - two columns: intro left, points right (green only here) */
 .features {
     padding: 5rem 0;
-    background: var(--accent-green);
+    background: var(--background-light);
 }
 
 .features-inner {
@@ -484,14 +482,14 @@ body {
     font-size: 0.75rem;
     font-weight: 600;
     letter-spacing: 0.1em;
-    color: #000000;
+    color: var(--text-secondary);
     margin-bottom: 0.5rem;
 }
 
 .features-heading {
     font-size: 2.5rem;
     font-weight: 700;
-    color: #000000;
+    color: var(--text-primary);
     margin-bottom: 1.5rem;
     line-height: 1.2;
 }
@@ -499,7 +497,7 @@ body {
 .features-description {
     font-size: 1.1rem;
     line-height: 1.7;
-    color: rgba(0, 0, 0, 0.85);
+    color: var(--text-secondary);
 }
 
 .features-list {
@@ -528,7 +526,7 @@ body {
 .features .feature-number {
     font-size: 4rem;
     font-weight: 600;
-    color: rgba(0, 0, 0, 0.15);
+    color: var(--border-color);
     line-height: 1;
     font-family: 'Space Grotesk', sans-serif;
 }
@@ -542,14 +540,14 @@ body {
 .features .feature-title {
     font-size: 1.25rem;
     font-weight: 600;
-    color: #000000;
+    color: var(--text-primary);
     line-height: 1.3;
 }
 
 .features .feature-description {
     font-size: 1rem;
     line-height: 1.7;
-    color: rgba(0, 0, 0, 0.8);
+    color: var(--text-secondary);
 }
 
 .section-title {
@@ -2290,22 +2288,14 @@ body {
 /* Footer - premium white card with rounded corners, inspired by modern footer design */
 .footer {
     background: linear-gradient(180deg, #f9f9f9 0%, #f0f0f0 100%);
-    padding: 4rem 0 3rem;
+    padding: 4rem 0 0;
     margin-top: 4rem;
 }
 
 .footer-wrapper {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
-}
-
-.footer-card {
-    background: #fff;
-    border-radius: 20px;
-    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
-    padding: 3rem 2.5rem;
-    max-width: 100%;
+    padding: 0 20px 3rem;
 }
 
 .footer-top {
@@ -2327,9 +2317,10 @@ body {
 }
 
 .footer-logo {
-    height: 32px;
+    height: 128px;
     width: auto;
     object-fit: contain;
+    filter: invert(1);
 }
 
 .footer-tagline {
@@ -2860,11 +2851,6 @@ body {
     /* Footer responsive */
     .footer {
         padding: 2.5rem 0 2rem;
-    }
-
-    .footer-card {
-        padding: 2rem 1.5rem;
-        border-radius: 16px;
     }
 
     .footer-top {
