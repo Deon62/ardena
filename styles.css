@@ -57,6 +57,7 @@ button,
 .faq-question,
 .nav-toggle,
 .footer-icon,
+.footer-social-icon,
 .social-link {
     outline: none !important;
     -webkit-tap-highlight-color: transparent;
@@ -89,6 +90,9 @@ button:focus-visible,
 .footer-icon:focus,
 .footer-icon:active,
 .footer-icon:focus-visible,
+.footer-social-icon:focus,
+.footer-social-icon:active,
+.footer-social-icon:focus-visible,
 .social-link:focus,
 .social-link:active,
 .social-link:focus-visible {
@@ -2283,51 +2287,173 @@ body {
     text-decoration: underline;
 }
 
-/* Footer */
+/* Footer - premium white card with rounded corners, inspired by modern footer design */
 .footer {
-    background: var(--text-primary);
-    color: white;
-    padding: 1.5rem 0;
+    background: linear-gradient(180deg, #f9f9f9 0%, #f0f0f0 100%);
+    padding: 4rem 0 3rem;
     margin-top: 4rem;
 }
 
-.footer-content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
+.footer-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
-.footer-icons {
+.footer-card {
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+    padding: 3rem 2.5rem;
+    max-width: 100%;
+}
+
+.footer-top {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
     gap: 1.5rem;
-    align-items: center;
 }
 
-.footer-icon {
-    color: rgba(255, 255, 255, 0.8);
-    transition: var(--transition);
+.footer-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    color: var(--text-primary);
+    font-weight: 600;
+    font-size: 1.25rem;
+}
+
+.footer-logo {
+    height: 32px;
+    width: auto;
+    object-fit: contain;
+}
+
+.footer-tagline {
+    color: #666;
+    font-size: 0.95rem;
+    margin: 0;
+    max-width: 400px;
+}
+
+.footer-divider {
+    border: none;
+    border-top: 1px solid #e8e8e8;
+    margin: 2rem 0;
+}
+
+.footer-main {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr auto;
+    gap: 3rem;
+    align-items: start;
+}
+
+.footer-col-title {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+
+.footer-links,
+.footer-contact {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li,
+.footer-contact li {
+    margin-bottom: 0.6rem;
+}
+
+.footer-links a,
+.footer-contact a {
+    color: #555;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color 0.2s;
+}
+
+.footer-links a:hover,
+.footer-contact a:hover {
+    color: var(--text-primary);
+}
+
+.footer-contact li {
+    color: #555;
+    font-size: 0.95rem;
+}
+
+.footer-contact-icon {
+    display: inline-block;
+    margin-right: 0.5rem;
+    opacity: 0.7;
+}
+
+.footer-social {
+    display: flex;
+    gap: 0.75rem;
+}
+
+.footer-social-icon {
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 44px;
+    height: 44px;
+    background: #333;
+    color: #fff;
+    border-radius: 12px;
+    transition: background 0.2s, transform 0.2s;
     -webkit-tap-highlight-color: transparent;
     outline: none;
 }
 
-.footer-icon:hover {
-    color: white;
+.footer-social-icon:hover {
+    background: #1a1a1a;
+    transform: translateY(-2px);
 }
 
-.footer-icon svg {
-    width: 24px;
-    height: 24px;
+.footer-social-icon svg {
+    width: 20px;
+    height: 20px;
 }
 
 .footer-bottom {
-    text-align: center;
-    margin-top: 1rem;
-    color: rgba(255, 255, 255, 0.5);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.footer-copyright {
+    color: #999;
     font-size: 0.85rem;
+    margin: 0;
+}
+
+.footer-legal {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.footer-legal a {
+    color: #999;
+    font-size: 0.85rem;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.footer-legal a:hover {
+    color: var(--text-primary);
 }
 
 /* Apps Page Styles */
@@ -2729,6 +2855,39 @@ body {
         justify-content: center;
         align-items: center;
         text-align: center;
+    }
+
+    /* Footer responsive */
+    .footer {
+        padding: 2.5rem 0 2rem;
+    }
+
+    .footer-card {
+        padding: 2rem 1.5rem;
+        border-radius: 16px;
+    }
+
+    .footer-top {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .footer-tagline {
+        max-width: 100%;
+    }
+
+    .footer-main {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .footer-legal {
+        flex-wrap: wrap;
     }
 
     /* Apps page responsive */
