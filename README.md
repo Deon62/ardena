@@ -107,12 +107,27 @@ oparides-website/
 - Edge (latest)
 - Mobile browsers (iOS Safari, Chrome Mobile)
 
+## Optimizing the hero image
+
+The home page hero uses `assets/landing.jpg`. To speed up loading:
+
+1. **Generate a WebP version** (smaller file, same quality):
+   ```bash
+   npm install
+   npm run optimize:hero
+   ```
+   This creates `assets/landing.webp`. Browsers that support WebP will load it instead of the JPG.
+
+2. **Or** convert manually with [Squoosh](https://squoosh.app/) and save as `assets/landing.webp`.
+
+The HTML already uses a `<picture>` element: if `landing.webp` exists, it will be used automatically.
+
 ## Notes
 
 - This website is designed to be relocated easily - just move the entire folder
 - All paths are relative, so the site structure should remain intact
-- No external dependencies required
-- Images can be added to an `images/` folder and referenced in the HTML
+- No external dependencies required for viewing; `npm install` is only needed for the hero image optimization script
+- Images can be added to an `assets/` folder and referenced in the HTML
 
 ## Contact Information
 
