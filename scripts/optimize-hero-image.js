@@ -1,20 +1,19 @@
 /**
- * Generates assets/landing.webp from assets/landing.jpg for faster hero loading.
- * Run once: npm install && npm run optimize:hero
- * Requires Node.js and writes to assets/landing.webp.
+ * Optimizes assets/landing.jpg for faster loading (compresses in place).
+ * Run: npm run optimize:hero
+ * Requires Node.js and sharp.
  */
 const fs = require('fs');
 const path = require('path');
 
 const inputPath = path.join(__dirname, '..', 'assets', 'landing.jpg');
-const outputPath = path.join(__dirname, '..', 'assets', 'landing.webp');
+const tempPath = path.join(__dirname, '..', 'assets', 'landing-optimized.jpg');
 
 if (!fs.existsSync(inputPath)) {
   console.error('assets/landing.jpg not found. Nothing to optimize.');
   process.exit(1);
 }
 
-// Use dynamic import so script fails gracefully if sharp not installed
 (async () => {
   let sharp;
   try {
@@ -25,11 +24,16 @@ if (!fs.existsSync(inputPath)) {
   }
 
   try {
+    const { size: beforeSize } = fs.statSync(inputPath);
     await sharp(inputPath)
-      .webp({ quality: 82 })
-      .toFile(outputPath);
-    console.log('Created assets/landing.webp (WebP). The home page will use it for faster loading.');
+      .jpeg({ quality: 82, mozjpeg: true })
+      .toFile(tempPath);
+    const { size: afterSize } = fs.statSync(tempPath);
+    fs.renameSync(tempPath, inputPath);
+    const saved = Math.round((1 - afterSize / beforeSize) * 100);
+    console.log(`Optimized assets/landing.jpg (${(beforeSize / 1024).toFixed(1)}KB → ${(afterSize / 1024).toFixed(1)}KB${saved > 0 ? `, ${saved}% smaller` : ''})`);
   } catch (err) {
+    if (fs.existsSync(tempPath)) fs.unlinkSync(tempPath);
     console.error(err);
     process.exit(1);
   }
