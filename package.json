@@ -2,7 +2,8 @@
   "name": "oparides-website",
   "private": true,
   "scripts": {
-    "optimize:hero": "node scripts/optimize-hero-image.js"
+    "optimize:hero": "node scripts/optimize-hero-image.js",
+    "optimize:images": "node scripts/optimize-images.js"
   },
   "devDependencies": {
     "sharp": "^0.33.5"
