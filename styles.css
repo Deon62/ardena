@@ -1753,38 +1753,48 @@ body {
 
 .host-earnings-note {
     background: transparent;
-    padding: 0;
-    border: none;
-    border-radius: 0;
+    padding: 2rem 0;
 }
 
-.host-earnings-note h3 {
-    font-size: 1.25rem;
-    font-weight: 600;
-    color: var(--text-primary);
-    margin-bottom: 1rem;
-}
-
-.host-earnings-note ul {
-    list-style: none;
-    padding-left: 0;
-}
-
-.host-earnings-note ul li {
-    padding: 0.75rem 0;
-    padding-left: 1.5rem;
-    position: relative;
-    color: var(--text-secondary);
-    line-height: 1.7;
-}
-
-.host-earnings-note ul li::before {
-    content: '•';
-    position: absolute;
-    left: 0;
-    color: var(--primary-color);
-    font-weight: bold;
+.host-earnings-title {
     font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 0 0 3.5rem 0;
+}
+
+.host-earnings-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    justify-content: space-between;
+}
+
+.host-earnings-item {
+    flex: 1;
+    min-width: 160px;
+    max-width: 280px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.host-earnings-img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    max-width: 320px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.host-earnings-point {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin: 0;
 }
 
 /* Managing Bookings - full-width left to right, two-column: content left, SVG right */
@@ -3066,6 +3076,15 @@ body {
     .host-section-block h2 {
         font-size: 1.5rem;
         text-align: center;
+    }
+    
+    .host-earnings-row {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .host-earnings-item {
+        max-width: 220px;
     }
     
     .host-section-intro {
