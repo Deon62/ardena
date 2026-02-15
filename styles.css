@@ -926,8 +926,20 @@ body {
 /* CTA Section */
 .cta {
     background: #f5f5f5;
-    padding: 5rem 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 0;
     text-align: center;
+}
+
+.cta-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    text-align: left;
 }
 
 .cta-title {
@@ -939,8 +951,47 @@ body {
 
 .cta-text {
     font-size: 1.25rem;
-    margin-bottom: 2rem;
+    margin-bottom: 2.5rem;
     color: var(--text-secondary);
+}
+
+.cta-qr-codes {
+    display: flex;
+    gap: 4rem;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+.cta-qr-block {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 1.5rem;
+}
+
+.cta-qr-img {
+    width: 160px;
+    height: 160px;
+    border-radius: 12px;
+    flex-shrink: 0;
+}
+
+.cta-qr-desc {
+    max-width: 280px;
+}
+
+.qr-block-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 0 0 0.5rem 0;
+}
+
+.qr-block-text {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    margin: 0;
 }
 
 .cta-buttons {
@@ -1888,27 +1939,73 @@ body {
 }
 
 .host-download-section {
-    background: transparent;
-    padding: 4rem 0;
-    border-radius: 0;
-    text-align: center;
+    background: #f5f5f5;
+    padding: 4rem 2rem;
+    border-radius: 16px;
+    text-align: left;
     margin-top: 3rem;
+    min-height: 280px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
-.host-download-section h2 {
+.host-download-title {
     font-size: 2rem;
-    font-weight: 600;
+    font-weight: 700;
     color: var(--text-primary);
-    margin-bottom: 1rem;
+    margin: 0 0 0.75rem 0;
 }
 
-.host-download-section > p {
+.host-download-text {
     font-size: 1.1rem;
     color: var(--text-secondary);
-    margin-bottom: 2rem;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
+    line-height: 1.7;
+    margin: 0 0 2rem 0;
+    max-width: 560px;
+}
+
+.host-qr-block {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.host-qr-img {
+    width: 160px;
+    height: 160px;
+    border-radius: 12px;
+    flex-shrink: 0;
+}
+
+.host-qr-desc {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.host-qr-copy {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin: 0;
+}
+
+.host-contact-text {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+.host-contact-text a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.host-contact-text a:hover {
+    text-decoration: underline;
 }
 
 .host-download-buttons {
@@ -2832,9 +2929,18 @@ body {
     }
 
     .hero-buttons,
-    .cta-buttons {
+    .cta-buttons,
+    .cta-qr-codes {
         flex-direction: column;
         width: 100%;
+    }
+
+    .cta-qr-block {
+        flex-direction: column;
+    }
+
+    .cta-qr-desc {
+        max-width: 100%;
     }
 
     .btn {
@@ -3055,8 +3161,12 @@ body {
         padding: 3rem 1.5rem;
     }
     
-    .host-download-section h2 {
+    .host-download-title {
         font-size: 1.5rem;
+    }
+    
+    .host-qr-block {
+        flex-direction: column;
     }
 
     .problems-section {
