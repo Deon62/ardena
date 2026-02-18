@@ -2474,14 +2474,175 @@ body {
     background: #fafafa;
 }
 
+.delete-section-right .container.container--wide {
+    max-width: 960px;
+}
+
+.delete-right-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem 3rem;
+    align-items: start;
+}
+
+.delete-right-text h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+.delete-right-text p,
+.delete-right-text li {
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+.delete-right-text ul {
+    margin: 1rem 0;
+}
+
+.delete-right-text ul li {
+    margin-bottom: 0.5rem;
+}
+
+/* Right section image block – tilted “card” effect */
+.delete-right-image-block {
+    position: relative;
+    max-width: 420px;
+}
+
+.delete-right-shape {
+    position: absolute;
+    top: 12px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 122, 255, 0.12);
+    border-radius: 12px;
+    transform: translate(-12px, 12px);
+    z-index: 0;
+}
+
+.delete-right-image {
+    position: relative;
+    z-index: 1;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.delete-right-img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+@media (max-width: 768px) {
+    .delete-right-layout {
+        grid-template-columns: 1fr;
+    }
+    .delete-right-image-block {
+        max-width: 100%;
+    }
+    .delete-right-shape {
+        transform: translate(-8px, 8px);
+    }
+}
+
 .delete-section-app {
     background: #f0f0f0;
+}
+
+.delete-section-app .container--wide {
+    max-width: 960px;
+}
+
+.delete-app-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem 3rem;
+    align-items: start;
+}
+
+.delete-app-image-block {
+    position: relative;
+    max-width: 380px;
+}
+
+/* Protruding shape: blue block behind the image, extends out for layered effect */
+.delete-app-shape {
+    position: absolute;
+    top: 12px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    min-height: 200px;
+    background: rgba(0, 122, 255, 0.12);
+    border-radius: 16px;
+    transform: translate(20px, 20px);
+    z-index: 0;
+}
+
+.delete-app-illustration {
+    position: relative;
+    z-index: 1;
+    display: block;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.delete-illustration-img {
+    display: block;
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+    border-radius: 12px;
+}
+
+.delete-app-text h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+.delete-app-text p,
+.delete-app-text li {
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+.delete-app-text .steps-list {
+    margin: 1rem 0;
+}
+
+.delete-app-text .steps-list li {
+    margin-bottom: 0.75rem;
+}
+
+@media (max-width: 768px) {
+    .delete-app-layout {
+        grid-template-columns: 1fr;
+    }
+    .delete-app-image-block {
+        max-width: 100%;
+    }
+    .delete-app-shape {
+        transform: translate(12px, 12px);
+        min-height: 160px;
+    }
 }
 
 .delete-section .container {
     max-width: 720px;
     margin-left: auto;
     margin-right: auto;
+}
+
+.delete-section-app .container.container--wide {
+    max-width: 960px;
 }
 
 .delete-section .legal-section {
@@ -2512,6 +2673,10 @@ body {
     text-align: left;
 }
 
+.delete-form-text h2 {
+    margin-top: 0;
+}
+
 .delete-form-text p {
     margin-bottom: 1rem;
     font-size: 1rem;
@@ -2527,6 +2692,10 @@ body {
 .delete-account-form {
     max-width: 100%;
     margin-top: 0;
+    border: 1px solid var(--border-color);
+    border-radius: 0;
+    padding: 1.25rem;
+    background: #fff;
 }
 
 @media (max-width: 768px) {
@@ -2536,15 +2705,19 @@ body {
 }
 
 .delete-account-form .form-group {
-    margin-bottom: 1.25rem;
+    margin-bottom: 0.75rem;
+}
+
+.delete-account-form .form-group:last-of-type {
+    margin-bottom: 0.6rem;
 }
 
 .delete-account-form label {
     display: block;
     font-weight: 600;
-    font-size: 0.95rem;
+    font-size: 0.875rem;
     color: var(--text-primary);
-    margin-bottom: 0.4rem;
+    margin-bottom: 0.25rem;
 }
 
 .delete-account-form input[type="text"],
@@ -2552,11 +2725,11 @@ body {
 .delete-account-form input[type="password"],
 .delete-account-form textarea {
     width: 100%;
-    padding: 0.65rem 0.85rem;
-    font-size: 1rem;
+    padding: 0.4rem 0.6rem;
+    font-size: 0.95rem;
     font-family: inherit;
     border: 1px solid var(--border-color);
-    border-radius: 8px;
+    border-radius: 0;
     color: var(--text-primary);
     background: #fff;
     box-sizing: border-box;
@@ -2564,7 +2737,7 @@ body {
 
 .delete-account-form textarea {
     resize: vertical;
-    min-height: 80px;
+    min-height: 52px;
 }
 
 .delete-account-form .form-note {
@@ -2574,7 +2747,7 @@ body {
 }
 
 .delete-account-form .btn {
-    margin-top: 0.5rem;
+    margin-top: 0.25rem;
 }
 
 /* Footer - premium white card with rounded corners, inspired by modern footer design */
