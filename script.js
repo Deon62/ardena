@@ -135,6 +135,81 @@ function showHelpFormMessage(message, type) {
     }
 }
 
+// Internal testing modal (only on index)
+const internalTestingModal = document.getElementById('internal-testing-modal');
+const internalTestingForm = document.getElementById('internal-testing-form');
+
+function openInternalTestingModal() {
+    if (!internalTestingModal) return;
+    internalTestingModal.classList.add('is-open');
+    internalTestingModal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeInternalTestingModal() {
+    if (!internalTestingModal) return;
+    internalTestingModal.classList.remove('is-open');
+    internalTestingModal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+    if (window.location.hash === '#join-internal-testing') {
+        history.replaceState(null, '', window.location.pathname + window.location.search);
+    }
+}
+
+if (internalTestingModal) {
+    if (window.location.hash === '#join-internal-testing') openInternalTestingModal();
+    window.addEventListener('hashchange', () => {
+        if (window.location.hash === '#join-internal-testing') openInternalTestingModal();
+        else closeInternalTestingModal();
+    });
+    document.querySelectorAll('.js-internal-testing-cta').forEach(link => {
+        link.addEventListener('click', (e) => {
+            const isIndex = /index\.html$|\/$/.test(window.location.pathname) || window.location.pathname === '';
+            if (isIndex) {
+                e.preventDefault();
+                openInternalTestingModal();
+            }
+        });
+    });
+    internalTestingModal.querySelectorAll('[data-close-modal]').forEach(el => {
+        el.addEventListener('click', closeInternalTestingModal);
+    });
+}
+
+if (internalTestingForm) {
+    internalTestingForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const submitBtn = internalTestingForm.querySelector('.modal-submit');
+        const originalText = submitBtn ? submitBtn.textContent : '';
+        if (submitBtn) {
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Sending…';
+        }
+        const formData = new FormData(internalTestingForm);
+        fetch('https://formspree.io/f/xvzbqdpb', {
+            method: 'POST',
+            body: formData,
+            headers: { Accept: 'application/json' }
+        })
+            .then(r => r.json())
+            .then(() => {
+                if (submitBtn) {
+                    submitBtn.textContent = 'Link sent! Check your email.';
+                    submitBtn.disabled = false;
+                }
+                internalTestingForm.reset();
+                setTimeout(closeInternalTestingModal, 2000);
+            })
+            .catch(() => {
+                if (submitBtn) {
+                    submitBtn.textContent = originalText;
+                    submitBtn.disabled = false;
+                }
+                alert('Something went wrong. Please try again or email us directly.');
+            });
+    });
+}
+
 // Smooth scroll for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
