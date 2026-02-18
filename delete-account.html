@@ -57,7 +57,7 @@
             </div>
         </section>
 
-        <section class="content-section">
+        <section class="delete-section delete-section-right">
             <div class="container">
                 <div class="legal-content delete-account-content">
                     <div class="legal-section">
@@ -71,7 +71,13 @@
                         </ul>
                         <p>Deletion is permanent. We may retain minimal data where required by law (e.g. for tax or dispute resolution).</p>
                     </div>
+                </div>
+            </div>
+        </section>
 
+        <section class="delete-section delete-section-app">
+            <div class="container">
+                <div class="legal-content delete-account-content">
                     <div class="legal-section">
                         <h2>How to delete your account in the app</h2>
                         <p>You can delete your account directly from the ardena client or ardena host app:</p>
@@ -85,31 +91,41 @@
                         </ol>
                         <p>After you confirm, we will process your request. You may receive an email when the deletion is complete. If you use both the client and host apps, delete each account separately if you have signed up for both.</p>
                     </div>
+                </div>
+            </div>
+        </section>
 
-                    <div class="legal-section">
+        <section class="content-section">
+            <div class="container">
+                <div class="legal-content delete-account-content">
+                    <div class="legal-section delete-form-section">
                         <h2>Request deletion via this form</h2>
-                        <p>If you cannot use the app or prefer to request deletion here, submit the form below. We will verify your identity and then process the deletion of your account and associated data.</p>
-                        <form class="delete-account-form" id="deleteAccountForm" action="mailto:support@ardena.xyz" method="get" enctype="text/plain">
-                            <input type="hidden" name="subject" value="Account &amp; data deletion request">
-                            <div class="form-group">
-                                <label for="del-username">Username or phone (as used in the app)</label>
-                                <input type="text" id="del-username" name="username" required placeholder="Your ardena username or registered phone">
+                        <div class="delete-form-layout">
+                            <div class="delete-form-text">
+                                <p>If you cannot use the app or prefer to request deletion here, submit the form on the right. We will verify your identity and then process the deletion of your account and associated data.</p>
+                                <p class="form-note">Submitting this form will open your email client to send a deletion request to support@ardena.xyz. We will verify your details and process your request. For security, avoid using shared or public computers when entering your password.</p>
                             </div>
-                            <div class="form-group">
-                                <label for="del-email">Email address (registered with ardena)</label>
-                                <input type="email" id="del-email" name="email" required placeholder="your@email.com">
-                            </div>
-                            <div class="form-group">
-                                <label for="del-password">Password (for verification)</label>
-                                <input type="password" id="del-password" name="password" required placeholder="Your account password" autocomplete="current-password">
-                            </div>
-                            <div class="form-group">
-                                <label for="del-message">Additional details (optional)</label>
-                                <textarea id="del-message" name="body" rows="3" placeholder="e.g. Confirm deletion of all my data including booking history"></textarea>
-                            </div>
-                            <p class="form-note">Submitting this form will open your email client to send a deletion request to support@ardena.xyz. We will verify your details and process your request. For security, avoid using shared or public computers when entering your password.</p>
-                            <button type="submit" class="btn btn-primary btn-large">Submit deletion request</button>
-                        </form>
+                            <form class="delete-account-form" id="deleteAccountForm" action="mailto:support@ardena.xyz" method="get" enctype="text/plain">
+                                <input type="hidden" name="subject" value="Account &amp; data deletion request">
+                                <div class="form-group">
+                                    <label for="del-username">Username or phone (as used in the app)</label>
+                                    <input type="text" id="del-username" name="username" required placeholder="Your ardena username or registered phone">
+                                </div>
+                                <div class="form-group">
+                                    <label for="del-email">Email address (registered with ardena)</label>
+                                    <input type="email" id="del-email" name="email" required placeholder="your@email.com">
+                                </div>
+                                <div class="form-group">
+                                    <label for="del-password">Password (for verification)</label>
+                                    <input type="password" id="del-password" name="password" required placeholder="Your account password" autocomplete="current-password">
+                                </div>
+                                <div class="form-group">
+                                    <label for="del-message">Additional details (optional)</label>
+                                    <textarea id="del-message" name="body" rows="3" placeholder="e.g. Confirm deletion of all my data including booking history"></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary btn-large">Submit deletion request</button>
+                            </form>
+                        </div>
                     </div>
 
                     <div class="legal-section">

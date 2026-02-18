@@ -2466,9 +2466,73 @@ body {
     margin-bottom: 0.75rem;
 }
 
-.delete-account-form {
-    max-width: 520px;
+.delete-section {
+    padding: 3rem 0;
+}
+
+.delete-section-right {
+    background: #fafafa;
+}
+
+.delete-section-app {
+    background: #f0f0f0;
+}
+
+.delete-section .container {
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.delete-section .legal-section {
+    margin-bottom: 0;
+}
+
+.delete-section .legal-section h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.delete-section .legal-section p,
+.delete-section .legal-section li {
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+.delete-form-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem 3rem;
+    align-items: start;
     margin-top: 1.5rem;
+}
+
+.delete-form-text {
+    text-align: left;
+}
+
+.delete-form-text p {
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+.delete-form-text .form-note {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-bottom: 0;
+}
+
+.delete-account-form {
+    max-width: 100%;
+    margin-top: 0;
+}
+
+@media (max-width: 768px) {
+    .delete-form-layout {
+        grid-template-columns: 1fr;
+    }
 }
 
 .delete-account-form .form-group {
