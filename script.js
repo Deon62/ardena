@@ -392,3 +392,35 @@ faqQuestions.forEach(question => {
         }
     });
 });
+
+// Help page: toggle Renters / Car host
+(function () {
+    const toggleBtns = document.querySelectorAll('.help-toggle-btn');
+    const panels = document.querySelectorAll('.help-panel');
+    if (!toggleBtns.length || !panels.length) return;
+
+    toggleBtns.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+            const panelId = btn.getAttribute('data-help-panel');
+            if (!panelId) return;
+            const targetPanel = document.getElementById('help-panel-' + panelId);
+            if (!targetPanel) return;
+
+            toggleBtns.forEach(function (b) {
+                b.classList.remove('is-active');
+                b.setAttribute('aria-selected', 'false');
+            });
+            btn.classList.add('is-active');
+            btn.setAttribute('aria-selected', 'true');
+
+            panels.forEach(function (panel) {
+                panel.classList.remove('is-active');
+                panel.hidden = true;
+                panel.setAttribute('aria-hidden', 'true');
+            });
+            targetPanel.classList.add('is-active');
+            targetPanel.hidden = false;
+            targetPanel.setAttribute('aria-hidden', 'false');
+        });
+    });
+})();
