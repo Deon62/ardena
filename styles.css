@@ -2390,6 +2390,15 @@ body {
 
 .legal-hero .container {
     width: 100%;
+    text-align: center;
+}
+
+.legal-hero-box {
+    display: inline-block;
+    border: 3px solid var(--text-primary);
+    padding: 2.5rem 3.5rem;
+    max-width: 90%;
+    box-sizing: border-box;
 }
 
 .legal-hero .page-title {
@@ -2397,10 +2406,10 @@ body {
     font-weight: 400;
 }
 
-.legal-hero .page-subtitle {
+.legal-hero .legal-hero-box .page-subtitle {
     font-size: 1.25rem;
-    max-width: 500px;
-    margin: 0 auto;
+    max-width: 480px;
+    margin: 0.75rem auto 0;
 }
 
 .legal-content {
@@ -3533,6 +3542,10 @@ body {
         margin-left: auto;
         margin-right: auto;
         max-width: 100%;
+    }
+    
+    .legal-hero-box {
+        padding: 1.5rem 2rem;
     }
 
     .legal-section h2 {
