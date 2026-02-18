@@ -13,6 +13,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://ardena.xyz/teams.html</loc>
+    <lastmod>2025-01-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://ardena.xyz/host</loc>
     <lastmod>2025-01-15</lastmod>
     <changefreq>monthly</changefreq>
