@@ -374,7 +374,9 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.3) 50%, rgba(0, 0, 0, 0.5) 100%);
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0.25) 50%, rgba(0, 0, 0, 0.45) 100%);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
     z-index: 1;
 }
 
@@ -417,6 +419,20 @@ body {
     justify-content: flex-start;
     flex-wrap: wrap;
     margin-top: 2.5rem;
+}
+
+.btn.btn-hero-cta {
+    background: transparent;
+    color: #fff;
+    border: 2px solid #475569;
+    border-radius: 4px;
+    padding: 0.75rem 2rem;
+}
+
+.btn.btn-hero-cta:hover {
+    background: rgba(30, 41, 59, 0.3);
+    border-color: #64748b;
+    color: #fff;
 }
 
 /* Buttons */
