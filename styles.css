@@ -2446,6 +2446,64 @@ body {
     text-decoration: underline;
 }
 
+.legal-section ol.steps-list {
+    margin-left: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--text-secondary);
+    line-height: 1.8;
+}
+
+.legal-section ol.steps-list li {
+    margin-bottom: 0.75rem;
+}
+
+.delete-account-form {
+    max-width: 520px;
+    margin-top: 1.5rem;
+}
+
+.delete-account-form .form-group {
+    margin-bottom: 1.25rem;
+}
+
+.delete-account-form label {
+    display: block;
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--text-primary);
+    margin-bottom: 0.4rem;
+}
+
+.delete-account-form input[type="text"],
+.delete-account-form input[type="email"],
+.delete-account-form input[type="password"],
+.delete-account-form textarea {
+    width: 100%;
+    padding: 0.65rem 0.85rem;
+    font-size: 1rem;
+    font-family: inherit;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    color: var(--text-primary);
+    background: #fff;
+    box-sizing: border-box;
+}
+
+.delete-account-form textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+.delete-account-form .form-note {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-bottom: 1.25rem;
+}
+
+.delete-account-form .btn {
+    margin-top: 0.5rem;
+}
+
 /* Footer - premium white card with rounded corners, inspired by modern footer design */
 .footer {
     background: linear-gradient(180deg, #f9f9f9 0%, #f0f0f0 100%);
