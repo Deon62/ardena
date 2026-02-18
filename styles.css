@@ -266,6 +266,16 @@ body {
     display: block;
 }
 
+.nav-link--cta {
+    border: 1px solid var(--primary-color);
+    border-radius: 4px;
+    padding: 0.5rem 1rem;
+}
+
+.nav-link--cta:hover {
+    background: rgba(30, 41, 59, 0.06);
+}
+
 .btn-contact {
     display: inline-block;
     padding: 0.6rem 1.5rem;
