@@ -109,18 +109,15 @@ oparides-website/
 
 ## Optimizing the hero image
 
-The home page hero uses `assets/landing.jpg`. To speed up loading:
+The home page hero uses `assets/landing.jpg`. To load it faster:
 
-1. **Generate a WebP version** (smaller file, same quality):
+1. **Run the optimizer** (compresses the image and creates a tiny placeholder for instant display):
    ```bash
    npm install
    npm run optimize:hero
    ```
-   This creates `assets/landing.webp`. Browsers that support WebP will load it instead of the JPG.
-
-2. **Or** convert manually with [Squoosh](https://squoosh.app/) and save as `assets/landing.webp`.
-
-The HTML already uses a `<picture>` element: if `landing.webp` exists, it will be used automatically.
+   This compresses `assets/landing.jpg` in place and creates `assets/landing-placeholder.jpg` (~1–2 KB). The placeholder is shown immediately while the full image loads, so the hero never looks empty.
+2. The hero image is preloaded at the top of the page so the browser fetches it before CSS and fonts.
 
 ## Notes
 
