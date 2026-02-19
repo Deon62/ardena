@@ -424,3 +424,50 @@ faqQuestions.forEach(question => {
         });
     });
 })();
+
+// Help page newsletter form
+(function () {
+    var form = document.getElementById('help-newsletter-form');
+    var messageEl = document.getElementById('help-newsletter-message');
+    if (!form || !messageEl) return;
+
+    function showMessage(text, type) {
+        messageEl.textContent = text;
+        messageEl.className = 'help-newsletter-message ' + (type || '');
+        messageEl.hidden = false;
+    }
+
+    form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var submitBtn = form.querySelector('.help-newsletter-submit');
+        var originalText = submitBtn ? submitBtn.textContent : '';
+        if (submitBtn) {
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Subscribing…';
+        }
+        messageEl.hidden = true;
+
+        var formData = new FormData(form);
+        fetch(form.getAttribute('action'), {
+            method: 'POST',
+            body: formData,
+            headers: { Accept: 'application/json' }
+        })
+            .then(function (r) { return r.json(); })
+            .then(function () {
+                showMessage('Thanks! You’re subscribed. We’ll send updates to your email.', 'success');
+                form.reset();
+                if (submitBtn) {
+                    submitBtn.textContent = originalText;
+                    submitBtn.disabled = false;
+                }
+            })
+            .catch(function () {
+                showMessage('Something went wrong. Please try again or email support@ardena.xyz.', 'error');
+                if (submitBtn) {
+                    submitBtn.textContent = originalText;
+                    submitBtn.disabled = false;
+                }
+            });
+    });
+})();
