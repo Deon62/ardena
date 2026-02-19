@@ -3001,6 +3001,36 @@ body {
     text-decoration: underline;
 }
 
+.help-card h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 1rem 0 0.4rem;
+    line-height: 1.3;
+}
+
+.help-card h3:first-of-type {
+    margin-top: 0.75rem;
+}
+
+/* Policy/legal pages: same card layout as help */
+.policy-page-content {
+    background: #fafafa;
+    padding: 2rem 0 3rem;
+}
+
+.policy-page-content .help-content-section {
+    padding-top: 0;
+}
+
+.policy-updated,
+.help-card--muted .policy-updated {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    font-weight: 400;
+    margin: 0;
+}
+
 /* Help socials - same sharp-edged card style as Finances & Earnings */
 .help-socials-section {
     background: #000000;
