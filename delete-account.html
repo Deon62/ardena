@@ -116,9 +116,9 @@
                             <div class="delete-form-text">
                                 <h2>Request deletion via this form</h2>
                                 <p>If you cannot use the app or prefer to request deletion here, submit the form on the right. We will verify your identity and then process the deletion of your account and associated data.</p>
-                                <p class="form-note">Submitting this form will open your email client to send a deletion request to support@ardena.xyz. We will verify your details and process your request. For security, avoid using shared or public computers when entering your password.</p>
+                                <p class="form-note">Submitting this form will open your email client to send a deletion request to ardenacompanies@gmail.com. We will verify your details and process your request. For security, avoid using shared or public computers when entering your password.</p>
                             </div>
-                            <form class="delete-account-form" id="deleteAccountForm" action="mailto:support@ardena.xyz" method="get" enctype="text/plain">
+                            <form class="delete-account-form" id="deleteAccountForm" action="mailto:ardenacompanies@gmail.com" method="get" enctype="text/plain">
                                 <input type="hidden" name="subject" value="Account &amp; data deletion request">
                                 <div class="form-group">
                                     <label for="del-username">Username or phone (as used in the app)</label>
@@ -174,7 +174,7 @@
                 <div class="footer-col">
                     <h4 class="footer-col-title">Contact</h4>
                     <ul class="footer-contact">
-                        <li><a href="mailto:support@ardena.xyz"><span class="footer-contact-icon" aria-hidden="true">✉</span> support@ardena.xyz</a></li>
+                        <li><a href="mailto:ardenacompanies@gmail.com"><span class="footer-contact-icon" aria-hidden="true">✉</span> ardenacompanies@gmail.com</a></li>
                         <li><span class="footer-contact-icon" aria-hidden="true">☎</span> +254 702 248 984</li>
                         <li><span class="footer-contact-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" width="1em" height="1em" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></span> Nakuru, Kenya</li>
                     </ul>
@@ -209,7 +209,7 @@
             body += 'Email: ' + document.getElementById('del-email').value + '\n';
             body += 'Password: ' + document.getElementById('del-password').value + '\n';
             body += 'Message: ' + document.getElementById('del-message').value;
-            this.action = 'mailto:support@ardena.xyz?subject=' + subj + '&body=' + encodeURIComponent(body);
+            this.action = 'mailto:ardenacompanies@gmail.com?subject=' + subj + '&body=' + encodeURIComponent(body);
         });
     </script>
 </body>
