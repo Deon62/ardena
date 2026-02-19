@@ -161,7 +161,7 @@ body {
     box-sizing: border-box;
 }
 
-/* Header and Navigation */
+/* Header and Navigation - same bar and logo on every page */
 .header {
     position: fixed;
     top: 0;
@@ -195,10 +195,12 @@ body {
 }
 
 .nav-brand {
-    display: flex;
+    display: flex !important;
     align-items: center;
     gap: 0.5rem;
     flex-shrink: 0;
+    visibility: visible;
+    min-width: 0;
 }
 
 .nav-brand-link {
@@ -213,11 +215,14 @@ body {
 }
 
 .nav-logo {
-    display: block;
+    display: block !important;
     height: 48px;
+    min-height: 40px;
     width: auto;
+    max-width: 140px;
     object-fit: contain;
     filter: invert(1);
+    visibility: visible;
 }
 
 .nav-menu {
@@ -3594,6 +3599,12 @@ body {
     opacity: 0.7;
 }
 
+.footer-contact-icon svg {
+    width: 1em;
+    height: 1em;
+    vertical-align: -0.15em;
+}
+
 .footer-social {
     display: flex;
     flex-wrap: wrap;
@@ -3901,6 +3912,12 @@ body {
 
     .nav-brand {
         order: 1;
+        display: flex !important;
+    }
+
+    .nav-logo {
+        height: 44px;
+        min-height: 36px;
     }
 
     .btn-contact {
