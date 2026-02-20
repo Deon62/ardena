@@ -1,3 +1,15 @@
+// API base URL: local development (localhost / 127.0.0.1) vs production
+function getApiBase() {
+    if (typeof window.ARDENA_API_BASE === 'string' && window.ARDENA_API_BASE) {
+        return window.ARDENA_API_BASE.replace(/\/$/, '');
+    }
+    var host = typeof window !== 'undefined' && window.location ? window.location.hostname : '';
+    if (host === 'localhost' || host === '127.0.0.1') {
+        return 'http://localhost:8001';
+    }
+    return 'https://api.ardena.xyz';
+}
+
 // Mobile Navigation Toggle
 const navToggle = document.getElementById('navToggle');
 const navMenu = document.getElementById('navMenu');
@@ -425,11 +437,15 @@ faqQuestions.forEach(question => {
     });
 })();
 
-// Help page newsletter form
+// Help page newsletter form: one form, one button (Subscribe / Unsubscribe). POST /api/v1/subscribe and /api/v1/unsubscribe
 (function () {
     var form = document.getElementById('help-newsletter-form');
     var messageEl = document.getElementById('help-newsletter-message');
+    var unsubscribeLink = document.querySelector('.help-newsletter-unsubscribe-link');
     if (!form || !messageEl) return;
+
+    var mode = 'subscribe'; // 'subscribe' | 'unsubscribe'
+    var submitBtn = form.querySelector('.help-newsletter-submit');
 
     function showMessage(text, type) {
         messageEl.textContent = text;
@@ -437,33 +453,74 @@ faqQuestions.forEach(question => {
         messageEl.hidden = false;
     }
 
+    function setMode(newMode) {
+        mode = newMode;
+        if (submitBtn) submitBtn.textContent = mode === 'unsubscribe' ? 'Unsubscribe' : 'Subscribe';
+    }
+
+    function subscribe(email) {
+        var base = getApiBase();
+        return fetch(base + '/api/v1/subscribe', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+            body: JSON.stringify({ email: email })
+        });
+    }
+
+    function unsubscribe(email) {
+        var base = getApiBase();
+        return fetch(base + '/api/v1/unsubscribe', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+            body: JSON.stringify({ email: email })
+        });
+    }
+
+    if (unsubscribeLink) {
+        unsubscribeLink.addEventListener('click', function () {
+            setMode('unsubscribe');
+            var emailInput = form.querySelector('input[name="email"], input[type="email"]');
+            if (emailInput) {
+                emailInput.focus();
+                emailInput.value = '';
+            }
+        });
+    }
+
     form.addEventListener('submit', function (e) {
         e.preventDefault();
-        var submitBtn = form.querySelector('.help-newsletter-submit');
+        var emailInput = form.querySelector('input[name="email"], input[type="email"]');
+        var email = emailInput ? emailInput.value.trim() : '';
+        if (!email) {
+            showMessage('Please enter your email address.', 'error');
+            return;
+        }
         var originalText = submitBtn ? submitBtn.textContent : '';
         if (submitBtn) {
             submitBtn.disabled = true;
-            submitBtn.textContent = 'Subscribing…';
+            submitBtn.textContent = mode === 'unsubscribe' ? 'Unsubscribing…' : 'Subscribing…';
         }
         messageEl.hidden = true;
 
-        var formData = new FormData(form);
-        fetch(form.getAttribute('action'), {
-            method: 'POST',
-            body: formData,
-            headers: { Accept: 'application/json' }
-        })
-            .then(function (r) { return r.json(); })
-            .then(function () {
-                showMessage('Thanks! You’re subscribed. We’ll send updates to your email.', 'success');
-                form.reset();
-                if (submitBtn) {
-                    submitBtn.textContent = originalText;
-                    submitBtn.disabled = false;
-                }
+        var request = mode === 'unsubscribe' ? unsubscribe(email) : subscribe(email);
+        request
+            .then(function (r) {
+                if (!r.ok) return r.json().then(function (body) { throw new Error(body.message || body.detail || (mode === 'unsubscribe' ? 'Unsubscribe failed' : 'Subscribe failed')); });
+                return r.json().catch(function () { return {}; });
             })
-            .catch(function () {
-                showMessage('Something went wrong. Please try again or email ardenacompanies@gmail.com.', 'error');
+            .then(function () {
+                if (mode === 'unsubscribe') {
+                    showMessage('You have been unsubscribed from our newsletter.', 'success');
+                    setMode('subscribe');
+                } else {
+                    showMessage('Thanks! You’re subscribed. We’ll send updates to your email.', 'success');
+                    setMode('unsubscribe');
+                }
+                form.reset();
+                if (submitBtn) submitBtn.disabled = false;
+            })
+            .catch(function (err) {
+                showMessage(err && err.message ? err.message : 'Something went wrong. Please try again or email ardenacompanies@gmail.com.', 'error');
                 if (submitBtn) {
                     submitBtn.textContent = originalText;
                     submitBtn.disabled = false;
