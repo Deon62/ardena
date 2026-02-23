@@ -2342,7 +2342,7 @@ body {
     margin: 0;
 }
 
-/* Managing Bookings - full-width left to right, two-column: content left, SVG right */
+/* Support section (host) - full-width left to right, two-column: content left, SVG right */
 .bookings-section {
     padding: 5rem 0;
     background: #fafafa;
