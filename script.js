@@ -38,6 +38,33 @@ if (navToggle && navMenu) {
     });
 }
 
+// More menu (About, Team, Applications, Help)
+const navMoreToggle = document.getElementById('navMoreToggle');
+const navMoreMenu = document.getElementById('navMoreMenu');
+
+if (navMoreToggle && navMoreMenu) {
+    navMoreToggle.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const isOpen = navMoreMenu.classList.toggle('is-open');
+        navMoreToggle.setAttribute('aria-expanded', isOpen);
+        navMoreMenu.setAttribute('aria-hidden', !isOpen);
+    });
+
+    document.addEventListener('click', () => {
+        navMoreMenu.classList.remove('is-open');
+        navMoreToggle.setAttribute('aria-expanded', 'false');
+        navMoreMenu.setAttribute('aria-hidden', 'true');
+    });
+
+    navMoreMenu.querySelectorAll('.nav-more-link').forEach(link => {
+        link.addEventListener('click', () => {
+            navMoreMenu.classList.remove('is-open');
+            navMoreToggle.setAttribute('aria-expanded', 'false');
+            navMoreMenu.setAttribute('aria-hidden', 'true');
+        });
+    });
+}
+
 // Contact Form Handling
 const contactForm = document.getElementById('contactForm');
 const formMessage = document.getElementById('formMessage');
