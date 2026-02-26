@@ -2970,39 +2970,50 @@ body {
     max-width: none;
 }
 
-/* Reset password page – cream background, clean form */
+/* Reset password page – no navbar/footer; cream background, card with form only */
+.reset-password-page {
+    min-height: 100vh;
+    background: var(--cream);
+}
+
 .reset-password-section {
-    min-height: 80vh;
-    padding: 5rem 1.5rem 4rem;
+    min-height: 100vh;
+    padding: 2rem 1.5rem;
     display: flex;
     align-items: center;
+    justify-content: center;
     background: var(--cream);
     background-image: none;
 }
 
 .reset-password-container {
-    max-width: 440px;
-    margin-left: auto;
-    margin-right: auto;
+    width: 100%;
+    max-width: 420px;
+    margin: 0 auto;
 }
 
-.reset-password-content {
+.reset-password-card {
+    background: #fff;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
     text-align: left;
 }
 
 .reset-password-title {
-    font-size: 2.75rem;
+    font-size: 2rem;
     font-weight: 700;
     color: var(--text-primary);
-    margin: 0;
+    margin: 0 0 0.35rem 0;
     letter-spacing: -0.02em;
 }
 
 .reset-password-subtitle {
-    font-size: 1.125rem;
+    font-size: 1rem;
     color: var(--text-secondary);
-    margin: 0.5rem 0 1.5rem 0;
-    max-width: none;
+    margin: 0 0 1.5rem 0;
+    line-height: 1.45;
 }
 
 .reset-password-form .form-group {
@@ -3023,7 +3034,7 @@ body {
     font-size: 1rem;
     font-family: inherit;
     border: 1px solid var(--border-color);
-    border-radius: 4px;
+    border-radius: 6px;
     color: var(--text-primary);
     background: #fff;
     box-sizing: border-box;
@@ -3043,7 +3054,7 @@ body {
     font-size: 0.9rem;
     padding: 0.6rem 0.75rem;
     margin-bottom: 1rem;
-    border-radius: 4px;
+    border-radius: 6px;
 }
 
 .reset-form-message--error {
@@ -3060,21 +3071,7 @@ body {
     width: 100%;
     padding: 0.75rem 1.5rem;
     margin-top: 0.25rem;
-}
-
-.reset-password-back {
-    margin: 1.5rem 0 0;
-    font-size: 0.95rem;
-}
-
-.reset-password-link {
-    color: var(--primary-color);
-    text-decoration: none;
-    font-weight: 500;
-}
-
-.reset-password-link:hover {
-    text-decoration: underline;
+    border-radius: 6px;
 }
 
 /* Help page hero – help.jpg background */
