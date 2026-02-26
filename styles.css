@@ -2970,6 +2970,113 @@ body {
     max-width: none;
 }
 
+/* Reset password page – cream background, clean form */
+.reset-password-section {
+    min-height: 80vh;
+    padding: 5rem 1.5rem 4rem;
+    display: flex;
+    align-items: center;
+    background: var(--cream);
+    background-image: none;
+}
+
+.reset-password-container {
+    max-width: 440px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.reset-password-content {
+    text-align: left;
+}
+
+.reset-password-title {
+    font-size: 2.75rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 0;
+    letter-spacing: -0.02em;
+}
+
+.reset-password-subtitle {
+    font-size: 1.125rem;
+    color: var(--text-secondary);
+    margin: 0.5rem 0 1.5rem 0;
+    max-width: none;
+}
+
+.reset-password-form .form-group {
+    margin-bottom: 1rem;
+}
+
+.reset-password-form label {
+    display: block;
+    font-weight: 600;
+    font-size: 0.875rem;
+    color: var(--text-primary);
+    margin-bottom: 0.35rem;
+}
+
+.reset-password-form input[type="password"] {
+    width: 100%;
+    padding: 0.65rem 0.85rem;
+    font-size: 1rem;
+    font-family: inherit;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    color: var(--text-primary);
+    background: #fff;
+    box-sizing: border-box;
+    transition: border-color 0.2s;
+}
+
+.reset-password-form input[type="password"]:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.reset-password-form input::placeholder {
+    color: var(--text-light);
+}
+
+.reset-form-message {
+    font-size: 0.9rem;
+    padding: 0.6rem 0.75rem;
+    margin-bottom: 1rem;
+    border-radius: 4px;
+}
+
+.reset-form-message--error {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+.reset-form-message--success {
+    background: #d1fae5;
+    color: #065f46;
+}
+
+.reset-password-btn {
+    width: 100%;
+    padding: 0.75rem 1.5rem;
+    margin-top: 0.25rem;
+}
+
+.reset-password-back {
+    margin: 1.5rem 0 0;
+    font-size: 0.95rem;
+}
+
+.reset-password-link {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.reset-password-link:hover {
+    text-decoration: underline;
+}
+
 /* Help page hero – help.jpg background */
 .help-hero {
     background: #0f172a;
