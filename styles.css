@@ -2935,17 +2935,14 @@ body {
     margin: 0.75rem auto 0;
 }
 
-/* Team page hero – full viewport, scroll to see team */
+/* Team page hero – pure cream background, no SVG, no boxes/grid */
 .team-hero {
     min-height: 100vh;
     padding: 5rem 1.5rem 4rem;
     display: flex;
     align-items: center;
-    background-color: var(--cream);
-    background-image: url('assets/team/collab.svg');
-    background-position: 100% 50%;
-    background-size: 48% auto;
-    background-repeat: no-repeat;
+    background: var(--cream);
+    background-image: none;
 }
 
 .team-hero .container {
