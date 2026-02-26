@@ -284,6 +284,11 @@ body {
     background: rgba(30, 41, 59, 0.06);
 }
 
+/* Hide mobile-only items (About, Team) from desktop main bar; they're in More dropdown */
+.nav-menu-item--mobile-only {
+    display: none;
+}
+
 .btn-contact {
     display: inline-block;
     padding: 0.6rem 1.5rem;
@@ -4109,16 +4114,20 @@ body {
     .nav {
         padding: 0.75rem 1rem;
         border-radius: 0;
-        flex-wrap: wrap;
-        gap: 0.5rem;
+        flex-wrap: nowrap;
+        gap: 0;
         width: 100%;
         box-sizing: border-box;
         max-width: 100%;
+        justify-content: space-between;
+        align-items: center;
     }
 
     .nav-brand {
         order: 1;
         display: flex !important;
+        flex-shrink: 0;
+        margin-right: auto;
     }
 
     .nav-logo {
@@ -4132,9 +4141,25 @@ body {
         font-size: 0.85rem;
     }
 
+    /* Single hamburger on mobile: hide the "More" dropdown hamburger */
+    .nav-more-wrap {
+        display: none !important;
+    }
+
+    /* Mobile menu shows only Home, Host, About, Team; hide "Join internal app testing" */
+    .nav-menu-item--desktop-only {
+        display: none !important;
+    }
+
+    .nav-menu-item--mobile-only {
+        display: list-item !important;
+    }
+
     .nav-toggle {
-        order: 3;
+        order: 2;
         display: flex;
+        flex-shrink: 0;
+        margin-left: auto;
     }
 
     .nav-menu {
