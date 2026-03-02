@@ -2941,14 +2941,16 @@ body {
     padding: 5rem 1.5rem 4rem;
     display: flex;
     align-items: center;
-    background: var(--cream);
-    background-image: none;
+    position: relative;
+    background: linear-gradient(rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15)), url('assets/team/teeam.jpg') center 30%/cover no-repeat;
 }
 
 .team-hero .container {
     max-width: 900px;
     margin-left: auto;
     margin-right: auto;
+    position: relative;
+    z-index: 1;
 }
 
 .team-hero-content {
@@ -2958,16 +2960,18 @@ body {
 .team-hero-title {
     font-size: 2.75rem;
     font-weight: 700;
-    color: var(--text-primary);
+    color: #fff;
     margin: 0;
     letter-spacing: -0.02em;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
 }
 
 .team-hero-subtitle {
     font-size: 1.125rem;
-    color: var(--text-secondary);
+    color: #fff;
     margin: 0.5rem 0 0;
     max-width: none;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
 }
 
 /* Reset password page – no navbar/footer; cream background, card with form only */
