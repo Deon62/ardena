@@ -83,9 +83,14 @@
 
                 <section class="apply-form-section">
                     <h2 class="apply-section-heading">2. Position</h2>
-                    <div class="form-group">
-                        <label for="position">Position you're applying for <span class="required">*</span></label>
-                        <select id="position" name="position" required>
+                    <input type="hidden" id="positionValue" name="position">
+                    <div class="form-group" id="positionReadonlyWrap" style="display: none;">
+                        <label for="positionReadonly">Position you're applying for <span class="required">*</span></label>
+                        <input type="text" id="positionReadonly" class="apply-position-readonly" readonly aria-readonly="true">
+                    </div>
+                    <div class="form-group" id="positionSelectWrap">
+                        <label for="positionSelect">Position you're applying for <span class="required">*</span></label>
+                        <select id="positionSelect">
                             <option value="">Select a position</option>
                             <option value="Marketing Lead">Marketing Lead</option>
                             <option value="Social Media Manager">Social Media Manager</option>
@@ -190,25 +195,34 @@
     <script>
         (function() {
             var params = new URLSearchParams(window.location.search);
-            var role = params.get('role');
-            if (role) {
-                var select = document.getElementById('position');
-                if (select) {
-                    for (var i = 0; i < select.options.length; i++) {
-                        if (select.options[i].value === decodeURIComponent(role.replace(/\+/g, ' '))) {
-                            select.selectedIndex = i;
-                            break;
-                        }
-                    }
-                }
+            var roleParam = params.get('role');
+            var positionReadonlyWrap = document.getElementById('positionReadonlyWrap');
+            var positionSelectWrap = document.getElementById('positionSelectWrap');
+            var positionReadonly = document.getElementById('positionReadonly');
+            var positionSelect = document.getElementById('positionSelect');
+            var positionValue = document.getElementById('positionValue');
+
+            if (roleParam) {
+                var roleDecoded = decodeURIComponent(roleParam.replace(/\+/g, ' '));
+                positionReadonly.value = roleDecoded;
+                positionValue.value = roleDecoded;
+                positionReadonlyWrap.style.display = 'block';
+                positionSelectWrap.style.display = 'none';
+            } else {
+                positionSelect.addEventListener('change', function() {
+                    positionValue.value = positionSelect.value;
+                });
             }
 
             document.getElementById('applyForm').addEventListener('submit', function(e) {
                 e.preventDefault();
+                if (positionSelectWrap.style.display !== 'none') {
+                    positionValue.value = positionSelect.value;
+                }
                 var fullName = document.getElementById('fullName').value.trim();
                 var email = document.getElementById('email').value.trim();
                 var phone = document.getElementById('phone').value.trim();
-                var position = document.getElementById('position').value;
+                var position = positionValue.value;
                 var whyJoin = document.getElementById('whyJoin').value.trim();
                 var experience = document.getElementById('experience').value.trim();
                 var linkedinLink = document.getElementById('linkedinLink').value.trim();

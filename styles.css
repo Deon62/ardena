@@ -2204,6 +2204,16 @@ body {
     color: #b91c1c;
 }
 
+.apply-position-readonly {
+    background: var(--cream) !important;
+    color: var(--text-primary);
+    cursor: default;
+}
+
+.apply-form .form-group input.apply-position-readonly {
+    border-color: var(--border-color);
+}
+
 .apply-form .form-group input[type="file"] {
     padding: 0.5rem 0;
     border: none;
