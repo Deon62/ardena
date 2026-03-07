@@ -39,27 +39,58 @@
             <ul class="nav-menu" id="navMenu">
                 <li><a href="index.html" class="nav-link">Home</a></li>
                 <li><a href="host.html" class="nav-link active">Host</a></li>
-                <li class="nav-menu-item--desktop-only"><a href="index.html#join-internal-testing" class="nav-link nav-link--cta">Join internal app testing</a></li>
+                <li class="nav-item-has-dropdown nav-menu-item--desktop-only">
+                    <span class="nav-link nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">Resources</span>
+                    <div class="nav-dropdown-panel" aria-hidden="true">
+                        <div class="nav-dropdown-inner">
+                            <div class="nav-dropdown-grid">
+                                <div class="nav-dropdown-col">
+                                    <span class="nav-dropdown-heading">Company</span>
+                                    <a href="about.html" class="nav-dropdown-link">About Us<span class="nav-dropdown-desc">Who we are</span></a>
+                                    <a href="teams.html" class="nav-dropdown-link">Team<span class="nav-dropdown-desc">Meet the team</span></a>
+                                    <a href="careers.html" class="nav-dropdown-link">Careers<span class="nav-dropdown-desc">Open positions</span></a>
+                                </div>
+                                <div class="nav-dropdown-col">
+                                    <span class="nav-dropdown-heading">Support</span>
+                                    <a href="help.html" class="nav-dropdown-link">Help<span class="nav-dropdown-desc">FAQs & support</span></a>
+                                    <a href="mailto:ardenacompanies@gmail.com" class="nav-dropdown-link">Contact<span class="nav-dropdown-desc">Get in touch</span></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="nav-item-has-dropdown nav-menu-item--desktop-only">
+                    <span class="nav-link nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">Legal</span>
+                    <div class="nav-dropdown-panel" aria-hidden="true">
+                        <div class="nav-dropdown-inner">
+                            <div class="nav-dropdown-grid nav-dropdown-grid--single">
+                                <div class="nav-dropdown-col">
+                                    <span class="nav-dropdown-heading">Legal</span>
+                                    <a href="terms.html" class="nav-dropdown-link">Terms & Conditions<span class="nav-dropdown-desc">Usage terms</span></a>
+                                    <a href="privacy.html" class="nav-dropdown-link">Privacy Policy<span class="nav-dropdown-desc">Your data</span></a>
+                                    <a href="legal.html" class="nav-dropdown-link">Legal<span class="nav-dropdown-desc">Legal information</span></a>
+                                    <a href="insurance.html" class="nav-dropdown-link">Insurance & Protection<span class="nav-dropdown-desc">Coverage details</span></a>
+                                    <a href="delete-account.html" class="nav-dropdown-link">Delete Account & Data<span class="nav-dropdown-desc">Account removal</span></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
                 <li class="nav-menu-item--mobile-only"><a href="about.html" class="nav-link">About</a></li>
                 <li class="nav-menu-item--mobile-only"><a href="teams.html" class="nav-link">Team</a></li>
+                <li class="nav-menu-item--mobile-only"><a href="help.html" class="nav-link">Help</a></li>
+                <li class="nav-menu-item--mobile-only"><a href="careers.html" class="nav-link">Careers</a></li>
             </ul>
-            <div class="nav-more-wrap">
-                <button class="nav-more-toggle" id="navMoreToggle" type="button" aria-label="More menu" aria-expanded="false" aria-haspopup="true">
+            <div class="nav-end">
+                <div class="nav-cta-wrap nav-menu-item--desktop-only">
+                    <a href="index.html#join-internal-testing" class="nav-link nav-link--cta">Join internal app testing</a>
+                </div>
+                <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
                     <span></span>
                     <span></span>
                     <span></span>
                 </button>
-                <div class="nav-more-menu" id="navMoreMenu" aria-hidden="true">
-                    <a href="about.html" class="nav-more-link">About</a>
-                    <a href="teams.html" class="nav-more-link">Team</a>
-                    <a href="help.html" class="nav-more-link">Help</a>
-                </div>
             </div>
-            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
         </nav>
     </header>
 
