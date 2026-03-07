@@ -279,6 +279,21 @@ if (heroImage) {
     }
 }
 
+// Host page hero image loading
+const hostHeroImage = document.querySelector('.host-page-hero-image');
+if (hostHeroImage) {
+    if (hostHeroImage.complete && hostHeroImage.naturalHeight !== 0) {
+        hostHeroImage.classList.add('loaded');
+    } else {
+        hostHeroImage.addEventListener('load', () => {
+            hostHeroImage.classList.add('loaded');
+        });
+        setTimeout(() => {
+            hostHeroImage.classList.add('loaded');
+        }, 100);
+    }
+}
+
 // Intersection Observer for scroll animations
 const observerOptions = {
     threshold: 0.1,

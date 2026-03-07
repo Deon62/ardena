@@ -104,6 +104,25 @@ button:focus-visible,
     box-shadow: none !important;
 }
 
+/* Keyboard focus: visible ring for accessibility (pro + a11y) */
+a:focus-visible,
+button:focus-visible,
+.nav-link:focus-visible,
+.btn:focus-visible,
+.faq-question:focus-visible,
+.nav-dropdown-link:focus-visible,
+.footer-links a:focus-visible,
+.footer-social-icon:focus-visible,
+.modal-close:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--background), 0 0 0 4px var(--primary-color);
+}
+.nav-link--cta:focus-visible {
+    box-shadow: 0 0 0 2px var(--background), 0 0 0 4px var(--primary-color);
+}
+
 /* Prevent text selection on buttons and interactive elements */
 button,
 .btn,
@@ -136,6 +155,16 @@ button,
     --transition: all 0.3s ease;
 }
 
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    .scroll-fade-in { opacity: 1; transform: none; }
+    html { scroll-behavior: auto; }
+}
+
 html {
     scroll-behavior: smooth;
     overflow-x: hidden;
@@ -156,9 +185,14 @@ body {
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 1.5rem;
     width: 100%;
     box-sizing: border-box;
+}
+@media (min-width: 768px) {
+    .container {
+        padding: 0 2rem;
+    }
 }
 
 /* Header and Navigation - same bar and logo on every page */
@@ -184,13 +218,13 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 0.85rem 1.5rem;
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(255, 255, 255, 0.97);
     backdrop-filter: blur(20px) saturate(180%);
     -webkit-backdrop-filter: blur(20px) saturate(180%);
     border-radius: 0;
-    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06), 0 4px 24px rgba(0, 0, 0, 0.04);
     border: none;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
     width: 100%;
     max-width: none;
     margin: 0;
@@ -397,8 +431,8 @@ body {
     margin: 0;
     padding: 1.5rem 0;
     background: #fff;
-    border-top: 1px solid rgba(0, 0, 0, 0.08);
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+    border-top: 1px solid rgba(0, 0, 0, 0.06);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08), 0 1px 0 rgba(0, 0, 0, 0.04);
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.2s ease, visibility 0.2s ease, transform 0.2s ease;
@@ -585,6 +619,7 @@ body {
     background: rgba(255, 255, 255, 0.15);
     border-color: #fff;
     color: #fff;
+    transform: translateY(-1px);
 }
 
 /* Buttons */
@@ -605,10 +640,13 @@ body {
 .btn-primary {
     background: var(--primary-color);
     color: white;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
 }
 
 .btn-primary:hover {
     background: var(--primary-dark);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transform: translateY(-1px);
 }
 
 .btn-secondary {
@@ -747,12 +785,19 @@ body {
     text-align: center;
     margin-bottom: 3rem;
     color: var(--text-primary);
+    letter-spacing: -0.02em;
+    line-height: 1.2;
 }
 
 /* Features Section - two columns: intro left, points right (green only here) */
 .features {
     padding: 5rem 0;
     background: var(--background-light);
+}
+@media (min-width: 900px) {
+    .features {
+        padding: 6rem 0;
+    }
 }
 
 .features-inner {
@@ -882,6 +927,11 @@ body {
 .safety-trust {
     padding: 5rem 0;
     background: var(--cream);
+}
+@media (min-width: 900px) {
+    .safety-trust {
+        padding: 6rem 0;
+    }
 }
 
 .safety-inner {
@@ -2405,45 +2455,88 @@ body {
 
 /* Host Page */
 .host-page-hero {
+    position: relative;
     min-height: 100vh;
     display: flex;
     align-items: center;
-    background: #ffffff;
-    background-image: 
-        radial-gradient(ellipse at center, transparent 0%, transparent 40%, rgba(255, 255, 255, 0.8) 70%, rgba(255, 255, 255, 1) 100%),
-        repeating-linear-gradient(0deg, transparent, transparent 24px, rgba(0, 0, 0, 0.1) 24px, rgba(0, 0, 0, 0.1) 25px),
-        repeating-linear-gradient(90deg, transparent, transparent 24px, rgba(0, 0, 0, 0.1) 24px, rgba(0, 0, 0, 0.1) 25px);
-    background-size: 100% 100%, 25px 25px, 25px 25px;
     margin-top: 0;
     padding-top: 100px;
+    overflow: hidden;
+    background-color: #1a1a1a;
+}
+
+.host-page-hero-picture {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.host-page-hero-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+    opacity: 0;
+    transition: opacity 0.3s ease-out;
+}
+
+.host-page-hero-image.loaded {
+    opacity: 1;
+}
+
+.host-page-hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.25) 50%, transparent 85%);
+    z-index: 1;
 }
 
 .host-page-hero .container {
+    position: relative;
+    z-index: 2;
     width: 100%;
+    padding-left: 5%;
+    padding-right: 5%;
 }
 
 .host-page-title {
     font-size: 3.5rem;
     font-weight: 400;
-    color: var(--text-primary);
+    color: #fff;
     margin-bottom: 2rem;
     line-height: 1.2;
-    max-width: 800px;
+    max-width: 700px;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 .host-page-subtitle {
     font-size: 1.35rem;
-    color: var(--text-secondary);
+    color: rgba(255, 255, 255, 0.92);
     line-height: 1.7;
-    max-width: 700px;
+    max-width: 600px;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
 }
 
-/* How to Host Your Car - cute, minimal, cream section, two columns */
+/* How to Host Your Car - bright white section, two columns */
 .host-steps-section {
     padding: 5rem 0;
-    background: var(--cream);
+    background: #ffffff;
     width: 100%;
     box-sizing: border-box;
+}
+@media (min-width: 900px) {
+    .host-steps-section {
+        padding: 6rem 0;
+    }
 }
 
 .host-steps-inner {
@@ -2463,12 +2556,11 @@ body {
 }
 
 .host-steps-label {
-    font-size: 0.75rem;
+    font-size: 0.6875rem;
     font-weight: 600;
-    letter-spacing: 0.1em;
-    color: var(--text-primary);
+    letter-spacing: 0.12em;
+    color: var(--text-secondary);
     margin-bottom: 0.5rem;
-    opacity: 0.9;
 }
 
 .host-steps-heading {
@@ -2477,10 +2569,11 @@ body {
     color: var(--text-primary);
     margin-bottom: 1.25rem;
     line-height: 1.2;
+    letter-spacing: -0.02em;
 }
 
 .host-steps-tagline {
-    font-size: 1.05rem;
+    font-size: 1.0625rem;
     line-height: 1.7;
     color: var(--text-secondary);
     margin: 0;
@@ -2498,7 +2591,7 @@ body {
     gap: 1.25rem;
     align-items: start;
     padding: 1.5rem 0;
-    border-bottom: 1px solid var(--cream-dark);
+    border-bottom: 1px solid #e5e7eb;
     text-align: left;
 }
 
@@ -2507,10 +2600,9 @@ body {
 }
 
 .host-step-marker {
-    font-size: 0.875rem;
+    font-size: 0.8125rem;
     font-weight: 600;
-    color: var(--text-primary);
-    opacity: 0.4;
+    color: var(--text-secondary);
     line-height: 1;
     font-family: 'Space Grotesk', sans-serif;
 }
@@ -2524,7 +2616,7 @@ body {
 }
 
 .host-step-content p {
-    font-size: 0.95rem;
+    font-size: 0.9375rem;
     color: var(--text-secondary);
     line-height: 1.65;
     margin: 0;
@@ -2532,7 +2624,7 @@ body {
 
 .host-content-section {
     padding: 4rem 0;
-    background: white;
+    background: #fafafa;
 }
 
 .host-content-wrapper {
@@ -2609,13 +2701,18 @@ body {
     font-size: 0.95rem;
 }
 
-/* Finances & Earnings / Pricing - black section, 4 straight-edged white cards, not connected */
+/* Finances & Earnings / Pricing - dark section, white cards with subtle shadow */
 .finances-pricing-section {
-    background: #000000;
+    background: var(--primary-dark);
     padding: 5rem 0;
     width: 100%;
     max-width: 100%;
     box-sizing: border-box;
+}
+@media (min-width: 900px) {
+    .finances-pricing-section {
+        padding: 6rem 0;
+    }
 }
 
 .finances-pricing-title {
@@ -2627,12 +2724,13 @@ body {
     max-width: 1100px;
     margin-left: auto;
     margin-right: auto;
+    letter-spacing: -0.02em;
 }
 
 .finances-pricing-intro {
-    font-size: 1.05rem;
+    font-size: 1.0625rem;
     line-height: 1.7;
-    color: rgba(255, 255, 255, 0.8);
+    color: rgba(255, 255, 255, 0.85);
     text-align: center;
     max-width: 600px;
     margin: 0 auto 3rem;
@@ -2651,10 +2749,10 @@ body {
 .finances-pricing-section .finance-info-card {
     background: #ffffff;
     padding: 2.5rem 2rem;
-    border-radius: 0;
+    border-radius: 8px;
     text-align: left;
     border: none;
-    box-shadow: none;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
 }
 
 .finances-pricing-section .finance-info-card h3 {
@@ -2740,9 +2838,14 @@ body {
 /* Support section (host) - full-width left to right, two-column: content left, SVG right */
 .bookings-section {
     padding: 5rem 0;
-    background: #fafafa;
+    background: #ffffff;
     width: 100%;
     box-sizing: border-box;
+}
+@media (min-width: 900px) {
+    .bookings-section {
+        padding: 6rem 0;
+    }
 }
 
 .bookings-section .container {
@@ -2805,7 +2908,7 @@ body {
 
 .booking-item {
     padding-left: 1.5rem;
-    border-left: 4px solid var(--primary-color);
+    border-left: 3px solid var(--primary-color);
     margin: 0;
     background: transparent;
     border-radius: 0;
@@ -2853,12 +2956,17 @@ body {
     font-size: 0.95rem;
 }
 
-/* Tips for Successful Hosting - white section, 4 sharp black cards */
+/* Tips for Successful Hosting - light section, dark cards with shadow */
 .host-tips-section {
-    background: #fafafa;
+    background: #f8fafc;
     padding: 5rem 0;
     width: 100%;
     box-sizing: border-box;
+}
+@media (min-width: 900px) {
+    .host-tips-section {
+        padding: 6rem 0;
+    }
 }
 
 .host-tips-title {
@@ -2870,10 +2978,11 @@ body {
     max-width: 1100px;
     margin-left: auto;
     margin-right: auto;
+    letter-spacing: -0.02em;
 }
 
 .host-tips-intro {
-    font-size: 1.05rem;
+    font-size: 1.0625rem;
     line-height: 1.7;
     color: var(--text-secondary);
     text-align: center;
@@ -2892,12 +3001,12 @@ body {
 }
 
 .host-tip-card {
-    background: #000000;
+    background: var(--primary-color);
     padding: 2.5rem 2rem;
-    border-radius: 0;
+    border-radius: 8px;
     text-align: left;
     border: none;
-    box-shadow: none;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
 }
 
 .host-tip-card h3 {
@@ -2909,22 +3018,24 @@ body {
 }
 
 .host-tip-card p {
-    font-size: 0.95rem;
+    font-size: 0.9375rem;
     line-height: 1.65;
-    color: rgba(255, 255, 255, 0.85);
+    color: rgba(255, 255, 255, 0.9);
     margin: 0;
 }
 
 .host-download-section {
-    background: #f5f5f5;
+    background: #ffffff;
     padding: 4rem 2rem;
-    border-radius: 16px;
+    border-radius: 12px;
     text-align: left;
     margin-top: 3rem;
     min-height: 280px;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
 }
 
 .host-download-title {
@@ -4212,7 +4323,12 @@ body {
 .footer-wrapper {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 3rem 20px 3rem;
+    padding: 3rem 1.5rem 3rem;
+}
+@media (min-width: 768px) {
+    .footer-wrapper {
+        padding: 4rem 2rem 3rem;
+    }
 }
 
 .footer-top {
@@ -4283,10 +4399,10 @@ body {
 
 .footer-links a,
 .footer-contact a {
-    color: #555;
+    color: var(--text-secondary);
     text-decoration: none;
-    font-size: 0.95rem;
-    transition: color 0.2s;
+    font-size: 0.9375rem;
+    transition: color 0.2s ease;
 }
 
 .footer-links a:hover,
