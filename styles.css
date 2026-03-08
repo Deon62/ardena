@@ -4723,7 +4723,7 @@ body {
     }
 
     .nav {
-        padding: 0.75rem 1rem;
+        padding: 0.75rem 1rem 0.75rem 0.75rem;
         border-radius: 0;
         flex-wrap: nowrap;
         gap: 0;
@@ -4738,7 +4738,8 @@ body {
         order: 1;
         display: flex !important;
         flex-shrink: 0;
-        margin-right: auto;
+        margin-right: 0;
+        margin-left: 0;
     }
 
     .nav-logo {
@@ -4752,6 +4753,14 @@ body {
         font-size: 0.85rem;
     }
 
+    /* Mobile: menu is drawer only, so it must not take space in the bar */
+    .nav-menu {
+        flex: none !important;
+        width: 0 !important;
+        min-width: 0 !important;
+        overflow: visible;
+    }
+
     /* Mobile menu shows Home, Host, About, Team, Help, Careers; hide "Join internal app testing" and Resources dropdown */
     .nav-menu-item--desktop-only {
         display: none !important;
@@ -4761,11 +4770,16 @@ body {
         display: list-item !important;
     }
 
+    .nav-end {
+        order: 2;
+        margin-left: auto !important;
+        flex-shrink: 0;
+    }
+
     .nav-toggle {
         order: 2;
         display: flex;
         flex-shrink: 0;
-        margin-left: auto;
     }
 
     .nav-menu {
