@@ -3533,9 +3533,13 @@ body {
     margin-bottom: 0.35rem;
 }
 
-.reset-password-form input[type="password"] {
+.reset-password-input-wrap {
+    position: relative;
+}
+
+.reset-password-input-wrap input {
     width: 100%;
-    padding: 0.65rem 0.85rem;
+    padding: 0.65rem 2.75rem 0.65rem 0.85rem;
     font-size: 1rem;
     font-family: inherit;
     border: 1px solid var(--border-color);
@@ -3546,7 +3550,26 @@ body {
     transition: border-color 0.2s;
 }
 
-.reset-password-form input[type="password"]:focus {
+.reset-password-toggle {
+    position: absolute;
+    right: 0.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 0.35rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.reset-password-toggle:hover {
+    color: var(--text-primary);
+}
+
+.reset-password-form input:focus {
     outline: none;
     border-color: var(--primary-color);
 }
@@ -3577,6 +3600,15 @@ body {
     padding: 0.75rem 1.5rem;
     margin-top: 0.25rem;
     border-radius: 6px;
+}
+
+.reset-back-to-app-wrap {
+    margin-top: 1rem;
+}
+
+.reset-back-to-app-wrap .btn {
+    display: block;
+    text-align: center;
 }
 
 /* Help page hero – help.jpg background */
