@@ -4753,11 +4753,9 @@ body {
         font-size: 0.85rem;
     }
 
-    /* Mobile: menu is drawer only, so it must not take space in the bar */
+    /* Mobile: menu is drawer only; header layout handled by fixed positioning below */
     .nav-menu {
-        flex: none !important;
-        width: 0 !important;
-        min-width: 0 !important;
+        flex: none;
         overflow: visible;
     }
 
