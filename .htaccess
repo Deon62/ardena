@@ -1,3 +1,15 @@
+# Extensionless URLs: /privacy -> privacy.html, /about -> about.html, etc.
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+  # If the request is not for a real file or directory
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  # And adding .html gives a file that exists
+  RewriteCond %{REQUEST_FILENAME}.html -f
+  RewriteRule ^(.+)$ $1.html [L]
+</IfModule>
+
 # Cache images for 1 year
 <IfModule mod_expires.c>
   ExpiresActive On
