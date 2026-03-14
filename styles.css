@@ -592,18 +592,18 @@ body {
     display: inline-block;
 }
 
-/* Hand-drawn underline: one line, gentle semi-circle; second pass goes out slightly in one place */
+/* Hand-drawn underline: one line, gentle semi-circle; second pass goes out slightly; longer and thicker */
 .hero-title::after {
     content: '';
     position: absolute;
-    left: 0;
-    right: 0;
-    bottom: -0.12em;
-    height: 0.45em;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 12'%3E%3Cpath d='M0,5 Q50,11 100,5' stroke='%23d4a853' stroke-width='1.8' fill='none' stroke-linecap='round'/%3E%3Cpath d='M0,5 Q50,11 70,6 Q82,12 100,5' stroke='%23c49b47' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+    left: -0.15em;
+    right: -0.15em;
+    bottom: -0.14em;
+    height: 0.55em;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 14'%3E%3Cpath d='M0,6 Q50,12 100,6' stroke='%23d4a853' stroke-width='3' fill='none' stroke-linecap='round'/%3E%3Cpath d='M0,6 Q50,12 70,7 Q82,13 100,6' stroke='%23c49b47' stroke-width='2.4' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
     background-size: 100% 100%;
     background-repeat: no-repeat;
-    background-position: left bottom;
+    background-position: center bottom;
 }
 
 .hero-subtitle {
