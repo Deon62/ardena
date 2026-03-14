@@ -176,7 +176,7 @@ if (internalTestingModal) {
     });
     document.querySelectorAll('.js-internal-testing-cta').forEach(link => {
         link.addEventListener('click', (e) => {
-            const isIndex = /index\.html$|\/$/.test(window.location.pathname) || window.location.pathname === '';
+            const isIndex = /^\/?$/.test(window.location.pathname.replace(/\/$/, ''));
             if (isIndex) {
                 e.preventDefault();
                 openInternalTestingModal();
@@ -237,12 +237,13 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 // Add active class to current page nav link
-const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+const pathname = window.location.pathname.replace(/\/$/, '') || '/';
 const navLinks = document.querySelectorAll('.nav-link');
 
 navLinks.forEach(link => {
     const linkHref = link.getAttribute('href');
-    if (linkHref === currentPage || (currentPage === '' && linkHref === 'index.html')) {
+    const linkPath = linkHref.split('#')[0].replace(/\/$/, '') || '/';
+    if (linkPath === pathname) {
         link.classList.add('active');
     } else {
         link.classList.remove('active');
