@@ -12,14 +12,14 @@
     <meta property="og:url" content="https://ardena.xyz/host">
     <meta property="og:title" content="Become a Host - ardena">
     <meta property="og:description" content="Become a host on ardena - earn extra income by renting out your car in Kenya. Set your prices and manage bookings easily.">
-    <meta property="og:image" content="https://ardena.xyz/assets/ardena.png">
+    <meta property="og:image" content="https://ardena.xyz/assets/logo.png">
     
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://ardena.xyz/host">
     <meta property="twitter:title" content="Become a Host - ardena">
     <meta property="twitter:description" content="Become a host on ardena - earn extra income by renting out your car in Kenya. Set your prices and manage bookings easily.">
-    <meta property="twitter:image" content="https://ardena.xyz/assets/ardena.png">
+    <meta property="twitter:image" content="https://ardena.xyz/assets/logo.png">
     
     <title>Become a Host - ardena</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -35,7 +35,7 @@
         <nav class="nav">
             <div class="nav-brand">
                 <a href="/" class="nav-brand-link">
-                    <img src="/assets/ardena.png" alt="ardena" class="nav-logo">
+                    <img src="/assets/logo.png" alt="ardena" class="nav-logo">
                 </a>
             </div>
             <ul class="nav-menu" id="navMenu">
@@ -297,7 +297,7 @@
         <div class="footer-wrapper">
             <div class="footer-top">
                     <a href="/" class="footer-brand">
-                        <img src="/assets/ardena.png" alt="ardena" class="footer-logo">
+                        <img src="/assets/logo.png" alt="ardena" class="footer-logo">
                     </a>
                     <p class="footer-tagline">Trusted car rental in Kenya. Connect with verified owners and renters.</p>
                 </div>

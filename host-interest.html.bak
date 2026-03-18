@@ -10,13 +10,13 @@
     <meta property="og:url" content="https://ardena.xyz/host-interest">
     <meta property="og:title" content="Host Interest Form - ardena">
     <meta property="og:description" content="Send your host interest to join ardena closed testing and get early access to the host app.">
-    <meta property="og:image" content="https://ardena.xyz/assets/ardena.png">
+    <meta property="og:image" content="https://ardena.xyz/assets/logo.png">
 
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://ardena.xyz/host-interest">
     <meta property="twitter:title" content="Host Interest Form - ardena">
     <meta property="twitter:description" content="Send your host interest to join ardena closed testing and get early access to the host app.">
-    <meta property="twitter:image" content="https://ardena.xyz/assets/ardena.png">
+    <meta property="twitter:image" content="https://ardena.xyz/assets/logo.png">
 
     <title>Host Interest Form - ardena</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -33,7 +33,7 @@
     <main class="host-interest-main">
         <section class="host-interest-shell" aria-labelledby="host-interest-title">
             <a href="/" class="host-interest-brand" aria-label="Go to homepage">
-                <img src="/assets/ardena.png" alt="ardena" class="host-interest-logo">
+                <img src="/assets/logo.png" alt="ardena" class="host-interest-logo">
             </a>
 
             <div class="host-interest-card">

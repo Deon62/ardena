@@ -3,31 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Become a host on ardena - earn extra income by renting out your car in Kenya. Set your prices and manage bookings easily.">
-    <meta name="keywords" content="become a host, car rental host, earn money with car, rent out car Kenya, ardena host">
+    <!-- Preload hero image first so it starts loading before CSS/fonts -->
+    <link rel="preload" as="image" href="/assets/hero.jpg" fetchpriority="high">
+    <meta name="description" content="Find reliable car rentals in Kenya with no hidden fees. Browse verified vehicles, compare prices, and book confidently with Ardena.">
+    <meta name="keywords" content="car rental Kenya, peer-to-peer car rental, car hire Nairobi, vehicle rental Kenya, ardena">
+    <meta name="author" content="ardena">
     <meta name="robots" content="index, follow">
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://ardena.xyz/host">
-    <meta property="og:title" content="Become a Host - ardena">
-    <meta property="og:description" content="Become a host on ardena - earn extra income by renting out your car in Kenya. Set your prices and manage bookings easily.">
-    <meta property="og:image" content="https://ardena.xyz/assets/ardena.png">
+    <meta property="og:url" content="https://ardena.xyz/">
+    <meta property="og:title" content="ardena - Trusted car rental in kenya">
+    <meta property="og:description" content="Find reliable car rentals in Kenya with no hidden fees. Browse verified vehicles, compare prices, and book confidently with Ardena.">
+    <meta property="og:image" content="https://ardena.xyz/assets/logo.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
     
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://ardena.xyz/host">
-    <meta property="twitter:title" content="Become a Host - ardena">
-    <meta property="twitter:description" content="Become a host on ardena - earn extra income by renting out your car in Kenya. Set your prices and manage bookings easily.">
-    <meta property="twitter:image" content="https://ardena.xyz/assets/ardena.png">
+    <meta property="twitter:url" content="https://ardena.xyz/">
+    <meta property="twitter:title" content="ardena - Trusted car rental in kenya">
+    <meta property="twitter:description" content="Find reliable car rentals in Kenya with no hidden fees. Browse verified vehicles, compare prices, and book confidently with Ardena.">
+    <meta property="twitter:image" content="https://ardena.xyz/assets/logo.png">
     
-    <title>Become a Host - ardena</title>
+    <title>ardena - Trusted car rental in kenya</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <link rel="canonical" href="https://ardena.xyz/host">
-    <script>window.va=window.va||function(){(window.vaq=window.vaq||[]).push(arguments);};</script>
+    <link rel="canonical" href="https://ardena.xyz/">
+    <link rel="icon" type="image/png" href="assets/logo.png">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "ardena",
+      "url": "https://ardena.xyz",
+      "logo": "https://ardena.xyz/assets/logo.png",
+      "description": "Find reliable car rentals in Kenya with no hidden fees. Browse verified vehicles, compare prices, and book confidently with Ardena.",
+      "sameAs": [
+        "https://x.com/ardenagroupcomp",
+        "https://www.instagram.com/ardenacompanies",
+        "https://reddit.com/r/ardena"
+      ]
+    }
+    </script>
+    <!-- Vercel Web Analytics -->
+    <script>
+      window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+    </script>
     <script defer src="/_vercel/insights/script.js"></script>
 </head>
 <body>
@@ -35,12 +61,12 @@
         <nav class="nav">
             <div class="nav-brand">
                 <a href="/" class="nav-brand-link">
-                    <img src="/assets/ardena.png" alt="ardena" class="nav-logo">
+                    <img src="/assets/logo.png" alt="ardena" class="nav-logo">
                 </a>
             </div>
             <ul class="nav-menu" id="navMenu">
-                <li><a href="/" class="nav-link">Home</a></li>
-                <li><a href="/host" class="nav-link active">Host</a></li>
+                <li><a href="/" class="nav-link active">Home</a></li>
+                <li><a href="/host" class="nav-link">Host</a></li>
                 <li class="nav-item-has-dropdown nav-menu-item--desktop-only">
                     <span class="nav-link nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">Resources</span>
                     <div class="nav-dropdown-panel" aria-hidden="true">
@@ -100,66 +126,73 @@
     </header>
 
     <main>
-        <section class="host-page-hero">
-            <picture class="host-page-hero-picture">
-                <img src="/assets/becomehost.jpg" alt="" class="host-page-hero-image" width="1080" height="1920" sizes="100vw" loading="eager" decoding="async">
+        <!-- Hero Section -->
+        <section class="hero">
+            <picture class="hero-picture">
+                <img src="/assets/hero.jpg" alt="Hero background" class="hero-image" width="1920" height="1080" sizes="100vw" loading="eager" fetchpriority="high" decoding="async">
             </picture>
-            <div class="host-page-hero-overlay"></div>
+            <div class="hero-overlay"></div>
             <div class="container">
-                <h1 class="host-page-title">Want to become a host?</h1>
-                <p class="host-page-subtitle">Turn your idle vehicle into a source of income. Join thousands of car owners earning extra money by renting out their cars through ardena.</p>
+                <div class="hero-content">
+                    <h1 class="hero-title">Own your start</h1>
+                    <p class="hero-subtitle">Rent cars easily from verified owners across Kenya.<br>Access reliable vehicles, transparent pricing, and seamless booking, all in one place.</p>
+                    <div class="hero-buttons">
+                        <a href="/host-interest" class="btn btn-hero-cta">Send host interest</a>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <section class="host-steps-section">
+        <!-- Features Section -->
+        <section class="features">
             <div class="container">
-                <div class="host-steps-inner">
-                    <div class="host-steps-intro">
-                        <p class="host-steps-label">▪ HOW TO HOST YOUR CAR</p>
-                        <h2 class="host-steps-heading">How to Host Your Car</h2>
-                        <p class="host-steps-tagline">Getting started is simple. List your vehicle in a few steps and start earning—whether you're side-hustling or building a gig. We keep it clear and flexible.</p>
+                <div class="features-inner">
+                    <div class="features-intro">
+                        <p class="features-label">▪ WHY CHOOSE ARDENA?</p>
+                        <h2 class="features-heading">Why Choose ardena?</h2>
+                        <p class="features-description">ardena connects you with verified car owners and renters across Kenya. No hidden fees, no surprises—just simple, honest car rental with premium vehicles and support when you need it.</p>
                     </div>
-                    <div class="host-steps-list">
-                        <div class="host-step-item">
-                            <span class="host-step-marker">01</span>
-                            <div class="host-step-content">
-                                <h3>Download the App</h3>
-                                <p>Get the ardena host app from the App Store or Google Play. Free to download and use.</p>
+                    <div class="features-list">
+                        <div class="feature-card">
+                            <div class="feature-number">01</div>
+                            <div class="feature-content">
+                                <h3 class="feature-title">Verified Car Owners</h3>
+                                <p class="feature-description">Connect with trusted, verified car owners across Kenya. All vehicles are thoroughly vetted for safety and quality.</p>
                             </div>
                         </div>
-                        <div class="host-step-item">
-                            <span class="host-step-marker">02</span>
-                            <div class="host-step-content">
-                                <h3>Create Your Account</h3>
-                                <p>Sign up with your email and phone. Verify your identity with a valid Kenyan ID or passport.</p>
+                        <div class="feature-card">
+                            <div class="feature-number">02</div>
+                            <div class="feature-content">
+                                <h3 class="feature-title">Secure Payments</h3>
+                                <p class="feature-description">Enjoy peace of mind with our secure payment system. Multiple payment options including M-Pesa, Visa, and Mastercard.</p>
                             </div>
                         </div>
-                        <div class="host-step-item">
-                            <span class="host-step-marker">03</span>
-                            <div class="host-step-content">
-                                <h3>Add Your Vehicle</h3>
-                                <p>Upload photos, add details (make, model, year), and submit registration and insurance docs.</p>
+                        <div class="feature-card">
+                            <div class="feature-number">03</div>
+                            <div class="feature-content">
+                                <h3 class="feature-title">24/7 Support</h3>
+                                <p class="feature-description">Round-the-clock customer support to assist you with bookings, inquiries, and any issues you may encounter.</p>
                             </div>
                         </div>
-                        <div class="host-step-item">
-                            <span class="host-step-marker">04</span>
-                            <div class="host-step-content">
-                                <h3>Set Your Availability</h3>
-                                <p>Choose when your car is available—daily, weekly, or monthly. Fit it around your schedule.</p>
+                        <div class="feature-card">
+                            <div class="feature-number">04</div>
+                            <div class="feature-content">
+                                <h3 class="feature-title">Premium Vehicles</h3>
+                                <p class="feature-description">Access a wide range of premium vehicles from economy to luxury, all maintained to the highest standards.</p>
                             </div>
                         </div>
-                        <div class="host-step-item">
-                            <span class="host-step-marker">05</span>
-                            <div class="host-step-content">
-                                <h3>Set Your Price</h3>
-                                <p>Set your daily rate. We'll suggest ranges based on your vehicle, location, and demand.</p>
+                        <div class="feature-card">
+                            <div class="feature-number">05</div>
+                            <div class="feature-content">
+                                <h3 class="feature-title">Discover Destinations</h3>
+                                <p class="feature-description">Explore amazing destinations, events, and automotive businesses across Kenya with our discovery features.</p>
                             </div>
                         </div>
-                        <div class="host-step-item">
-                            <span class="host-step-marker">06</span>
-                            <div class="host-step-content">
-                                <h3>Get Verified</h3>
-                                <p>Our team reviews your documents and inspects your vehicle. Once approved, you're live.</p>
+                        <div class="feature-card">
+                            <div class="feature-number">06</div>
+                            <div class="feature-content">
+                                <h3 class="feature-title">Professional Services</h3>
+                                <p class="feature-description">Access chauffeurs, car detailing, roadside assistance, moving services, and more.</p>
                             </div>
                         </div>
                     </div>
@@ -167,127 +200,92 @@
             </div>
         </section>
 
-        <section class="finances-pricing-section">
+        <!-- Safety & Trust -->
+        <section class="safety-trust">
             <div class="container">
-                <h2 class="finances-pricing-title">Finances & Earnings</h2>
-                <p class="finances-pricing-intro">Understand how you'll earn money and manage your finances as a host on ardena.</p>
-                <div class="finances-info-grid">
-                    <div class="finance-info-card">
-                        <h3>Set Your Own Rates</h3>
-                        <p>You control your pricing. Set competitive rates based on your vehicle type, location, and market demand. Adjust prices anytime through the app.</p>
+                <div class="safety-inner">
+                    <div class="safety-list">
+                        <div class="trust-item">
+                            <span class="trust-marker">01</span>
+                            <div class="trust-content">
+                                <h3 class="trust-title">Insurance Coverage</h3>
+                                <p class="trust-description">Every rental includes comprehensive insurance. You're protected against accidents, theft, and damage—simple, straightforward, no hidden terms.</p>
+                            </div>
+                        </div>
+                        <div class="trust-item">
+                            <span class="trust-marker">02</span>
+                            <div class="trust-content">
+                                <h3 class="trust-title">Secure Payments</h3>
+                                <p class="trust-description">All transactions are encrypted and secure. M-Pesa, Visa, and Mastercard accepted. Your payment details are never stored on our servers.</p>
+                            </div>
+                        </div>
+                        <div class="trust-item">
+                            <span class="trust-marker">03</span>
+                            <div class="trust-content">
+                                <h3 class="trust-title">ID & License Verification</h3>
+                                <p class="trust-description">Every user is verified before they can rent or list. We check government-issued IDs and valid driver's licenses so everyone on the platform is legitimate.</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="finance-info-card">
-                        <h3>Service Fee</h3>
-                        <p>ardena charges a 15% service fee on each completed booking. This covers platform maintenance, insurance, customer support, and payment processing.</p>
-                    </div>
-                    <div class="finance-info-card">
-                        <h3>Fast Payouts</h3>
-                        <p>Receive your earnings within 48 hours after each rental completion. Payments are processed securely via M-Pesa or bank transfer directly to your account.</p>
-                    </div>
-                    <div class="finance-info-card">
-                        <h3>Income Potential</h3>
-                        <p>Earn anywhere from KSh 5,000 to KSh 50,000+ per day depending on your vehicle. Active hosts typically earn 30-50% of their car's value annually.</p>
+                    <div class="safety-intro">
+                        <p class="safety-label">▪ SAFETY & TRUST</p>
+                        <h2 class="safety-heading">Safety & Trust</h2>
+                        <p class="safety-description">We take your security seriously. Every rental is backed by clear policies and verified users—so you can focus on the road.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="host-content-section">
+        <!-- FAQ Section -->
+        <section class="faq-section">
             <div class="container">
-                <div class="host-content-wrapper">
-                    <div class="host-section-block">
-                        <div class="host-earnings-note">
-                            <h3 class="host-earnings-title">What Affects Your Earnings?</h3>
-                            <div class="host-earnings-row">
-                                <div class="host-earnings-item">
-                                    <img src="/assets/vehicle.jpg" alt="Vehicle type and condition" class="host-earnings-img" loading="lazy" decoding="async" width="320" height="180">
-                                    <p class="host-earnings-point"><strong>Vehicle type and condition:</strong> Luxury and well-maintained cars command higher rates</p>
-                                </div>
-                                <div class="host-earnings-item">
-                                    <img src="/assets/location.jpg" alt="Location" class="host-earnings-img" loading="lazy" decoding="async" width="320" height="180">
-                                    <p class="host-earnings-point"><strong>Location:</strong> Urban areas with high demand see more bookings</p>
-                                </div>
-                                <div class="host-earnings-item">
-                                    <img src="/assets/availability.jpg" alt="Availability" class="host-earnings-img" loading="lazy" decoding="async" width="320" height="180">
-                                    <p class="host-earnings-point"><strong>Availability:</strong> More available days mean more earning opportunities</p>
-                                </div>
-                                <div class="host-earnings-item">
-                                    <img src="/assets/price.jpg" alt="Pricing strategy" class="host-earnings-img" loading="lazy" decoding="async" width="320" height="180">
-                                    <p class="host-earnings-point"><strong>Pricing strategy:</strong> Competitive pricing attracts more renters</p>
-                                </div>
-                            </div>
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            How do I rent a car on ardena?
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Download the ardena client app, create an account, and browse available vehicles. Once you find a car you like, select your dates, confirm the booking, and pay securely through the app. You'll coordinate pickup directly with the host.</p>
                         </div>
                     </div>
-
-                    <section class="bookings-section">
-                        <div class="container">
-                            <div class="bookings-inner">
-                                <div class="bookings-content">
-                                    <h2 class="bookings-title">Support Right Behind You</h2>
-                                    <p class="bookings-intro">Dedicated customer support for hosts. Get help when you need it—before, during, and after every rental.</p>
-                                    <div class="bookings-list">
-                                    <article class="booking-item">
-                                        <h3>Host support team</h3>
-                                        <p>Our team is here to help you with listing setup, pricing, and any questions about the host app or policies.</p>
-                                    </article>
-                                    <article class="booking-item">
-                                        <h3>Disputes & issues</h3>
-                                        <p>If something goes wrong with a booking or a renter, we help mediate and resolve issues quickly and fairly.</p>
-                                    </article>
-                                    <article class="booking-item">
-                                        <h3>Tips & best practices</h3>
-                                        <p>Get guidance on how to keep your vehicle in top shape, communicate with renters, and maintain a great host rating.</p>
-                                    </article>
-                                    <article class="booking-item">
-                                        <h3>Safety & compliance</h3>
-                                        <p>Support with documentation, insurance questions, and staying compliant with local rules so you can host with confidence.</p>
-                                    </article>
-                                    </div>
-                                </div>
-                                <div class="bookings-visual">
-                                    <img src="/assets/support.svg" alt="Support for hosts" class="bookings-svg">
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-
-                    <section class="host-tips-section">
-                        <div class="container">
-                            <h2 class="host-tips-title">Tips for Successful Hosting</h2>
-                            <p class="host-tips-intro">Simple practices that help you attract more renters and earn consistently.</p>
-                            <div class="host-tips-grid">
-                                <div class="host-tip-card">
-                                    <h3>Vehicle Maintenance</h3>
-                                    <p>Keep your vehicle clean and well-maintained at all times. A well-cared-for car earns better reviews and higher ratings.</p>
-                                </div>
-                                <div class="host-tip-card">
-                                    <h3>Be Responsive</h3>
-                                    <p>Respond to booking requests promptly. Be flexible with pickup and drop-off times when possible—renters appreciate it.</p>
-                                </div>
-                                <div class="host-tip-card">
-                                    <h3>Clear Instructions</h3>
-                                    <p>Provide clear instructions about your vehicle's features, fuel policy, and any quirks. It reduces confusion and builds trust.</p>
-                                </div>
-                                <div class="host-tip-card">
-                                    <h3>Build Repeat Business</h3>
-                                    <p>Build positive relationships with repeat renters. Update your calendar regularly to reflect actual availability.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-
-                    <div class="host-download-section">
-                        <h2 class="host-download-title">Ready to Start Hosting?</h2>
-                        <p class="host-download-text">Download the ardena host app today and start earning money from your vehicle. The app is available for both iOS and Android devices.</p>
-                        <div class="host-qr-block">
-                            <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://ardena.xyz" alt="QR code for ardena host app" class="host-qr-img" width="160" height="160">
-                            <div class="host-qr-desc">
-                                <p class="host-qr-copy">Scan to get the ardena host app. List your vehicle, set your rates, and start earning.</p>
-                                <p class="host-contact-text">Questions about hosting? Contact us at <a href="mailto:ardenacompanies@gmail.com">ardenacompanies@gmail.com</a></p>
-                            </div>
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            Is insurance included?
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Yes. All rentals include comprehensive insurance coverage with third-party liability, collision damage, and theft protection. There's a standard excess of KSh 50,000 that the renter is responsible for in case of damage or theft.</p>
                         </div>
                     </div>
-
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            How do I list my car as a host?
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Download the ardena host app, complete verification with your ID and vehicle documents, add your car details and photos, set your pricing and availability. Once approved, your car will be visible to renters.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            What payment methods do you accept?
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>We accept M-Pesa, Visa, and Mastercard. All payments are processed securely through the app, and hosts receive their earnings within 48 hours of rental completion.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            What if something goes wrong during my rental?
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Our support team is available 24/7. Report any issues through the app or call us directly. For accidents, contact police first, then report to ardena within 24 hours with a police abstract for insurance claims.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -297,7 +295,7 @@
         <div class="footer-wrapper">
             <div class="footer-top">
                     <a href="/" class="footer-brand">
-                        <img src="/assets/ardena.png" alt="ardena" class="footer-logo">
+                        <img src="/assets/logo.png" alt="ardena" class="footer-logo">
                     </a>
                     <p class="footer-tagline">Trusted car rental in Kenya. Connect with verified owners and renters.</p>
                 </div>
@@ -306,8 +304,8 @@
                     <div class="footer-col">
                         <h4 class="footer-col-title">Company</h4>
                         <ul class="footer-links">
-<li><a href="/about">About Us</a></li>
-                        <li><a href="/teams">Team</a></li>
+                            <li><a href="/about">About Us</a></li>
+                            <li><a href="/teams">Team</a></li>
                         </ul>
                     </div>
                     <div class="footer-col">

@@ -3,23 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Apply for a position at ardena. Fill in your details and tell us why you want to join our team.">
+    <meta name="description" content="Request account and data deletion for ardena. Learn how to delete your account and associated data from our apps and website.">
     <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://ardena.xyz/apply">
-    <meta property="og:title" content="Apply - ardena">
-    <meta property="og:description" content="Apply for a position at ardena.">
-    <meta property="og:image" content="https://ardena.xyz/assets/ardena.png">
+    <meta property="og:url" content="https://ardena.xyz/delete-account">
+    <meta property="og:title" content="Delete Account & Data - ardena">
+    <meta property="og:description" content="Request account and data deletion for ardena. Learn how to delete your account and associated data.">
+    <meta property="og:image" content="https://ardena.xyz/assets/logo.png">
+    
+    <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://ardena.xyz/apply">
-    <meta property="twitter:title" content="Apply - ardena">
-    <meta property="twitter:image" content="https://ardena.xyz/assets/ardena.png">
-    <title>Apply - ardena</title>
+    <meta property="twitter:url" content="https://ardena.xyz/delete-account">
+    <meta property="twitter:title" content="Delete Account & Data - ardena">
+    <meta property="twitter:description" content="Request account and data deletion for ardena. Learn how to delete your account and associated data.">
+    <meta property="twitter:image" content="https://ardena.xyz/assets/logo.png">
+    
+    <title>Delete Account & Data - ardena</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <link rel="canonical" href="https://ardena.xyz/apply">
+    <link rel="canonical" href="https://ardena.xyz/delete-account">
     <script>window.va=window.va||function(){(window.vaq=window.vaq||[]).push(arguments);};</script>
     <script defer src="/_vercel/insights/script.js"></script>
 </head>
@@ -28,7 +34,7 @@
         <nav class="nav">
             <div class="nav-brand">
                 <a href="/" class="nav-brand-link">
-                    <img src="/assets/ardena.png" alt="ardena" class="nav-logo">
+                    <img src="/assets/logo.png" alt="ardena" class="nav-logo">
                 </a>
             </div>
             <ul class="nav-menu" id="navMenu">
@@ -79,11 +85,7 @@
                 <li class="nav-menu-item--mobile-only"><a href="/help" class="nav-link">Help</a></li>
                 <li class="nav-menu-item--mobile-only"><a href="/careers" class="nav-link">Careers</a></li>
             </ul>
-            <div class="nav-end">
-                <div class="nav-cta-wrap nav-menu-item--desktop-only">
-                    <a href="/host-interest" class="nav-link nav-link--cta">Send host interest</a>
-                </div>
-                <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
                     <span></span>
                     <span></span>
                     <span></span>
@@ -92,90 +94,108 @@
         </nav>
     </header>
 
-    <main class="apply-page">
-        <div class="apply-container">
-            <header class="apply-header">
-                <h1 class="apply-title">Apply to Join ardena</h1>
-                <p class="apply-subtitle">Apply for an open position</p>
-                <p class="apply-intro">We’re building trusted car rental across Kenya. If you’d like to help make that happen, fill in the form below. We’ll get back to you as soon as we can.</p>
-            </header>
-
-            <form id="applyForm" class="apply-form" novalidate>
-                <section class="apply-form-section">
-                    <h2 class="apply-section-heading">1. Basic Information</h2>
-                    <div class="form-group">
-                        <label for="fullName">Full Name <span class="required">*</span></label>
-                        <input type="text" id="fullName" name="fullName" required placeholder="Your full name" autocomplete="name">
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email <span class="required">*</span></label>
-                        <input type="email" id="email" name="email" required placeholder="you@example.com" autocomplete="email">
-                    </div>
-                    <div class="form-group">
-                        <label for="phone">Phone</label>
-                        <input type="tel" id="phone" name="phone" placeholder="e.g. +254 700 000 000" autocomplete="tel">
-                    </div>
-                </section>
-
-                <section class="apply-form-section">
-                    <h2 class="apply-section-heading">2. Position</h2>
-                    <input type="hidden" id="positionValue" name="position">
-                    <div class="form-group" id="positionReadonlyWrap" style="display: none;">
-                        <label for="positionReadonly">Position you're applying for <span class="required">*</span></label>
-                        <input type="text" id="positionReadonly" class="apply-position-readonly" readonly aria-readonly="true">
-                    </div>
-                    <div class="form-group" id="positionSelectWrap">
-                        <label for="positionSelect">Position you're applying for <span class="required">*</span></label>
-                        <select id="positionSelect">
-                            <option value="">Select a position</option>
-                            <option value="Marketing Lead">Marketing Lead</option>
-                            <option value="Social Media Manager">Social Media Manager</option>
-                            <option value="Customer Support">Customer Support</option>
-                            <option value="Business Development & Partnerships">Business Development & Partnerships</option>
-                            <option value="Content Writer">Content Writer</option>
-                            <option value="Fleet & Operations Support">Fleet & Operations Support</option>
-                            <option value="Data & Analytics">Data & Analytics</option>
-                        </select>
-                    </div>
-                </section>
-
-                <section class="apply-form-section">
-                    <h2 class="apply-section-heading">3. Experience & Motivation</h2>
-                    <div class="form-group">
-                        <label for="whyJoin">Why do you want to join ardena? <span class="required">*</span></label>
-                        <textarea id="whyJoin" name="whyJoin" required placeholder="Tell us what draws you to ardena and this role." rows="4"></textarea>
-                    </div>
-                    <div class="form-group">
-                        <label for="experience">Relevant experience</label>
-                        <textarea id="experience" name="experience" placeholder="Brief summary of your relevant experience, skills, or background." rows="4"></textarea>
-                    </div>
-                </section>
-
-                <section class="apply-form-section">
-                    <h2 class="apply-section-heading">4. LinkedIn & CV</h2>
-                    <div class="form-group">
-                        <label for="linkedinLink">LinkedIn profile (URL)</label>
-                        <input type="url" id="linkedinLink" name="linkedinLink" placeholder="https://linkedin.com/in/yourprofile" autocomplete="url">
-                    </div>
-                    <div class="form-group">
-                        <label for="cvFile">Attach CV</label>
-                        <input type="file" id="cvFile" name="cvFile" accept=".pdf,.doc,.docx" class="apply-file-input">
-                        <span class="apply-file-hint">PDF or Word (optional). You’ll attach this file when your email client opens.</span>
-                    </div>
-                </section>
-
-                <div class="apply-form-actions">
-                    <button type="submit" class="apply-submit-btn">Submit application</button>
+    <main>
+        <section class="legal-hero">
+            <div class="container">
+                <div class="legal-hero-box">
+                    <h1 class="page-title">Delete Account & Data</h1>
+                    <p class="page-subtitle">Request deletion of your ardena account and associated data</p>
                 </div>
-            </form>
-        </div>
+            </div>
+        </section>
+
+        <section class="delete-section delete-section-right">
+            <div class="container container--wide">
+                <div class="delete-right-layout">
+                    <div class="delete-right-text">
+                        <h2>Your right to delete</h2>
+                        <p>You can delete your ardena account and the data associated with it at any time. When you do:</p>
+                        <ul>
+                            <li>Your profile and account credentials are removed</li>
+                            <li>Your personal information (name, email, phone) is deleted from our systems</li>
+                            <li>Booking and transaction history linked to your account is anonymized or removed in line with legal retention requirements</li>
+                            <li>You will no longer be able to log in or use ardena services with that account</li>
+                        </ul>
+                        <p>Deletion is permanent. We may retain minimal data where required by law (e.g. for tax or dispute resolution).</p>
+                    </div>
+                    <div class="delete-right-image-block">
+                        <div class="delete-right-shape" aria-hidden="true"></div>
+                        <div class="delete-right-image">
+                            <img src="/assets/right.jpg" alt="Freedom to manage your account and data" width="420" height="280" loading="lazy" class="delete-right-img">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="delete-section delete-section-app">
+            <div class="container container--wide">
+                <div class="delete-app-layout">
+                    <div class="delete-app-image-block">
+                        <div class="delete-app-shape" aria-hidden="true"></div>
+                        <div class="delete-app-illustration">
+                            <img src="/assets/delete.png" alt="Delete your account and data from the app" width="320" height="240" loading="lazy" class="delete-illustration-img">
+                        </div>
+                    </div>
+                    <div class="delete-app-text">
+                        <h2>How to delete your account in the app</h2>
+                        <p>You can delete your account directly from the ardena client or ardena host app:</p>
+                        <ol class="steps-list">
+                            <li>Open the <strong>ardena</strong> app (client or host) and log in.</li>
+                            <li>Go to <strong>Profile</strong> or <strong>Settings</strong> (tap your profile icon or the menu).</li>
+                            <li>Select <strong>Account</strong> or <strong>Privacy</strong>.</li>
+                            <li>Tap <strong>Delete account</strong> or <strong>Request account deletion</strong>.</li>
+                            <li>Follow the on-screen steps. You may be asked to confirm your password or identity.</li>
+                            <li>Confirm that you want to permanently delete your account and data.</li>
+                        </ol>
+                        <p>After you confirm, we will process your request. You may receive an email when the deletion is complete. If you use both the client and host apps, delete each account separately if you have signed up for both.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <div class="container">
+                <div class="legal-content delete-account-content">
+                    <div class="legal-section delete-form-section">
+                        <div class="delete-form-layout">
+                            <div class="delete-form-text">
+                                <h2>Request deletion via this form</h2>
+                                <p>If you cannot use the app or prefer to request deletion here, submit the form on the right. We will verify your identity and then process the deletion of your account and associated data.</p>
+                                <p class="form-note">Submitting this form will open your email client to send a deletion request to ardenacompanies@gmail.com. We will verify your details and process your request. For security, avoid using shared or public computers when entering your password.</p>
+                            </div>
+                            <form class="delete-account-form" id="deleteAccountForm" action="mailto:ardenacompanies@gmail.com" method="get" enctype="text/plain">
+                                <input type="hidden" name="subject" value="Account &amp; data deletion request">
+                                <div class="form-group">
+                                    <label for="del-username">Username or phone (as used in the app)</label>
+                                    <input type="text" id="del-username" name="username" required placeholder="Your ardena username or registered phone">
+                                </div>
+                                <div class="form-group">
+                                    <label for="del-email">Email address (registered with ardena)</label>
+                                    <input type="email" id="del-email" name="email" required placeholder="your@email.com">
+                                </div>
+                                <div class="form-group">
+                                    <label for="del-password">Password (for verification)</label>
+                                    <input type="password" id="del-password" name="password" required placeholder="Your account password" autocomplete="current-password">
+                                </div>
+                                <div class="form-group">
+                                    <label for="del-message">Additional details (optional)</label>
+                                    <textarea id="del-message" name="body" rows="2" placeholder="e.g. Confirm deletion of all my data including booking history"></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary btn-large">Submit deletion request</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer class="footer">
         <div class="footer-wrapper">
             <div class="footer-top">
                 <a href="/" class="footer-brand">
-                    <img src="/assets/ardena.png" alt="ardena" class="footer-logo">
+                    <img src="/assets/logo.png" alt="ardena" class="footer-logo">
                 </a>
                 <p class="footer-tagline">Trusted car rental in Kenya. Connect with verified owners and renters.</p>
             </div>
@@ -184,9 +204,8 @@
                 <div class="footer-col">
                     <h4 class="footer-col-title">Company</h4>
                     <ul class="footer-links">
-                        <li><a href="/about">About Us</a></li>
-                        <li><a href="/teams">Team</a></li>
-                        <li><a href="/careers">Careers</a></li>
+<li><a href="/about">About Us</a></li>
+                    <li><a href="/teams">Team</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
@@ -230,62 +249,14 @@
 
     <script src="script.js"></script>
     <script>
-        (function() {
-            var params = new URLSearchParams(window.location.search);
-            var roleParam = params.get('role');
-            var positionReadonlyWrap = document.getElementById('positionReadonlyWrap');
-            var positionSelectWrap = document.getElementById('positionSelectWrap');
-            var positionReadonly = document.getElementById('positionReadonly');
-            var positionSelect = document.getElementById('positionSelect');
-            var positionValue = document.getElementById('positionValue');
-
-            if (roleParam) {
-                var roleDecoded = decodeURIComponent(roleParam.replace(/\+/g, ' '));
-                positionReadonly.value = roleDecoded;
-                positionValue.value = roleDecoded;
-                positionReadonlyWrap.style.display = 'block';
-                positionSelectWrap.style.display = 'none';
-            } else {
-                positionSelect.addEventListener('change', function() {
-                    positionValue.value = positionSelect.value;
-                });
-            }
-
-            document.getElementById('applyForm').addEventListener('submit', function(e) {
-                e.preventDefault();
-                if (positionSelectWrap.style.display !== 'none') {
-                    positionValue.value = positionSelect.value;
-                }
-                var fullName = document.getElementById('fullName').value.trim();
-                var email = document.getElementById('email').value.trim();
-                var phone = document.getElementById('phone').value.trim();
-                var position = positionValue.value;
-                var whyJoin = document.getElementById('whyJoin').value.trim();
-                var experience = document.getElementById('experience').value.trim();
-                var linkedinLink = document.getElementById('linkedinLink').value.trim();
-                var cvFileInput = document.getElementById('cvFile');
-                var cvFileName = cvFileInput.files.length ? cvFileInput.files[0].name : '';
-
-                if (!fullName || !email || !position || !whyJoin) {
-                    alert('Please fill in all required fields (Full Name, Email, Position, Why do you want to join ardena?).');
-                    return;
-                }
-
-                var subject = 'Application: ' + position;
-                var body = 'Full Name: ' + fullName + '\n';
-                body += 'Email: ' + email + '\n';
-                if (phone) body += 'Phone: ' + phone + '\n';
-                body += 'Position: ' + position + '\n\n';
-                body += 'Why do you want to join ardena?\n' + whyJoin + '\n\n';
-                if (experience) body += 'Relevant experience:\n' + experience + '\n\n';
-                if (linkedinLink) body += 'LinkedIn: ' + linkedinLink + '\n\n';
-                body += 'CV: Please attach your CV file to this email before sending.';
-                if (cvFileName) body += ' (Selected file: ' + cvFileName + ')';
-
-                var mailto = 'mailto:ardenacompanies@gmail.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
-                window.location.href = mailto;
-            });
-        })();
+        document.getElementById('deleteAccountForm').addEventListener('submit', function(e) {
+            var subj = encodeURIComponent('Account & data deletion request');
+            var body = 'Username/phone: ' + document.getElementById('del-username').value + '\n';
+            body += 'Email: ' + document.getElementById('del-email').value + '\n';
+            body += 'Password: ' + document.getElementById('del-password').value + '\n';
+            body += 'Message: ' + document.getElementById('del-message').value;
+            this.action = 'mailto:ardenacompanies@gmail.com?subject=' + subj + '&body=' + encodeURIComponent(body);
+        });
     </script>
 </body>
 </html>

@@ -3,23 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Apply for a position at ardena. Fill in your details and tell us why you want to join our team.">
+    <meta name="description" content="Join ardena. Open positions in marketing, social media, customer support, and more. Help make car rental simple and trusted across Kenya.">
     <meta name="robots" content="index, follow">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://ardena.xyz/apply">
-    <meta property="og:title" content="Apply - ardena">
-    <meta property="og:description" content="Apply for a position at ardena.">
-    <meta property="og:image" content="https://ardena.xyz/assets/ardena.png">
+    <meta property="og:url" content="https://ardena.xyz/careers">
+    <meta property="og:title" content="Careers - ardena">
+    <meta property="og:description" content="Join ardena. Open positions in marketing, social media, customer support, and more.">
+    <meta property="og:image" content="https://ardena.xyz/assets/logo.png">
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://ardena.xyz/apply">
-    <meta property="twitter:title" content="Apply - ardena">
-    <meta property="twitter:image" content="https://ardena.xyz/assets/ardena.png">
-    <title>Apply - ardena</title>
+    <meta property="twitter:url" content="https://ardena.xyz/careers">
+    <meta property="twitter:title" content="Careers - ardena">
+    <meta property="twitter:image" content="https://ardena.xyz/assets/logo.png">
+    <title>Careers - ardena</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <link rel="canonical" href="https://ardena.xyz/apply">
+    <link rel="canonical" href="https://ardena.xyz/careers">
     <script>window.va=window.va||function(){(window.vaq=window.vaq||[]).push(arguments);};</script>
     <script defer src="/_vercel/insights/script.js"></script>
 </head>
@@ -28,7 +28,7 @@
         <nav class="nav">
             <div class="nav-brand">
                 <a href="/" class="nav-brand-link">
-                    <img src="/assets/ardena.png" alt="ardena" class="nav-logo">
+                    <img src="/assets/logo.png" alt="ardena" class="nav-logo">
                 </a>
             </div>
             <ul class="nav-menu" id="navMenu">
@@ -77,13 +77,9 @@
                 <li class="nav-menu-item--mobile-only"><a href="/about" class="nav-link">About</a></li>
                 <li class="nav-menu-item--mobile-only"><a href="/teams" class="nav-link">Team</a></li>
                 <li class="nav-menu-item--mobile-only"><a href="/help" class="nav-link">Help</a></li>
-                <li class="nav-menu-item--mobile-only"><a href="/careers" class="nav-link">Careers</a></li>
+                <li class="nav-menu-item--mobile-only"><a href="/careers" class="nav-link active">Careers</a></li>
             </ul>
-            <div class="nav-end">
-                <div class="nav-cta-wrap nav-menu-item--desktop-only">
-                    <a href="/host-interest" class="nav-link nav-link--cta">Send host interest</a>
-                </div>
-                <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
                     <span></span>
                     <span></span>
                     <span></span>
@@ -92,90 +88,84 @@
         </nav>
     </header>
 
-    <main class="apply-page">
-        <div class="apply-container">
-            <header class="apply-header">
-                <h1 class="apply-title">Apply to Join ardena</h1>
-                <p class="apply-subtitle">Apply for an open position</p>
-                <p class="apply-intro">We’re building trusted car rental across Kenya. If you’d like to help make that happen, fill in the form below. We’ll get back to you as soon as we can.</p>
-            </header>
+    <main>
+        <section class="careers-hero">
+            <div class="container careers-hero-container">
+                <h1 class="page-title careers-hero-title">Open Positions</h1>
+                <p class="page-subtitle careers-hero-subtitle">Help make car rental simple and trusted across Kenya. Apply by email with your CV and a short note on why you’d like to join.</p>
+            </div>
+        </section>
 
-            <form id="applyForm" class="apply-form" novalidate>
-                <section class="apply-form-section">
-                    <h2 class="apply-section-heading">1. Basic Information</h2>
-                    <div class="form-group">
-                        <label for="fullName">Full Name <span class="required">*</span></label>
-                        <input type="text" id="fullName" name="fullName" required placeholder="Your full name" autocomplete="name">
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email <span class="required">*</span></label>
-                        <input type="email" id="email" name="email" required placeholder="you@example.com" autocomplete="email">
-                    </div>
-                    <div class="form-group">
-                        <label for="phone">Phone</label>
-                        <input type="tel" id="phone" name="phone" placeholder="e.g. +254 700 000 000" autocomplete="tel">
-                    </div>
-                </section>
-
-                <section class="apply-form-section">
-                    <h2 class="apply-section-heading">2. Position</h2>
-                    <input type="hidden" id="positionValue" name="position">
-                    <div class="form-group" id="positionReadonlyWrap" style="display: none;">
-                        <label for="positionReadonly">Position you're applying for <span class="required">*</span></label>
-                        <input type="text" id="positionReadonly" class="apply-position-readonly" readonly aria-readonly="true">
-                    </div>
-                    <div class="form-group" id="positionSelectWrap">
-                        <label for="positionSelect">Position you're applying for <span class="required">*</span></label>
-                        <select id="positionSelect">
-                            <option value="">Select a position</option>
-                            <option value="Marketing Lead">Marketing Lead</option>
-                            <option value="Social Media Manager">Social Media Manager</option>
-                            <option value="Customer Support">Customer Support</option>
-                            <option value="Business Development & Partnerships">Business Development & Partnerships</option>
-                            <option value="Content Writer">Content Writer</option>
-                            <option value="Fleet & Operations Support">Fleet & Operations Support</option>
-                            <option value="Data & Analytics">Data & Analytics</option>
-                        </select>
-                    </div>
-                </section>
-
-                <section class="apply-form-section">
-                    <h2 class="apply-section-heading">3. Experience & Motivation</h2>
-                    <div class="form-group">
-                        <label for="whyJoin">Why do you want to join ardena? <span class="required">*</span></label>
-                        <textarea id="whyJoin" name="whyJoin" required placeholder="Tell us what draws you to ardena and this role." rows="4"></textarea>
-                    </div>
-                    <div class="form-group">
-                        <label for="experience">Relevant experience</label>
-                        <textarea id="experience" name="experience" placeholder="Brief summary of your relevant experience, skills, or background." rows="4"></textarea>
-                    </div>
-                </section>
-
-                <section class="apply-form-section">
-                    <h2 class="apply-section-heading">4. LinkedIn & CV</h2>
-                    <div class="form-group">
-                        <label for="linkedinLink">LinkedIn profile (URL)</label>
-                        <input type="url" id="linkedinLink" name="linkedinLink" placeholder="https://linkedin.com/in/yourprofile" autocomplete="url">
-                    </div>
-                    <div class="form-group">
-                        <label for="cvFile">Attach CV</label>
-                        <input type="file" id="cvFile" name="cvFile" accept=".pdf,.doc,.docx" class="apply-file-input">
-                        <span class="apply-file-hint">PDF or Word (optional). You’ll attach this file when your email client opens.</span>
-                    </div>
-                </section>
-
-                <div class="apply-form-actions">
-                    <button type="submit" class="apply-submit-btn">Submit application</button>
+        <section class="careers-section" id="open-positions">
+            <div class="container">
+                <div class="jobs-list">
+                    <article class="job-card">
+                        <div class="job-card-content">
+                            <span class="job-card-dept">Marketing</span>
+                            <h2 class="job-card-title">Marketing Lead</h2>
+                            <p class="job-card-desc">Drive brand awareness and campaigns for ardena across Kenya. Own messaging, channels, and performance so more renters and hosts discover and trust the platform.</p>
+                        </div>
+                        <a href="/apply?role=Marketing+Lead" class="job-card-apply">Apply</a>
+                    </article>
+                    <article class="job-card">
+                        <div class="job-card-content">
+                            <span class="job-card-dept">Marketing</span>
+                            <h2 class="job-card-title">Social Media Manager</h2>
+                            <p class="job-card-desc">Manage ardena’s social presence (X, Instagram, etc.): create content, engage the community, and grow followership for our car rental brand in Kenya.</p>
+                        </div>
+                        <a href="/apply?role=Social+Media+Manager" class="job-card-apply">Apply</a>
+                    </article>
+                    <article class="job-card">
+                        <div class="job-card-content">
+                            <span class="job-card-dept">Operations</span>
+                            <h2 class="job-card-title">Customer Support</h2>
+                            <p class="job-card-desc">Support renters and hosts via chat, email, and phone. Resolve booking and payment issues and help keep the ardena experience smooth and trusted.</p>
+                        </div>
+                        <a href="/apply?role=Customer+Support" class="job-card-apply">Apply</a>
+                    </article>
+                    <article class="job-card">
+                        <div class="job-card-content">
+                            <span class="job-card-dept">Business</span>
+                            <h2 class="job-card-title">Business Development & Partnerships</h2>
+                            <p class="job-card-desc">Grow our fleet and reach by onboarding new hosts, fleet owners, and corporate partners. Build relationships that scale trusted car rental across Kenya.</p>
+                        </div>
+                        <a href="/apply?role=Business+Development+%26+Partnerships" class="job-card-apply">Apply</a>
+                    </article>
+                    <article class="job-card">
+                        <div class="job-card-content">
+                            <span class="job-card-dept">Content</span>
+                            <h2 class="job-card-title">Content Writer</h2>
+                            <p class="job-card-desc">Write clear, helpful content for the website, app, help centre, and marketing. Help renters and hosts understand how ardena works and why it’s trusted.</p>
+                        </div>
+                        <a href="/apply?role=Content+Writer" class="job-card-apply">Apply</a>
+                    </article>
+                    <article class="job-card">
+                        <div class="job-card-content">
+                            <span class="job-card-dept">Operations</span>
+                            <h2 class="job-card-title">Fleet & Operations Support</h2>
+                            <p class="job-card-desc">Support vehicle verification, listing quality, and day-to-day operations so our fleet stays reliable and our processes run smoothly for hosts and renters.</p>
+                        </div>
+                        <a href="/apply?role=Fleet+%26+Operations+Support" class="job-card-apply">Apply</a>
+                    </article>
+                    <article class="job-card">
+                        <div class="job-card-content">
+                            <span class="job-card-dept">Data</span>
+                            <h2 class="job-card-title">Data & Analytics</h2>
+                            <p class="job-card-desc">Turn data into insights for product, marketing, and operations. Track bookings, retention, and growth to help ardena make better decisions.</p>
+                        </div>
+                        <a href="/apply?role=Data+%26+Analytics" class="job-card-apply">Apply</a>
+                    </article>
                 </div>
-            </form>
-        </div>
+                <p class="careers-apply-note">Send your CV and a short note to <a href="mailto:ardenacompanies@gmail.com">ardenacompanies@gmail.com</a> with the role in the subject line. We’ll get back to you as soon as we can.</p>
+            </div>
+        </section>
     </main>
 
     <footer class="footer">
         <div class="footer-wrapper">
             <div class="footer-top">
                 <a href="/" class="footer-brand">
-                    <img src="/assets/ardena.png" alt="ardena" class="footer-logo">
+                    <img src="/assets/logo.png" alt="ardena" class="footer-logo">
                 </a>
                 <p class="footer-tagline">Trusted car rental in Kenya. Connect with verified owners and renters.</p>
             </div>
@@ -229,63 +219,5 @@
     </footer>
 
     <script src="script.js"></script>
-    <script>
-        (function() {
-            var params = new URLSearchParams(window.location.search);
-            var roleParam = params.get('role');
-            var positionReadonlyWrap = document.getElementById('positionReadonlyWrap');
-            var positionSelectWrap = document.getElementById('positionSelectWrap');
-            var positionReadonly = document.getElementById('positionReadonly');
-            var positionSelect = document.getElementById('positionSelect');
-            var positionValue = document.getElementById('positionValue');
-
-            if (roleParam) {
-                var roleDecoded = decodeURIComponent(roleParam.replace(/\+/g, ' '));
-                positionReadonly.value = roleDecoded;
-                positionValue.value = roleDecoded;
-                positionReadonlyWrap.style.display = 'block';
-                positionSelectWrap.style.display = 'none';
-            } else {
-                positionSelect.addEventListener('change', function() {
-                    positionValue.value = positionSelect.value;
-                });
-            }
-
-            document.getElementById('applyForm').addEventListener('submit', function(e) {
-                e.preventDefault();
-                if (positionSelectWrap.style.display !== 'none') {
-                    positionValue.value = positionSelect.value;
-                }
-                var fullName = document.getElementById('fullName').value.trim();
-                var email = document.getElementById('email').value.trim();
-                var phone = document.getElementById('phone').value.trim();
-                var position = positionValue.value;
-                var whyJoin = document.getElementById('whyJoin').value.trim();
-                var experience = document.getElementById('experience').value.trim();
-                var linkedinLink = document.getElementById('linkedinLink').value.trim();
-                var cvFileInput = document.getElementById('cvFile');
-                var cvFileName = cvFileInput.files.length ? cvFileInput.files[0].name : '';
-
-                if (!fullName || !email || !position || !whyJoin) {
-                    alert('Please fill in all required fields (Full Name, Email, Position, Why do you want to join ardena?).');
-                    return;
-                }
-
-                var subject = 'Application: ' + position;
-                var body = 'Full Name: ' + fullName + '\n';
-                body += 'Email: ' + email + '\n';
-                if (phone) body += 'Phone: ' + phone + '\n';
-                body += 'Position: ' + position + '\n\n';
-                body += 'Why do you want to join ardena?\n' + whyJoin + '\n\n';
-                if (experience) body += 'Relevant experience:\n' + experience + '\n\n';
-                if (linkedinLink) body += 'LinkedIn: ' + linkedinLink + '\n\n';
-                body += 'CV: Please attach your CV file to this email before sending.';
-                if (cvFileName) body += ' (Selected file: ' + cvFileName + ')';
-
-                var mailto = 'mailto:ardenacompanies@gmail.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
-                window.location.href = mailto;
-            });
-        })();
-    </script>
 </body>
 </html>
