@@ -12,7 +12,9 @@
     { "source": "/insurance", "destination": "/insurance.html" },
     { "source": "/delete-account", "destination": "/delete-account.html" },
     { "source": "/apply", "destination": "/apply.html" },
-    { "source": "/reset-password", "destination": "/reset-password.html" }
+    { "source": "/reset-password", "destination": "/reset-password.html" },
+    { "source": "/host-interest", "destination": "/host-interest.html" },
+    { "source": "/host-interest/", "destination": "/host-interest.html" }
   ],
   "headers": [
     {
