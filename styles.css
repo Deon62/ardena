@@ -726,13 +726,15 @@ body {
 }
 
 .host-interest-brand {
-    display: inline-flex;
+    display: flex;
+    justify-content: center;
     margin-bottom: 1rem;
 }
 
 .host-interest-logo {
     height: 28px;
     width: auto;
+    display: block;
 }
 
 .host-interest-card {
