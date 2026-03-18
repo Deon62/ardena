@@ -324,6 +324,123 @@
         </div>
     </footer>
 
+    <script>
+        // Help page newsletter signup:
+        // Some deployments were still falling back to native form submission (".../help#")
+        // when the external script didn't bind correctly. This inline handler guarantees
+        // we prevent default navigation and show success/error feedback.
+        (function () {
+            var form = document.getElementById('help-newsletter-form');
+            var messageEl = document.getElementById('help-newsletter-message');
+            var unsubscribeLink = document.querySelector('.help-newsletter-unsubscribe-link');
+            if (!form || !messageEl) return;
+
+            var mode = 'subscribe'; // 'subscribe' | 'unsubscribe'
+            var submitBtn = form.querySelector('.help-newsletter-submit');
+
+            function getApiBase() {
+                if (typeof window.ARDENA_API_BASE === 'string' && window.ARDENA_API_BASE) {
+                    return window.ARDENA_API_BASE.replace(/\/$/, '');
+                }
+                var host = typeof window !== 'undefined' && window.location ? window.location.hostname : '';
+                if (host === 'localhost' || host === '127.0.0.1') return 'http://localhost:8001';
+                return 'https://api.ardena.xyz';
+            }
+
+            function showMessage(text, type) {
+                messageEl.textContent = text;
+                messageEl.className = 'help-newsletter-message ' + (type || '');
+                messageEl.hidden = false;
+            }
+
+            function setMode(newMode) {
+                mode = newMode;
+                if (submitBtn) submitBtn.textContent = mode === 'unsubscribe' ? 'Unsubscribe' : 'Subscribe';
+            }
+
+            function subscribe(email) {
+                var base = getApiBase();
+                return fetch(base + '/api/v1/subscribe', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+                    body: JSON.stringify({ email: email })
+                });
+            }
+
+            function unsubscribe(email) {
+                var base = getApiBase();
+                return fetch(base + '/api/v1/unsubscribe', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+                    body: JSON.stringify({ email: email })
+                });
+            }
+
+            if (unsubscribeLink) {
+                unsubscribeLink.addEventListener('click', function () {
+                    setMode('unsubscribe');
+                    var emailInput = form.querySelector('input[name="email"], input[type="email"]');
+                    if (emailInput) {
+                        emailInput.focus();
+                        emailInput.value = '';
+                    }
+                });
+            }
+
+            form.addEventListener('submit', function (e) {
+                // Ensure the URL doesn't change to ".../help#" even if external JS fails.
+                e.preventDefault();
+                e.stopImmediatePropagation();
+
+                var emailInput = form.querySelector('input[name="email"], input[type="email"]');
+                var email = emailInput ? emailInput.value.trim() : '';
+                if (!email) {
+                    showMessage('Please enter your email address.', 'error');
+                    return;
+                }
+
+                var originalText = submitBtn ? submitBtn.textContent : '';
+                if (submitBtn) {
+                    submitBtn.disabled = true;
+                    submitBtn.textContent = mode === 'unsubscribe' ? 'Unsubscribing…' : 'Subscribing…';
+                }
+                messageEl.hidden = true;
+
+                var request = mode === 'unsubscribe' ? unsubscribe(email) : subscribe(email);
+                request
+                    .then(function (r) {
+                        if (!r.ok) {
+                            return r.json().then(function (body) {
+                                throw new Error(body.message || body.detail || (mode === 'unsubscribe' ? 'Unsubscribe failed' : 'Subscribe failed'));
+                            });
+                        }
+                        return r.json().catch(function () { return {}; });
+                    })
+                    .then(function () {
+                        if (mode === 'unsubscribe') {
+                            showMessage('You have been unsubscribed from our newsletter.', 'success');
+                            setMode('subscribe');
+                        } else {
+                            showMessage('Thanks! You’re subscribed. We’ll send updates to your email.', 'success');
+                            setMode('unsubscribe');
+                        }
+                        form.reset();
+                        if (submitBtn) submitBtn.disabled = false;
+                    })
+                    .catch(function (err) {
+                        showMessage(
+                            err && err.message ? err.message : 'Something went wrong. Please try again or email ardenacompanies@gmail.com.',
+                            'error'
+                        );
+                        if (submitBtn) {
+                            submitBtn.textContent = originalText;
+                            submitBtn.disabled = false;
+                        }
+                    });
+            });
+        })();
+    </script>
+
     <script src="/script.js"></script>
 </body>
 </html>
