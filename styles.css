@@ -3287,7 +3287,45 @@ body {
 }
 
 .host-download-buttons {
-    margin-bottom: 2rem;
+    margin: 0 0 1.75rem 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.75rem 1rem;
+}
+
+.host-store-badge {
+    display: inline-block;
+    line-height: 0;
+    border-radius: 8px;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.host-store-badge:hover {
+    opacity: 0.92;
+    transform: translateY(-1px);
+}
+
+.host-store-badge:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--background, #fff), 0 0 0 4px var(--primary-color);
+    border-radius: 8px;
+}
+
+.host-store-badge-img {
+    display: block;
+    height: 54px;
+    width: auto;
+    max-width: 100%;
+}
+
+/* App Store badge asset is light — frame it so edges read on white/grey */
+.host-store-badge--appstore {
+    border: 1px solid #000000;
+    border-radius: 8px;
+    box-sizing: border-box;
+    overflow: hidden;
 }
 
 .host-contact-info {
