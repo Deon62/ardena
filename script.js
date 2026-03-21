@@ -167,6 +167,9 @@ const navLinks = document.querySelectorAll('.nav-link');
 
 navLinks.forEach(link => {
     const linkHref = link.getAttribute('href');
+    if (!linkHref || linkHref.charAt(0) === '#') {
+        return;
+    }
     const linkPath = linkHref.split('#')[0].replace(/\/$/, '') || '/';
     if (linkPath === pathname) {
         link.classList.add('active');
@@ -246,7 +249,7 @@ document.addEventListener('DOMContentLoaded', () => {
         .differentiator-item,
         .host-step-card,
         .host-step-item,
-        .booking-item,
+        .support-link-card,
         .finance-info-card,
         .booking-feature-item,
         .help-contact-form-wrapper,
@@ -325,24 +328,27 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // FAQ Accordion
-const faqQuestions = document.querySelectorAll('.faq-question');
+document.addEventListener('DOMContentLoaded', () => {
+    const faqQuestions = document.querySelectorAll('.faq-question');
+    faqQuestions.forEach(question => {
+        question.addEventListener('click', () => {
+            const faqItem = question.closest('.faq-item');
+            if (!faqItem) return;
+            const isActive = faqItem.classList.contains('active');
 
-faqQuestions.forEach(question => {
-    question.addEventListener('click', () => {
-        const faqItem = question.parentElement;
-        const isActive = faqItem.classList.contains('active');
-        
-        // Close all FAQ items
-        document.querySelectorAll('.faq-item').forEach(item => {
-            item.classList.remove('active');
-            item.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+            // Close all FAQ items
+            document.querySelectorAll('.faq-item').forEach(item => {
+                item.classList.remove('active');
+                const btn = item.querySelector('.faq-question');
+                if (btn) btn.setAttribute('aria-expanded', 'false');
+            });
+
+            // Open clicked item if it wasn't active
+            if (!isActive) {
+                faqItem.classList.add('active');
+                question.setAttribute('aria-expanded', 'true');
+            }
         });
-        
-        // Open clicked item if it wasn't active
-        if (!isActive) {
-            faqItem.classList.add('active');
-            question.setAttribute('aria-expanded', 'true');
-        }
     });
 });
 

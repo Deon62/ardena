@@ -1365,11 +1365,12 @@ body {
 .faq-answer {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.3s ease, padding 0.3s ease;
+    transition: max-height 0.35s ease, padding 0.35s ease;
 }
 
 .faq-item.active .faq-answer {
-    max-height: 300px;
+    max-height: 600px;
+    padding-top: 0;
     padding-bottom: 1.5rem;
 }
 
@@ -3008,94 +3009,110 @@ body {
     }
 }
 
-/* Support section (host) - full-width left to right, two-column: content left, SVG right */
+/* Support section (host) — matches Finances: dark band, white sharp cards, links to Help */
 .bookings-section {
+    background: var(--primary-dark);
     padding: 5rem 0;
-    background: #ffffff;
     width: 100%;
+    max-width: 100%;
     box-sizing: border-box;
 }
+
 @media (min-width: 900px) {
     .bookings-section {
         padding: 6rem 0;
     }
 }
 
-.bookings-section .container {
-    max-width: 100%;
-    width: 100%;
-    padding-left: 2rem;
-    padding-right: 2rem;
-}
-
-.bookings-inner {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
-    align-items: start;
-    width: 100%;
-    max-width: 100%;
-    margin: 0;
-    box-sizing: border-box;
-}
-
-.bookings-content {
-    min-width: 0;
-}
-
-.bookings-visual {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    min-width: 0;
-}
-
-.bookings-svg {
-    max-width: 100%;
-    width: 100%;
-    height: auto;
-    object-fit: contain;
-}
-
 .bookings-title {
-    font-size: 2.25rem;
+    font-size: 2.5rem;
     font-weight: 700;
-    color: var(--text-primary);
-    margin-bottom: 0.75rem;
+    color: #ffffff;
+    text-align: center;
+    margin: 0 auto 1rem;
     line-height: 1.2;
     letter-spacing: -0.02em;
+    max-width: 1100px;
 }
 
 .bookings-intro {
-    font-size: 1.05rem;
+    font-size: 1.0625rem;
     line-height: 1.7;
-    color: var(--text-secondary);
-    margin-bottom: 3rem;
+    color: rgba(255, 255, 255, 0.85);
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 3rem;
 }
 
-.bookings-list {
-    display: flex;
-    flex-direction: column;
-    gap: 2.5rem;
+.bookings-support-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    max-width: 1100px;
+    margin: 0 auto;
+    width: 100%;
+    box-sizing: border-box;
 }
 
-.booking-item {
-    padding-left: 1.5rem;
-    border-left: 3px solid var(--primary-color);
-    margin: 0;
-    background: transparent;
+@media (min-width: 640px) {
+    .bookings-support-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 900px) {
+    .bookings-support-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.bookings-section .support-link-card {
+    position: relative;
+    display: block;
+    background: #ffffff;
+    padding: 2.5rem 2rem 2.5rem;
+    padding-right: 2.75rem;
     border-radius: 0;
+    text-align: left;
+    text-decoration: none;
+    color: inherit;
+    border: none;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    -webkit-tap-highlight-color: transparent;
 }
 
-.booking-item h3 {
-    font-size: 1.125rem;
-    font-weight: 600;
+.bookings-section .support-link-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.18);
+}
+
+.support-link-card-arrow {
+    position: absolute;
+    top: 1.35rem;
+    right: 1.35rem;
+    width: 1.35rem;
+    height: 1.35rem;
+    color: rgba(30, 41, 59, 0.45);
+    pointer-events: none;
+}
+
+.support-link-card-arrow svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.bookings-section .support-link-card h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
     color: var(--text-primary);
-    margin-bottom: 0.5rem;
-    line-height: 1.35;
+    margin: 0 0 0.75rem 0;
+    line-height: 1.3;
+    padding-right: 1.5rem;
 }
 
-.booking-item p {
+.bookings-section .support-link-card p {
     font-size: 0.95rem;
     line-height: 1.65;
     color: var(--text-secondary);
@@ -5381,6 +5398,7 @@ body {
     }
     
     .finances-pricing-section .finances-info-grid,
+    .bookings-support-grid,
     .help-socials-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 1.5rem;
@@ -5419,37 +5437,21 @@ body {
         padding: 3rem 0;
     }
 
-    .bookings-inner {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-    }
-
-    .bookings-visual {
-        justify-content: center;
-        order: 1;
-    }
-
-    .bookings-content {
-        order: 0;
-    }
-
     .bookings-title {
-        font-size: 1.75rem;
+        font-size: 2rem;
     }
 
     .bookings-intro {
         margin-bottom: 2rem;
     }
 
-    .bookings-list {
-        gap: 2rem;
-    }
-
-    .booking-item {
-        padding-left: 1.25rem;
+    .bookings-section .support-link-card {
+        padding: 2rem 1.5rem 2rem;
+        padding-right: 2.25rem;
     }
 
     .finances-info-grid,
+    .bookings-support-grid,
     .bookings-features-grid,
     .help-socials-grid {
         grid-template-columns: 1fr;
@@ -5766,6 +5768,7 @@ body {
     }
 
     .finances-pricing-section .finances-info-grid,
+    .bookings-support-grid,
     .host-tips-grid,
     .help-socials-grid {
         grid-template-columns: 1fr;
