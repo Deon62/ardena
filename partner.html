@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Submit a partnership request to collaborate with ardena in Kenya.">
+    <meta name="robots" content="index, follow">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ardena.xyz/partner">
+    <meta property="og:title" content="Partnership Request - ardena">
+    <meta property="og:description" content="Send a partnership request to collaborate with ardena.">
+    <meta property="og:image" content="https://ardena.xyz/assets/logo.jpg">
+
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://ardena.xyz/partner">
+    <meta property="twitter:title" content="Partnership Request - ardena">
+    <meta property="twitter:description" content="Send a partnership request to collaborate with ardena.">
+    <meta property="twitter:image" content="https://ardena.xyz/assets/logo.jpg">
+
+    <title>Partnership Request - ardena</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="canonical" href="https://ardena.xyz/partner">
+    <link rel="icon" type="image/jpeg" href="/assets/logo.jpg">
+    <script>
+      window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+    </script>
+    <script defer src="/_vercel/insights/script.js"></script>
+</head>
+<body class="host-interest-page">
+    <main class="host-interest-main">
+        <section class="host-interest-shell" aria-labelledby="partner-request-title">
+            <a href="/" class="host-interest-brand" aria-label="Go to homepage">
+                <img src="/assets/ardena.png" alt="ardena" class="host-interest-logo">
+            </a>
+
+            <div class="host-interest-card">
+                <h1 id="partner-request-title" class="host-interest-title">Partnership request</h1>
+                <p class="host-interest-subtitle">Tell us about your company and how you want to collaborate with ardena. Our team will reach out shortly.</p>
+
+                <form id="partner-request-form" class="host-interest-form" action="https://formspree.io/f/mblpnyjo" method="POST">
+                    <input type="hidden" name="_subject" value="New partnership request - ardena">
+
+                    <div class="host-interest-field">
+                        <label for="partner-name">Full name</label>
+                        <input type="text" id="partner-name" name="full_name" required placeholder="Your full name" autocomplete="name">
+                    </div>
+
+                    <div class="host-interest-field">
+                        <label for="partner-email">Work email</label>
+                        <input type="email" id="partner-email" name="email" required placeholder="you@company.com" autocomplete="email">
+                    </div>
+
+                    <div class="host-interest-field">
+                        <label for="partner-company">Company name</label>
+                        <input type="text" id="partner-company" name="company" required placeholder="Company or organization name" autocomplete="organization">
+                    </div>
+
+                    <div class="host-interest-field">
+                        <label for="partner-message">How do you want to partner with ardena?</label>
+                        <textarea id="partner-message" name="partnership_details" rows="4" required placeholder="Short description of your proposal"></textarea>
+                    </div>
+
+                    <button type="submit" class="host-interest-submit">Send partnership request</button>
+                    <p id="partner-request-message" class="host-interest-message" role="status" aria-live="polite" hidden></p>
+                </form>
+
+                <div id="partner-request-success" class="host-interest-success-modal" role="status" aria-live="polite" hidden>
+                    <div class="host-interest-success-card">
+                        <h2 class="host-interest-success-title">Request sent successfully</h2>
+                        <p class="host-interest-success-text">Thanks for reaching out. We have received your partnership request and will follow up by email.</p>
+                        <p class="host-interest-success-text"><a href="/">Return to home</a></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        (function () {
+            var form = document.getElementById('partner-request-form');
+            var message = document.getElementById('partner-request-message');
+            var successModal = document.getElementById('partner-request-success');
+            if (!form || !message || !successModal) return;
+
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+                var submitBtn = form.querySelector('.host-interest-submit');
+                var originalText = submitBtn ? submitBtn.textContent : '';
+
+                if (submitBtn) {
+                    submitBtn.disabled = true;
+                    submitBtn.textContent = 'Sending...';
+                }
+
+                fetch(form.action, {
+                    method: 'POST',
+                    body: new FormData(form),
+                    headers: { Accept: 'application/json' }
+                })
+                    .then(function (response) {
+                        if (!response.ok) throw new Error('Request failed');
+                        message.hidden = true;
+                        message.textContent = '';
+                        form.reset();
+                        form.hidden = true;
+                        successModal.hidden = false;
+                    })
+                    .catch(function () {
+                        message.hidden = false;
+                        message.className = 'host-interest-message error';
+                        message.textContent = 'Something went wrong. Please try again in a moment.';
+                    })
+                    .finally(function () {
+                        if (submitBtn) {
+                            submitBtn.disabled = false;
+                            submitBtn.textContent = originalText;
+                        }
+                    });
+            });
+        })();
+    </script>
+    <!-- Vercel Speed Insights: events flush when you switch tab or leave the page (not only on load) -->
+    <script>
+      window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
+    </script>
+    <script defer src="/_vercel/speed-insights/script.js" data-sdkn="@vercel/speed-insights" data-sdkv="2.0.0"></script>
+</body>
+</html>

@@ -299,14 +299,15 @@ body {
 }
 
 .nav-link.active::after {
-    content: '●';
+    content: '';
     position: absolute;
-    bottom: -8px;
+    bottom: -9px;
     left: 50%;
     transform: translateX(-50%);
-    color: var(--primary-color);
-    font-size: 0.5rem;
-    line-height: 1;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--primary-color);
     display: block;
 }
 
@@ -2237,6 +2238,341 @@ body {
     transform: translateY(-1px);
 }
 
+.partner-cta-section {
+    padding: 3.5rem 0 4.25rem;
+    background: #f6f8fc;
+}
+
+.partner-cta-card {
+    max-width: 920px;
+    margin: 0 auto;
+    padding: 2rem 2.25rem;
+    border-radius: 14px;
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    background: linear-gradient(145deg, #ffffff 0%, #f8fbff 100%);
+    box-shadow: 0 10px 28px rgba(15, 23, 42, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.25rem;
+}
+
+.partner-cta-content {
+    max-width: 620px;
+}
+
+.partner-cta-title {
+    margin: 0 0 0.45rem;
+    font-size: 1.65rem;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    color: var(--text-primary);
+}
+
+.partner-cta-text {
+    margin: 0;
+    color: var(--text-secondary);
+    line-height: 1.55;
+}
+
+.partner-cta-button {
+    flex-shrink: 0;
+    display: inline-block;
+    border-radius: 999px;
+    background: var(--primary-color);
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 0.72rem 1.45rem;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.partner-cta-button:hover {
+    background: var(--primary-dark);
+    transform: translateY(-1px);
+}
+
+.partnerships-hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 6.75rem 0 3.5rem;
+    overflow: hidden;
+}
+
+.partnerships-hero-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 65%;
+    z-index: 0;
+}
+
+.partnerships-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(15, 23, 42, 0.28), rgba(15, 23, 42, 0.64));
+    z-index: 1;
+}
+
+.partnerships-hero .container {
+    position: relative;
+    z-index: 2;
+}
+
+.partnerships-hero-content {
+    max-width: 760px;
+    color: #ffffff;
+}
+
+.partnerships-eyebrow {
+    margin: 0 0 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.11em;
+    font-size: 0.76rem;
+    font-weight: 600;
+    opacity: 0.88;
+}
+
+.partnerships-hero-title {
+    margin: 0 0 0.95rem;
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+}
+
+.partnerships-hero-subtitle {
+    margin: 0;
+    font-size: clamp(1rem, 2vw, 1.18rem);
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.partnerships-hero-actions {
+    margin-top: 1.25rem;
+}
+
+.partnerships-hero-cta {
+    display: inline-block;
+    background: #ffffff;
+    color: #0f172a;
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 0.72rem 1.35rem;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.85);
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.partnerships-hero-cta:hover {
+    background: #f5f7fb;
+    transform: translateY(-1px);
+}
+
+.partnerships-categories {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 5.5rem 0 4.25rem;
+    background: #000000;
+}
+
+.partnerships-categories-header {
+    max-width: 780px;
+    margin: 0 auto 2rem;
+    text-align: center;
+}
+
+.partnerships-categories .section-title {
+    color: #ffffff;
+}
+
+.partnerships-categories-subtitle {
+    margin: -1.25rem 0 0;
+    color: rgba(255, 255, 255, 0.78);
+    line-height: 1.6;
+}
+
+.partnerships-categories-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.partnerships-category-card {
+    background: #ffffff;
+    border: 1px solid rgba(15, 23, 42, 0.1);
+    border-radius: 0;
+    padding: 1.35rem;
+    box-shadow: 0 6px 16px rgba(15, 23, 42, 0.05);
+}
+
+.partnerships-category-title {
+    margin: 0 0 0.7rem;
+    color: var(--text-primary);
+    font-size: 1.08rem;
+    line-height: 1.35;
+}
+
+.partnerships-category-list {
+    margin: 0;
+    padding-left: 1.05rem;
+    color: var(--text-secondary);
+    line-height: 1.65;
+}
+
+.partnerships-why-minimal {
+    padding: 4.75rem 0;
+    background: #ffffff;
+}
+
+.partnerships-why-minimal-head {
+    max-width: 760px;
+    margin: 0 auto 1.25rem;
+    text-align: center;
+}
+
+.partnerships-why-minimal-eyebrow {
+    margin: 0 0 0.45rem;
+    text-transform: uppercase;
+    letter-spacing: 0.11em;
+    font-size: 0.74rem;
+    font-weight: 600;
+    color: #64748b;
+}
+
+.partnerships-why-minimal-title {
+    margin: 0;
+    color: #0f172a;
+    font-size: clamp(1.7rem, 2.7vw, 2.4rem);
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+}
+
+.partnerships-why-minimal-list {
+    max-width: 980px;
+    margin: 2rem auto 0;
+    border-top: 1px solid #e2e8f0;
+}
+
+.partnerships-why-minimal-item {
+    display: grid;
+    grid-template-columns: 210px 1fr;
+    gap: 1.25rem;
+    align-items: start;
+    padding: 1.2rem 0;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.partnerships-why-minimal-key {
+    color: #64748b;
+    font-size: 0.78rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.partnerships-why-minimal-text {
+    margin: 0;
+    color: #334155;
+    line-height: 1.65;
+}
+
+.partnerships-how {
+    padding: 4.25rem 0 5rem;
+    background: #f8fafc;
+}
+
+.partnerships-how-shell {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 2rem 2.1rem;
+    border: 1px solid #e2e8f0;
+    background: #ffffff;
+}
+
+.partnerships-how-head {
+    text-align: left;
+}
+
+.partnerships-how-eyebrow {
+    margin: 0;
+    font-size: 0.74rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #64748b;
+    font-weight: 600;
+}
+
+.partnerships-how-title {
+    margin: 0.45rem 0 0;
+    font-size: clamp(1.55rem, 2.4vw, 2.2rem);
+    line-height: 1.2;
+    color: #0f172a;
+    letter-spacing: -0.02em;
+}
+
+.partnerships-how-steps {
+    margin: 1.6rem 0 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: 0.9rem;
+}
+
+.partnerships-how-step {
+    display: grid;
+    grid-template-columns: 56px 1fr;
+    gap: 0.9rem;
+    align-items: start;
+    padding: 0.9rem 0;
+    border-top: 1px solid #e2e8f0;
+}
+
+.partnerships-how-step-index {
+    color: #94a3b8;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    margin-top: 0.1rem;
+}
+
+.partnerships-how-step-title {
+    margin: 0 0 0.2rem;
+    font-size: 1.05rem;
+    color: #0f172a;
+}
+
+.partnerships-how-step-text {
+    margin: 0;
+    color: #475569;
+    line-height: 1.6;
+}
+
+.partnerships-how-cta {
+    margin-top: 1.5rem;
+}
+
+.partnerships-how-button {
+    display: inline-block;
+    background: #0f172a;
+    color: #ffffff;
+    border: 1px solid #0f172a;
+    padding: 0.72rem 1.3rem;
+    font-size: 0.94rem;
+    font-weight: 600;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.partnerships-how-button:hover {
+    background: #020617;
+    transform: translateY(-1px);
+}
+
 @media (max-width: 640px) {
     .join-team-card {
         flex-direction: column;
@@ -2246,6 +2582,55 @@ body {
     }
     .join-team-cta {
         align-self: center;
+    }
+
+    .partner-cta-card {
+        padding: 1.5rem;
+        text-align: center;
+        flex-direction: column;
+    }
+
+    .partner-cta-button {
+        width: 100%;
+        text-align: center;
+    }
+
+    .partnerships-hero {
+        min-height: 100vh;
+        padding: 6.25rem 0 2.5rem;
+    }
+
+    .partnerships-categories {
+        min-height: 100vh;
+        padding: 3.25rem 0;
+    }
+
+    .partnerships-categories-grid {
+        grid-template-columns: 1fr;
+        gap: 0.9rem;
+    }
+
+    .partnerships-why-minimal {
+        padding: 3.2rem 0;
+    }
+
+    .partnerships-why-minimal-item {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+        padding: 1rem 0;
+    }
+
+    .partnerships-how {
+        padding: 2.8rem 0 3.2rem;
+    }
+
+    .partnerships-how-shell {
+        padding: 1.35rem;
+    }
+
+    .partnerships-how-step {
+        grid-template-columns: 1fr;
+        gap: 0.35rem;
     }
 }
 
