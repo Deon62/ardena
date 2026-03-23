@@ -30,7 +30,7 @@
     </script>
     <script defer src="/_vercel/insights/script.js"></script>
 </head>
-<body class="host-interest-page">
+<body class="host-interest-page partner-request-page">
     <main class="host-interest-main">
         <section class="host-interest-shell" aria-labelledby="partner-request-title">
             <a href="/" class="host-interest-brand" aria-label="Go to homepage">
@@ -41,30 +41,47 @@
                 <h1 id="partner-request-title" class="host-interest-title">Partnership request</h1>
                 <p class="host-interest-subtitle">Tell us about your company and how you want to collaborate with ardena. Our team will reach out shortly.</p>
 
-                <form id="partner-request-form" class="host-interest-form" action="https://formspree.io/f/mblpnyjo" method="POST">
+                <form id="partner-request-form" class="host-interest-form partner-wizard-form" action="https://formspree.io/f/mblpnyjo" method="POST">
                     <input type="hidden" name="_subject" value="New partnership request - ardena">
-
-                    <div class="host-interest-field">
-                        <label for="partner-name">Full name</label>
-                        <input type="text" id="partner-name" name="full_name" required placeholder="Your full name" autocomplete="name">
+                    <div class="partner-wizard-progress" aria-hidden="true">
+                        <span id="partner-progress-fill" class="partner-wizard-progress-fill"></span>
                     </div>
 
-                    <div class="host-interest-field">
-                        <label for="partner-email">Work email</label>
+                    <div class="host-interest-field partner-step" data-step="0">
+                        <label for="partner-contact-name">Who is the contact person?</label>
+                        <input type="text" id="partner-contact-name" name="contact_person_name" required placeholder="Contact person's full name" autocomplete="name">
+                    </div>
+
+                    <div class="host-interest-field partner-step" data-step="1" hidden>
+                        <label for="partner-email">What is their work email?</label>
                         <input type="email" id="partner-email" name="email" required placeholder="you@company.com" autocomplete="email">
                     </div>
 
-                    <div class="host-interest-field">
-                        <label for="partner-company">Company name</label>
+                    <div class="host-interest-field partner-step" data-step="2" hidden>
+                        <label for="partner-phone">What phone number should we call?</label>
+                        <input type="tel" id="partner-phone" name="contact_phone" required placeholder="+254 700 000 000" autocomplete="tel">
+                    </div>
+
+                    <div class="host-interest-field partner-step" data-step="3" hidden>
+                        <label for="partner-company">What is the company name?</label>
                         <input type="text" id="partner-company" name="company" required placeholder="Company or organization name" autocomplete="organization">
                     </div>
 
-                    <div class="host-interest-field">
+                    <div class="host-interest-field partner-step" data-step="4" hidden>
+                        <label for="partner-website">Company website (optional)</label>
+                        <input type="url" id="partner-website" name="company_website" placeholder="https://example.com" autocomplete="url">
+                    </div>
+
+                    <div class="host-interest-field partner-step" data-step="5" hidden>
                         <label for="partner-message">How do you want to partner with ardena?</label>
                         <textarea id="partner-message" name="partnership_details" rows="4" required placeholder="Short description of your proposal"></textarea>
                     </div>
 
-                    <button type="submit" class="host-interest-submit">Send partnership request</button>
+                    <div class="partner-wizard-actions">
+                        <button type="button" id="partner-prev-btn" class="partner-wizard-btn partner-wizard-btn--secondary" hidden>Back</button>
+                        <button type="button" id="partner-next-btn" class="partner-wizard-btn partner-wizard-btn--primary">Next</button>
+                        <button type="submit" id="partner-submit-btn" class="host-interest-submit" hidden>Send partnership request</button>
+                    </div>
                     <p id="partner-request-message" class="host-interest-message" role="status" aria-live="polite" hidden></p>
                 </form>
 
@@ -82,19 +99,85 @@
     <script>
         (function () {
             var form = document.getElementById('partner-request-form');
+            var steps = Array.prototype.slice.call(document.querySelectorAll('.partner-step'));
             var message = document.getElementById('partner-request-message');
             var successModal = document.getElementById('partner-request-success');
-            if (!form || !message || !successModal) return;
+            var prevBtn = document.getElementById('partner-prev-btn');
+            var nextBtn = document.getElementById('partner-next-btn');
+            var submitBtn = document.getElementById('partner-submit-btn');
+            var progressFill = document.getElementById('partner-progress-fill');
+            if (!form || !steps.length || !message || !successModal || !prevBtn || !nextBtn || !submitBtn || !progressFill) return;
+
+            var currentStep = 0;
+            var totalSteps = steps.length;
+
+            function getCurrentField() {
+                return steps[currentStep].querySelector('input, textarea');
+            }
+
+            function updateProgress() {
+                var percent = ((currentStep + 1) / totalSteps) * 100;
+                progressFill.style.width = percent + '%';
+            }
+
+            function showStep(index) {
+                currentStep = index;
+                steps.forEach(function (step, i) {
+                    step.hidden = i !== currentStep;
+                });
+                prevBtn.hidden = currentStep === 0;
+                nextBtn.hidden = currentStep === totalSteps - 1;
+                submitBtn.hidden = currentStep !== totalSteps - 1;
+                updateProgress();
+                var field = getCurrentField();
+                if (field) field.focus();
+                message.hidden = true;
+                message.textContent = '';
+            }
+
+            function validateCurrentStep() {
+                var field = getCurrentField();
+                if (!field) return true;
+                if (!field.checkValidity()) {
+                    field.reportValidity();
+                    return false;
+                }
+                return true;
+            }
+
+            nextBtn.addEventListener('click', function () {
+                if (!validateCurrentStep()) return;
+                if (currentStep < totalSteps - 1) {
+                    showStep(currentStep + 1);
+                }
+            });
+
+            prevBtn.addEventListener('click', function () {
+                if (currentStep > 0) {
+                    showStep(currentStep - 1);
+                }
+            });
+
+            form.addEventListener('keydown', function (e) {
+                if (e.key !== 'Enter') return;
+                var field = getCurrentField();
+                if (!field) return;
+                if (field.tagName === 'TEXTAREA') return;
+                if (currentStep < totalSteps - 1) {
+                    e.preventDefault();
+                    nextBtn.click();
+                }
+            });
 
             form.addEventListener('submit', function (e) {
                 e.preventDefault();
-                var submitBtn = form.querySelector('.host-interest-submit');
-                var originalText = submitBtn ? submitBtn.textContent : '';
+                if (!validateCurrentStep()) return;
+                var originalText = submitBtn.textContent;
 
-                if (submitBtn) {
-                    submitBtn.disabled = true;
-                    submitBtn.textContent = 'Sending...';
-                }
+                submitBtn.disabled = true;
+                submitBtn.textContent = 'Sending...';
+                prevBtn.disabled = true;
+                nextBtn.disabled = true;
 
                 fetch(form.action, {
                     method: 'POST',
@@ -115,12 +198,14 @@
                         message.textContent = 'Something went wrong. Please try again in a moment.';
                     })
                     .finally(function () {
-                        if (submitBtn) {
-                            submitBtn.disabled = false;
-                            submitBtn.textContent = originalText;
-                        }
+                        submitBtn.disabled = false;
+                        submitBtn.textContent = originalText;
+                        prevBtn.disabled = false;
+                        nextBtn.disabled = false;
                     });
             });
+
+            showStep(0);
         })();
     </script>
     <!-- Vercel Speed Insights: events flush when you switch tab or leave the page (not only on load) -->
