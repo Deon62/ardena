@@ -475,3 +475,77 @@ document.addEventListener('DOMContentLoaded', () => {
             });
     });
 })();
+
+// Nav dropdown subscribe forms (Resources/Legal)
+(function () {
+    var dropdownInners = document.querySelectorAll('.nav-dropdown-panel .nav-dropdown-inner');
+    if (!dropdownInners.length) return;
+
+    dropdownInners.forEach(function (inner, idx) {
+        if (inner.querySelector('.nav-dropdown-subscribe')) return;
+        var section = document.createElement('aside');
+        section.className = 'nav-dropdown-subscribe';
+        section.innerHTML = ''
+            + '<h4 class="nav-dropdown-subscribe-title">Stay in the loop</h4>'
+            + '<p class="nav-dropdown-subscribe-text">Get product updates and platform news.</p>'
+            + '<form class="nav-dropdown-subscribe-form" data-nav-subscribe-form="' + idx + '" novalidate>'
+            + '  <label class="visually-hidden" for="nav-subscribe-email-' + idx + '">Email address</label>'
+            + '  <input id="nav-subscribe-email-' + idx + '" class="nav-dropdown-subscribe-input" type="email" name="email" placeholder="your@email.com" required autocomplete="email">'
+            + '  <button type="submit" class="nav-dropdown-subscribe-btn">Subscribe</button>'
+            + '  <p class="nav-dropdown-subscribe-message" role="status" aria-live="polite" hidden></p>'
+            + '</form>';
+        inner.appendChild(section);
+    });
+
+    function subscribe(email) {
+        var base = getApiBase();
+        return fetch(base + '/api/v1/subscribe', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+            body: JSON.stringify({ email: email })
+        });
+    }
+
+    document.querySelectorAll('.nav-dropdown-subscribe-form').forEach(function (form) {
+        var input = form.querySelector('.nav-dropdown-subscribe-input');
+        var btn = form.querySelector('.nav-dropdown-subscribe-btn');
+        var messageEl = form.querySelector('.nav-dropdown-subscribe-message');
+        if (!input || !btn || !messageEl) return;
+
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+            var email = input.value.trim();
+            if (!email) {
+                messageEl.textContent = 'Please enter your email.';
+                messageEl.className = 'nav-dropdown-subscribe-message error';
+                messageEl.hidden = false;
+                return;
+            }
+            var originalText = btn.textContent;
+            btn.disabled = true;
+            btn.textContent = 'Subscribing...';
+            messageEl.hidden = true;
+
+            subscribe(email)
+                .then(function (r) {
+                    if (!r.ok) return r.json().then(function (body) { throw new Error(body.message || body.detail || 'Subscribe failed'); });
+                    return r.json().catch(function () { return {}; });
+                })
+                .then(function () {
+                    messageEl.textContent = 'Subscribed successfully.';
+                    messageEl.className = 'nav-dropdown-subscribe-message success';
+                    messageEl.hidden = false;
+                    form.reset();
+                })
+                .catch(function (err) {
+                    messageEl.textContent = err && err.message ? err.message : 'Could not subscribe right now.';
+                    messageEl.className = 'nav-dropdown-subscribe-message error';
+                    messageEl.hidden = false;
+                })
+                .finally(function () {
+                    btn.disabled = false;
+                    btn.textContent = originalText;
+                });
+        });
+    });
+})();
