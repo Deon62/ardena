@@ -467,7 +467,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (submitBtn) submitBtn.disabled = false;
             })
             .catch(function (err) {
-                showMessage(err && err.message ? err.message : 'Something went wrong. Please try again or email ardenacompanies@gmail.com.', 'error');
+                showMessage(err && err.message ? err.message : 'Something went wrong. Please try again or email support@ardena.xyz.', 'error');
                 if (submitBtn) {
                     submitBtn.textContent = originalText;
                     submitBtn.disabled = false;
