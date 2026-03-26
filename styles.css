@@ -6156,26 +6156,42 @@ body {
   }
 
   .hero-traction {
-    gap: 2rem;
-    flex-wrap: wrap;
+    gap: 0.35rem;
+    flex-wrap: nowrap;
     flex-direction: row;
-    margin-top: 2rem;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1.2rem;
     padding-top: 0;
+    padding-bottom: 0.5rem;
     border-top: none;
     width: 100%;
+    overflow-x: hidden;
   }
 
   .traction-stat {
-    flex: 1;
-    min-width: 120px;
+    flex: 1 1 0;
+    min-width: 0;
+    padding: 0 0.2rem;
+    border-left: none;
+    border-right: 1px solid rgba(255, 255, 255, 0.28);
+  }
+
+  .traction-stat + .traction-stat {
+    border-left: none;
+  }
+
+  .traction-stat:last-child {
+    border-right: none;
   }
 
   .traction-number {
-    font-size: 2rem;
+    font-size: 1.45rem;
+    font-weight: 600;
   }
 
   .traction-label {
-    font-size: 0.9rem;
+    font-size: 0.75rem;
   }
 
   .cta-content {
