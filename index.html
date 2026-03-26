@@ -1,388 +1,720 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Preload hero image first so it starts loading before CSS/fonts -->
-    <link rel="preload" as="image" href="/assets/hero.jpg" fetchpriority="high">
-    <meta name="description" content="Find reliable car rentals in Kenya with no hidden fees. Browse verified vehicles, compare prices, and book confidently with Ardena.">
-    <meta name="keywords" content="car rental Kenya, peer-to-peer car rental, car hire Nairobi, vehicle rental Kenya, ardena">
-    <meta name="author" content="ardena">
-    <meta name="robots" content="index, follow">
-    
+    <link
+      rel="preload"
+      as="image"
+      href="/assets/hero.jpg"
+      fetchpriority="high"
+    />
+    <meta
+      name="description"
+      content="Find reliable car rentals in Kenya with no hidden fees. Browse verified vehicles, compare prices, and book confidently with Ardena."
+    />
+    <meta
+      name="keywords"
+      content="car rental Kenya, peer-to-peer car rental, car hire Nairobi, vehicle rental Kenya, ardena"
+    />
+    <meta name="author" content="ardena" />
+    <meta name="robots" content="index, follow" />
+
     <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://ardena.xyz/">
-    <meta property="og:title" content="ardena - Trusted car rental in kenya">
-    <meta property="og:description" content="Find reliable car rentals in Kenya with no hidden fees. Browse verified vehicles, compare prices, and book confidently with Ardena.">
-    <meta property="og:image" content="https://ardena.xyz/assets/logo.jpg">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://ardena.xyz/" />
+    <meta property="og:title" content="ardena - Trusted car rental in kenya" />
+    <meta
+      property="og:description"
+      content="Find reliable car rentals in Kenya with no hidden fees. Browse verified vehicles, compare prices, and book confidently with Ardena."
+    />
+    <meta property="og:image" content="https://ardena.xyz/assets/logo.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
     <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://ardena.xyz/">
-    <meta property="twitter:title" content="ardena - Trusted car rental in kenya">
-    <meta property="twitter:description" content="Find reliable car rentals in Kenya with no hidden fees. Browse verified vehicles, compare prices, and book confidently with Ardena.">
-    <meta property="twitter:image" content="https://ardena.xyz/assets/logo.jpg">
-    
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://ardena.xyz/" />
+    <meta
+      property="twitter:title"
+      content="ardena - Trusted car rental in kenya"
+    />
+    <meta
+      property="twitter:description"
+      content="Find reliable car rentals in Kenya with no hidden fees. Browse verified vehicles, compare prices, and book confidently with Ardena."
+    />
+    <meta
+      property="twitter:image"
+      content="https://ardena.xyz/assets/logo.jpg"
+    />
+
     <title>ardena - Trusted car rental in kenya</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/styles.css?v=20">
-    <link rel="canonical" href="https://ardena.xyz/">
-    <link rel="icon" type="image/jpeg" href="/assets/logo.jpg">
-    
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles.css?v=20" />
+    <link rel="canonical" href="https://ardena.xyz/" />
+    <link rel="icon" type="image/jpeg" href="/assets/logo.jpg" />
+
     <!-- Structured Data -->
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "ardena",
-      "url": "https://ardena.xyz",
-      "logo": "https://ardena.xyz/assets/logo.jpg",
-      "description": "Find reliable car rentals in Kenya with no hidden fees. Browse verified vehicles, compare prices, and book confidently with Ardena.",
-      "sameAs": [
-        "https://x.com/ardenagroupcomp",
-        "https://www.instagram.com/ardenacompanies",
-        "https://reddit.com/r/ardena"
-      ]
-    }
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "ardena",
+        "url": "https://ardena.xyz",
+        "logo": "https://ardena.xyz/assets/logo.jpg",
+        "description": "Find reliable car rentals in Kenya with no hidden fees. Browse verified vehicles, compare prices, and book confidently with Ardena.",
+        "sameAs": [
+          "https://x.com/ardenagroupcomp",
+          "https://www.instagram.com/ardenacompanies",
+          "https://reddit.com/r/ardena"
+        ]
+      }
     </script>
     <!-- Vercel Web Analytics -->
     <script>
-      window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+      window.va =
+        window.va ||
+        function () {
+          (window.vaq = window.vaq || []).push(arguments);
+        };
     </script>
-    <script src="https://analytics.ahrefs.com/analytics.js" data-key="cZmmLfer74Vhq5QnEN/LpA" async></script>
+    <script
+      src="https://analytics.ahrefs.com/analytics.js"
+      data-key="cZmmLfer74Vhq5QnEN/LpA"
+      async
+    ></script>
     <script defer src="/_vercel/insights/script.js"></script>
-    <meta name="google-site-verification" content="76Z5a8OHlM7cH1F9x9Lbq5i3Q2GRRaSwufZaNGFt20M" />
-</head>
-<body>
+    <meta
+      name="google-site-verification"
+      content="76Z5a8OHlM7cH1F9x9Lbq5i3Q2GRRaSwufZaNGFt20M"
+    />
+  </head>
+  <body>
     <header class="header">
-        <nav class="nav">
-            <div class="nav-brand">
-                <a href="/" class="nav-brand-link">
-                    <img src="/assets/ardena.png" alt="ardena" class="nav-logo">
-                </a>
-            </div>
-            <ul class="nav-menu" id="navMenu">
-                <li><a href="/" class="nav-link active">Home</a></li>
-                <li><a href="/host" class="nav-link">Host</a></li>
-                <li><a href="/partnerships" class="nav-link">Partners</a></li>
-                <li class="nav-item-has-dropdown nav-menu-item--desktop-only">
-                    <span class="nav-link nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">Resources</span>
-                    <div class="nav-dropdown-panel" aria-hidden="true">
-                        <div class="nav-dropdown-inner">
-                            <div class="nav-dropdown-grid">
-                                <div class="nav-dropdown-col">
-                                    <span class="nav-dropdown-heading">Company</span>
-                                    <a href="/about" class="nav-dropdown-link">About Us<span class="nav-dropdown-desc">Who we are</span></a>
-                                    <a href="/teams" class="nav-dropdown-link">Team<span class="nav-dropdown-desc">Meet the team</span></a>
-                                    <a href="/careers" class="nav-dropdown-link">Careers<span class="nav-dropdown-desc">Open positions</span></a>
-                                </div>
-                                <div class="nav-dropdown-col">
-                                    <span class="nav-dropdown-heading">Support</span>
-                                    <a href="/help" class="nav-dropdown-link">Help<span class="nav-dropdown-desc">FAQs & support</span></a>
-                                    <a href="mailto:support@ardena.xyz" class="nav-dropdown-link">Contact<span class="nav-dropdown-desc">Get in touch</span></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li class="nav-item-has-dropdown nav-menu-item--desktop-only">
-                    <span class="nav-link nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">Legal</span>
-                    <div class="nav-dropdown-panel" aria-hidden="true">
-                        <div class="nav-dropdown-inner">
-                            <div class="nav-dropdown-grid">
-                                <div class="nav-dropdown-col">
-                                    <span class="nav-dropdown-heading">Legal</span>
-                                    <a href="/terms" class="nav-dropdown-link">Terms & Conditions<span class="nav-dropdown-desc">Usage terms</span></a>
-                                    <a href="/privacy" class="nav-dropdown-link">Privacy Policy<span class="nav-dropdown-desc">Your data</span></a>
-                                    <a href="/legal" class="nav-dropdown-link">Legal<span class="nav-dropdown-desc">Legal information</span></a>
-                                </div>
-                                <div class="nav-dropdown-col">
-                                    <span class="nav-dropdown-heading">Legal</span>
-                                    <a href="/insurance" class="nav-dropdown-link">Insurance & Protection<span class="nav-dropdown-desc">Coverage details</span></a>
-                                    <a href="/delete-account" class="nav-dropdown-link">Delete Account & Data<span class="nav-dropdown-desc">Account removal</span></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li class="nav-menu-item--mobile-only"><a href="/about" class="nav-link">About</a></li>
-                <li class="nav-menu-item--mobile-only"><a href="/teams" class="nav-link">Team</a></li>
-                <li class="nav-menu-item--mobile-only"><a href="/help" class="nav-link">Help</a></li>
-                <li class="nav-menu-item--mobile-only"><a href="/careers" class="nav-link">Careers</a></li>
-                
-            </ul>
-            <div class="nav-end">
-                <div class="nav-cta-wrap nav-menu-item--desktop-only">
-                    <a href="/host-interest" class="nav-link nav-link--cta">Apply to Become a Host</a>
+      <nav class="nav">
+        <div class="nav-brand">
+          <a href="/" class="nav-brand-link">
+            <img src="/assets/ardena.png" alt="ardena" class="nav-logo" />
+          </a>
+        </div>
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="/" class="nav-link active">Home</a></li>
+          <li><a href="/host" class="nav-link">Host</a></li>
+          <li><a href="/partnerships" class="nav-link">Partners</a></li>
+          <li class="nav-item-has-dropdown nav-menu-item--desktop-only">
+            <span
+              class="nav-link nav-dropdown-trigger"
+              aria-haspopup="true"
+              aria-expanded="false"
+              >Resources</span
+            >
+            <div class="nav-dropdown-panel" aria-hidden="true">
+              <div class="nav-dropdown-inner">
+                <div class="nav-dropdown-grid">
+                  <div class="nav-dropdown-col">
+                    <span class="nav-dropdown-heading">Company</span>
+                    <a href="/about" class="nav-dropdown-link"
+                      >About Us<span class="nav-dropdown-desc"
+                        >Who we are</span
+                      ></a
+                    >
+                    <a href="/teams" class="nav-dropdown-link"
+                      >Team<span class="nav-dropdown-desc"
+                        >Meet the team</span
+                      ></a
+                    >
+                    <a href="/careers" class="nav-dropdown-link"
+                      >Careers<span class="nav-dropdown-desc"
+                        >Open positions</span
+                      ></a
+                    >
+                  </div>
+                  <div class="nav-dropdown-col">
+                    <span class="nav-dropdown-heading">Support</span>
+                    <a href="/help" class="nav-dropdown-link"
+                      >Help<span class="nav-dropdown-desc"
+                        >FAQs & support</span
+                      ></a
+                    >
+                    <a
+                      href="mailto:support@ardena.xyz"
+                      class="nav-dropdown-link"
+                      >Contact<span class="nav-dropdown-desc"
+                        >Get in touch</span
+                      ></a
+                    >
+                  </div>
                 </div>
-                <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
+              </div>
             </div>
-        </nav>
+          </li>
+          <li class="nav-item-has-dropdown nav-menu-item--desktop-only">
+            <span
+              class="nav-link nav-dropdown-trigger"
+              aria-haspopup="true"
+              aria-expanded="false"
+              >Legal</span
+            >
+            <div class="nav-dropdown-panel" aria-hidden="true">
+              <div class="nav-dropdown-inner">
+                <div class="nav-dropdown-grid">
+                  <div class="nav-dropdown-col">
+                    <span class="nav-dropdown-heading">Legal</span>
+                    <a href="/terms" class="nav-dropdown-link"
+                      >Terms & Conditions<span class="nav-dropdown-desc"
+                        >Usage terms</span
+                      ></a
+                    >
+                    <a href="/privacy" class="nav-dropdown-link"
+                      >Privacy Policy<span class="nav-dropdown-desc"
+                        >Your data</span
+                      ></a
+                    >
+                    <a href="/legal" class="nav-dropdown-link"
+                      >Legal<span class="nav-dropdown-desc"
+                        >Legal information</span
+                      ></a
+                    >
+                  </div>
+                  <div class="nav-dropdown-col">
+                    <span class="nav-dropdown-heading">Legal</span>
+                    <a href="/insurance" class="nav-dropdown-link"
+                      >Insurance & Protection<span class="nav-dropdown-desc"
+                        >Coverage details</span
+                      ></a
+                    >
+                    <a href="/delete-account" class="nav-dropdown-link"
+                      >Delete Account & Data<span class="nav-dropdown-desc"
+                        >Account removal</span
+                      ></a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="nav-menu-item--mobile-only">
+            <a href="/about" class="nav-link">About</a>
+          </li>
+          <li class="nav-menu-item--mobile-only">
+            <a href="/teams" class="nav-link">Team</a>
+          </li>
+          <li class="nav-menu-item--mobile-only">
+            <a href="/help" class="nav-link">Help</a>
+          </li>
+          <li class="nav-menu-item--mobile-only">
+            <a href="/careers" class="nav-link">Careers</a>
+          </li>
+        </ul>
+        <div class="nav-end">
+          <div class="nav-cta-wrap nav-menu-item--desktop-only">
+            <a href="/host-interest" class="nav-link nav-link--cta"
+              >Apply to Become a Host</a
+            >
+          </div>
+          <button
+            class="nav-toggle"
+            id="navToggle"
+            aria-label="Toggle navigation"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </nav>
     </header>
 
     <main>
-        <!-- Hero Section -->
-        <section class="hero">
-            <picture class="hero-picture">
-                <img src="/assets/hero.jpg" alt="Hero background" class="hero-image" width="1920" height="1080" sizes="100vw" loading="eager" fetchpriority="high" decoding="async">
-            </picture>
-            <div class="hero-overlay"></div>
-            <div class="container">
-                <div class="hero-content">
-                    <h1 class="hero-title">Own your start</h1>
-                    <p class="hero-subtitle">Rent cars easily from verified owners across Kenya.<br>Access reliable vehicles, transparent pricing, and seamless booking, all in one place.</p>
-                    <div class="hero-buttons">
-                        <a href="/host-interest" class="btn btn-hero-cta">Apply to Become a Host</a>
-                        <a href="https://youtube.com/shorts/lqHPeZJBu0k?si=rTcC75bDtVffWtM5" class="btn btn-hero-cta--demo" target="_blank" rel="noopener noreferrer">Watch host app demo</a>
-                    </div>
-                </div>
+      <!-- Hero Section -->
+      <section class="hero">
+        <picture class="hero-picture">
+          <img
+            src="/assets/hero.jpg"
+            alt="Hero background"
+            class="hero-image"
+            width="1920"
+            height="1080"
+            sizes="100vw"
+            loading="eager"
+            fetchpriority="high"
+            decoding="async"
+          />
+        </picture>
+        <div class="hero-overlay"></div>
+        <div class="container">
+          <div class="hero-content">
+            <h1 class="hero-title">Own your start</h1>
+            <p class="hero-subtitle">
+              Rent cars easily from verified owners across Kenya.<br />Access
+              reliable vehicles, transparent pricing, and seamless booking, all
+              in one place.
+            </p>
+            <div class="hero-buttons">
+              <a href="/host-interest" class="btn btn-hero-cta"
+                >Apply to Become a Host</a
+              >
+              <a
+                href="https://youtube.com/shorts/lqHPeZJBu0k?si=rTcC75bDtVffWtM5"
+                class="btn btn-hero-cta--demo"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Watch host app demo</a
+              >
             </div>
-        </section>
+          </div>
+          <div class="hero-traction">
+            <div class="traction-stat">
+              <div class="traction-number">13+</div>
+              <div class="traction-label">Cars Ready for Listing</div>
+            </div>
+            <div class="traction-stat">
+              <div class="traction-number">2+</div>
+              <div class="traction-label">Active Hosts</div>
+            </div>
+            <div class="traction-stat">
+              <div class="traction-number">2+</div>
+              <div class="traction-label">Car Yards</div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-        <!-- Features Section -->
-        <section class="features">
-            <div class="container">
-                <div class="features-inner">
-                    <div class="features-intro">
-                        <p class="features-label">▪ WHY CHOOSE ARDENA?</p>
-                        <h2 class="features-heading">Why Choose ardena?</h2>
-                        <p class="features-description">ardena connects you with verified car owners and renters across Kenya. No hidden fees, no surprises—just simple, honest car rental with premium vehicles and support when you need it.</p>
-                    </div>
-                    <div class="features-list">
-                        <div class="feature-card">
-                            <div class="feature-number">01</div>
-                            <div class="feature-content">
-                                <h3 class="feature-title">Verified Car Owners</h3>
-                                <p class="feature-description">Connect with trusted, verified car owners across Kenya. All vehicles are thoroughly vetted for safety and quality.</p>
-                            </div>
-                        </div>
-                        <div class="feature-card">
-                            <div class="feature-number">02</div>
-                            <div class="feature-content">
-                                <h3 class="feature-title">Secure Payments</h3>
-                                <p class="feature-description">Enjoy peace of mind with our secure payment system. Multiple payment options including M-Pesa, Visa, and Mastercard.</p>
-                            </div>
-                        </div>
-                        <div class="feature-card">
-                            <div class="feature-number">03</div>
-                            <div class="feature-content">
-                                <h3 class="feature-title">24/7 Support</h3>
-                                <p class="feature-description">Round-the-clock customer support to assist you with bookings, inquiries, and any issues you may encounter.</p>
-                            </div>
-                        </div>
-                        <div class="feature-card">
-                            <div class="feature-number">04</div>
-                            <div class="feature-content">
-                                <h3 class="feature-title">Premium Vehicles</h3>
-                                <p class="feature-description">Access a wide range of premium vehicles from economy to luxury, all maintained to the highest standards.</p>
-                            </div>
-                        </div>
-                        <div class="feature-card">
-                            <div class="feature-number">05</div>
-                            <div class="feature-content">
-                                <h3 class="feature-title">Discover Destinations</h3>
-                                <p class="feature-description">Explore amazing destinations, events, and automotive businesses across Kenya with our discovery features.</p>
-                            </div>
-                        </div>
-                        <div class="feature-card">
-                            <div class="feature-number">06</div>
-                            <div class="feature-content">
-                                <h3 class="feature-title">Professional Services</h3>
-                                <p class="feature-description">Access chauffeurs, car detailing, roadside assistance, moving services, and more.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+      <!-- Features Section -->
+      <section class="features">
+        <div class="container">
+          <div class="features-inner">
+            <div class="features-intro">
+              <p class="features-label">▪ WHY CHOOSE ARDENA?</p>
+              <h2 class="features-heading">Why Choose ardena?</h2>
+              <p class="features-description">
+                ardena connects you with verified car owners and renters across
+                Kenya. No hidden fees, no surprises—just simple, honest car
+                rental with premium vehicles and support when you need it.
+              </p>
             </div>
-        </section>
+            <div class="features-list">
+              <div class="feature-card">
+                <div class="feature-number">01</div>
+                <div class="feature-content">
+                  <h3 class="feature-title">Verified Car Owners</h3>
+                  <p class="feature-description">
+                    Connect with trusted, verified car owners across Kenya. All
+                    vehicles are thoroughly vetted for safety and quality.
+                  </p>
+                </div>
+              </div>
+              <div class="feature-card">
+                <div class="feature-number">02</div>
+                <div class="feature-content">
+                  <h3 class="feature-title">Secure Payments</h3>
+                  <p class="feature-description">
+                    Enjoy peace of mind with our secure payment system. Multiple
+                    payment options including M-Pesa, Visa, and Mastercard.
+                  </p>
+                </div>
+              </div>
+              <div class="feature-card">
+                <div class="feature-number">03</div>
+                <div class="feature-content">
+                  <h3 class="feature-title">24/7 Support</h3>
+                  <p class="feature-description">
+                    Round-the-clock customer support to assist you with
+                    bookings, inquiries, and any issues you may encounter.
+                  </p>
+                </div>
+              </div>
+              <div class="feature-card">
+                <div class="feature-number">04</div>
+                <div class="feature-content">
+                  <h3 class="feature-title">Premium Vehicles</h3>
+                  <p class="feature-description">
+                    Access a wide range of premium vehicles from economy to
+                    luxury, all maintained to the highest standards.
+                  </p>
+                </div>
+              </div>
+              <div class="feature-card">
+                <div class="feature-number">05</div>
+                <div class="feature-content">
+                  <h3 class="feature-title">Discover Destinations</h3>
+                  <p class="feature-description">
+                    Explore amazing destinations, events, and automotive
+                    businesses across Kenya with our discovery features.
+                  </p>
+                </div>
+              </div>
+              <div class="feature-card">
+                <div class="feature-number">06</div>
+                <div class="feature-content">
+                  <h3 class="feature-title">Professional Services</h3>
+                  <p class="feature-description">
+                    Access chauffeurs, car detailing, roadside assistance,
+                    moving services, and more.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-        <!-- Safety & Trust -->
-        <section class="safety-trust">
-            <div class="container">
-                <div class="safety-inner">
-                    <div class="safety-list">
-                        <div class="trust-item">
-                            <span class="trust-marker">01</span>
-                            <div class="trust-content">
-                                <h3 class="trust-title">Insurance Coverage</h3>
-                                <p class="trust-description">Every rental includes comprehensive insurance. You're protected against accidents, theft, and damage—simple, straightforward, no hidden terms.</p>
-                            </div>
-                        </div>
-                        <div class="trust-item">
-                            <span class="trust-marker">02</span>
-                            <div class="trust-content">
-                                <h3 class="trust-title">Secure Payments</h3>
-                                <p class="trust-description">All transactions are encrypted and secure. M-Pesa, Visa, and Mastercard accepted. Your payment details are never stored on our servers.</p>
-                            </div>
-                        </div>
-                        <div class="trust-item">
-                            <span class="trust-marker">03</span>
-                            <div class="trust-content">
-                                <h3 class="trust-title">ID & License Verification</h3>
-                                <p class="trust-description">Every user is verified before they can rent or list. We check government-issued IDs and valid driver's licenses so everyone on the platform is legitimate.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="safety-intro">
-                        <p class="safety-label">▪ SAFETY & TRUST</p>
-                        <h2 class="safety-heading">Safety & Trust</h2>
-                        <p class="safety-description">We take your security seriously. Every rental is backed by clear policies and verified users—so you can focus on the road.</p>
-                    </div>
+      <!-- Safety & Trust -->
+      <section class="safety-trust">
+        <div class="container">
+          <div class="safety-inner">
+            <div class="safety-list">
+              <div class="trust-item">
+                <span class="trust-marker">01</span>
+                <div class="trust-content">
+                  <h3 class="trust-title">Insurance Coverage</h3>
+                  <p class="trust-description">
+                    Every rental includes comprehensive insurance. You're
+                    protected against accidents, theft, and damage—simple,
+                    straightforward, no hidden terms.
+                  </p>
                 </div>
+              </div>
+              <div class="trust-item">
+                <span class="trust-marker">02</span>
+                <div class="trust-content">
+                  <h3 class="trust-title">Secure Payments</h3>
+                  <p class="trust-description">
+                    All transactions are encrypted and secure. M-Pesa, Visa, and
+                    Mastercard accepted. Your payment details are never stored
+                    on our servers.
+                  </p>
+                </div>
+              </div>
+              <div class="trust-item">
+                <span class="trust-marker">03</span>
+                <div class="trust-content">
+                  <h3 class="trust-title">ID & License Verification</h3>
+                  <p class="trust-description">
+                    Every user is verified before they can rent or list. We
+                    check government-issued IDs and valid driver's licenses so
+                    everyone on the platform is legitimate.
+                  </p>
+                </div>
+              </div>
             </div>
-        </section>
+            <div class="safety-intro">
+              <p class="safety-label">▪ SAFETY & TRUST</p>
+              <h2 class="safety-heading">Safety & Trust</h2>
+              <p class="safety-description">
+                We take your security seriously. Every rental is backed by clear
+                policies and verified users—so you can focus on the road.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
 
-        <!-- FAQ Section -->
-        <section class="faq-section">
-            <div class="container">
-                <h2 class="section-title">Frequently Asked Questions</h2>
-                <div class="faq-list">
-                    <div class="faq-item">
-                        <button class="faq-question" aria-expanded="false">
-                            How do I rent a car on ardena?
-                            <span class="faq-icon">+</span>
-                        </button>
-                        <div class="faq-answer">
-                            <p>Download the ardena client app, create an account, and browse available vehicles. Once you find a car you like, select your dates, confirm the booking, and pay securely through the app. You'll coordinate pickup directly with the host.</p>
-                        </div>
-                    </div>
-                    <div class="faq-item">
-                        <button class="faq-question" aria-expanded="false">
-                            Is insurance included?
-                            <span class="faq-icon">+</span>
-                        </button>
-                        <div class="faq-answer">
-                            <p>Yes. All rentals include comprehensive insurance coverage with third-party liability, collision damage, and theft protection. There's a standard excess of KSh 50,000 that the renter is responsible for in case of damage or theft.</p>
-                        </div>
-                    </div>
-                    <div class="faq-item">
-                        <button class="faq-question" aria-expanded="false">
-                            How do I list my car as a host?
-                            <span class="faq-icon">+</span>
-                        </button>
-                        <div class="faq-answer">
-                            <p>Download the ardena host app, complete verification with your ID and vehicle documents, add your car details and photos, set your pricing and availability. Once approved, your car will be visible to renters.</p>
-                        </div>
-                    </div>
-                    <div class="faq-item">
-                        <button class="faq-question" aria-expanded="false">
-                            What payment methods do you accept?
-                            <span class="faq-icon">+</span>
-                        </button>
-                        <div class="faq-answer">
-                            <p>We accept M-Pesa, Visa, and Mastercard. All payments are processed securely through the app, and hosts receive their earnings within 48 hours of rental completion.</p>
-                        </div>
-                    </div>
-                    <div class="faq-item">
-                        <button class="faq-question" aria-expanded="false">
-                            What if something goes wrong during my rental?
-                            <span class="faq-icon">+</span>
-                        </button>
-                        <div class="faq-answer">
-                            <p>Our support team is available 24/7. Report any issues through the app or call us directly. For accidents, contact police first, then report to ardena within 24 hours with a police abstract for insurance claims.</p>
-                        </div>
-                    </div>
-                </div>
+      <!-- FAQ Section -->
+      <section class="faq-section">
+        <div class="container">
+          <h2 class="section-title">Frequently Asked Questions</h2>
+          <div class="faq-list">
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                How do I rent a car on ardena?
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                <p>
+                  Download the ardena client app, create an account, and browse
+                  available vehicles. Once you find a car you like, select your
+                  dates, confirm the booking, and pay securely through the app.
+                  You'll coordinate pickup directly with the host.
+                </p>
+              </div>
             </div>
-        </section>
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                Is insurance included?
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                <p>
+                  Yes. All rentals include comprehensive insurance coverage with
+                  third-party liability, collision damage, and theft protection.
+                  There's a standard excess of KSh 50,000 that the renter is
+                  responsible for in case of damage or theft.
+                </p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                How do I list my car as a host?
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                <p>
+                  Download the ardena host app, complete verification with your
+                  ID and vehicle documents, add your car details and photos, set
+                  your pricing and availability. Once approved, your car will be
+                  visible to renters.
+                </p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                What payment methods do you accept?
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                <p>
+                  We accept M-Pesa, Visa, and Mastercard. All payments are
+                  processed securely through the app, and hosts receive their
+                  earnings within 48 hours of rental completion.
+                </p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                What if something goes wrong during my rental?
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                <p>
+                  Our support team is available 24/7. Report any issues through
+                  the app or call us directly. For accidents, contact police
+                  first, then report to ardena within 24 hours with a police
+                  abstract for insurance claims.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-        <section class="partner-cta-section" aria-labelledby="partner-cta-title">
-            <div class="container">
-                <div class="partner-cta-card">
-                    <div class="partner-cta-content">
-                        <h2 id="partner-cta-title" class="partner-cta-title">Partner with ardena</h2>
-                        <p class="partner-cta-text">Work with us on fleet partnerships, insurance programs, financing, and growth collaborations across Kenya.</p>
-                    </div>
-                    <a href="/partnerships" class="partner-cta-button">Become our partner</a>
-                </div>
+      <section class="partner-cta-section" aria-labelledby="partner-cta-title">
+        <div class="container">
+          <div class="partner-cta-card">
+            <div class="partner-cta-content">
+              <h2 id="partner-cta-title" class="partner-cta-title">
+                Partner with ardena
+              </h2>
+              <p class="partner-cta-text">
+                Work with us on fleet partnerships, insurance programs,
+                financing, and growth collaborations across Kenya.
+              </p>
             </div>
-        </section>
+            <a href="/partnerships" class="partner-cta-button"
+              >Become our partner</a
+            >
+          </div>
+        </div>
+      </section>
     </main>
 
     <footer class="footer">
-        <div class="footer-wrapper">
-            <div class="footer-top">
-                    <a href="/" class="footer-brand">
-                        <img src="/assets/ardena.png" alt="ardena" class="footer-logo">
-                    </a>
-                    <p class="footer-tagline">Trusted car rental in Kenya. Connect with verified owners and renters.</p>
-                </div>
-                <hr class="footer-divider">
-                <div class="footer-main">
-                    <div class="footer-col">
-                        <h4 class="footer-col-title">Company</h4>
-                        <ul class="footer-links">
-                            <li><a href="/about">About Us</a></li>
-                            <li><a href="/teams">Team</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-col">
-                        <h4 class="footer-col-title">Navigation</h4>
-                        <ul class="footer-links">
-                            <li><a href="/">Home</a></li>
-                            <li><a href="/host">Host</a></li>
-                            <li><a href="/help">Help</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-col">
-                        <h4 class="footer-col-title">Contact</h4>
-                        <ul class="footer-contact">
-                            <li><a href="mailto:support@ardena.xyz"><span class="footer-contact-icon" aria-hidden="true">✉</span> support@ardena.xyz</a></li>
-                            <li><span class="footer-contact-icon" aria-hidden="true">☎</span> +254 702 248 984</li>
-                            <li><span class="footer-contact-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" width="1em" height="1em" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></span> Nakuru, Kenya</li>
-                        </ul>
-                    </div>
-                    <div class="footer-social-block">
-                        <div class="footer-social">
-                            <a href="https://x.com/ardenaAfrica" class="footer-social-icon" target="_blank" rel="noopener noreferrer" aria-label="X"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
-                            <a href="https://www.linkedin.com/company/ardena-group/" class="footer-social-icon" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
-                            <a href="https://www.instagram.com/ardena_carrental?igsh=MTE4YmlkdDg4em82MQ==" class="footer-social-icon" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
-                            <a href="https://vm.tiktok.com/ZS9RaPxsdJxNK-LfM8K/" class="footer-social-icon" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.67 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/></svg></a>
-                            <a href="https://wa.me/254702248984" class="footer-social-icon" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.52 3.48A11.8 11.8 0 0 0 12.04 0C5.5 0 .17 5.32.17 11.86c0 2.09.55 4.14 1.6 5.95L0 24l6.35-1.66a11.84 11.84 0 0 0 5.67 1.45h.01c6.54 0 11.87-5.33 11.87-11.87 0-3.17-1.24-6.16-3.38-8.44zm-8.49 18.3h-.01a9.9 9.9 0 0 1-5.05-1.39l-.36-.22-3.77.99 1.01-3.67-.23-.38a9.87 9.87 0 0 1-1.51-5.25c0-5.46 4.44-9.9 9.9-9.9 2.64 0 5.11 1.03 6.98 2.9a9.82 9.82 0 0 1 2.9 6.99c0 5.46-4.45 9.9-9.9 9.9zm5.43-7.42c-.3-.15-1.77-.87-2.05-.97-.27-.1-.47-.15-.66.15-.2.3-.76.97-.94 1.16-.17.2-.35.22-.64.08-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.74-1.64-2.03-.17-.3-.02-.46.13-.61.13-.13.3-.35.44-.52.15-.18.2-.3.3-.5.1-.2.05-.38-.02-.53-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.66-.51h-.56c-.2 0-.52.07-.79.38-.27.3-1.04 1.01-1.04 2.47s1.06 2.86 1.2 3.06c.15.2 2.08 3.18 5.04 4.46.71.3 1.27.49 1.7.62.71.22 1.35.19 1.86.11.57-.09 1.77-.72 2.02-1.41.25-.7.25-1.3.18-1.42-.08-.12-.27-.2-.57-.35z"/></svg></a>
-                        </div>
-                        <div class="footer-store-badges">
-                            <a href="https://apps.apple.com/app/ardena" class="footer-store-badge footer-store-badge--appstore" target="_blank" rel="noopener noreferrer" aria-label="Download on the App Store">
-                                <img src="/assets/appstore.png" alt="" class="footer-store-badge-img" width="135" height="40" decoding="async">
-                            </a>
-                            <a href="https://play.google.com/store/apps/details?id=xyz.ardena" class="footer-store-badge" target="_blank" rel="noopener noreferrer" aria-label="Get it on Google Play">
-                                <img src="/assets/play.png" alt="" class="footer-store-badge-img" width="135" height="40" decoding="async">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <hr class="footer-divider">
-                <div class="footer-bottom">
-                    <p class="footer-copyright">&copy; 2026 ardena. All rights reserved.</p>
-                    <div class="footer-legal">
-                        <a href="/terms">Terms & Conditions</a>
-                        <a href="/privacy">Privacy Policy</a>
-                        <a href="/legal">Legal</a>
-                        <a href="/insurance">Insurance & Protection</a>
-                        <a href="/delete-account">Delete Account & Data</a>
-                    </div>
-                </div>
+      <div class="footer-wrapper">
+        <div class="footer-top">
+          <a href="/" class="footer-brand">
+            <img src="/assets/ardena.png" alt="ardena" class="footer-logo" />
+          </a>
+          <p class="footer-tagline">
+            Trusted car rental in Kenya. Connect with verified owners and
+            renters.
+          </p>
         </div>
+        <hr class="footer-divider" />
+        <div class="footer-main">
+          <div class="footer-col">
+            <h4 class="footer-col-title">Company</h4>
+            <ul class="footer-links">
+              <li><a href="/about">About Us</a></li>
+              <li><a href="/teams">Team</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4 class="footer-col-title">Navigation</h4>
+            <ul class="footer-links">
+              <li><a href="/">Home</a></li>
+              <li><a href="/host">Host</a></li>
+              <li><a href="/help">Help</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4 class="footer-col-title">Contact</h4>
+            <ul class="footer-contact">
+              <li>
+                <a href="mailto:support@ardena.xyz"
+                  ><span class="footer-contact-icon" aria-hidden="true">✉</span>
+                  support@ardena.xyz</a
+                >
+              </li>
+              <li>
+                <span class="footer-contact-icon" aria-hidden="true">☎</span>
+                +254 702 248 984
+              </li>
+              <li>
+                <span class="footer-contact-icon" aria-hidden="true"
+                  ><svg
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    width="1em"
+                    height="1em"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"
+                    /></svg
+                ></span>
+                Nakuru, Kenya
+              </li>
+            </ul>
+          </div>
+          <div class="footer-social-block">
+            <div class="footer-social">
+              <a
+                href="https://x.com/ardenaAfrica"
+                class="footer-social-icon"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="X"
+                ><svg viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"
+                  /></svg
+              ></a>
+              <a
+                href="https://www.linkedin.com/company/ardena-group/"
+                class="footer-social-icon"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+                ><svg viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+                  /></svg
+              ></a>
+              <a
+                href="https://www.instagram.com/ardena_carrental?igsh=MTE4YmlkdDg4em82MQ=="
+                class="footer-social-icon"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+                ><svg viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+                  /></svg
+              ></a>
+              <a
+                href="https://vm.tiktok.com/ZS9RaPxsdJxNK-LfM8K/"
+                class="footer-social-icon"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="TikTok"
+                ><svg viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.67 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"
+                  /></svg
+              ></a>
+              <a
+                href="https://wa.me/254702248984"
+                class="footer-social-icon"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="WhatsApp"
+                ><svg viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M20.52 3.48A11.8 11.8 0 0 0 12.04 0C5.5 0 .17 5.32.17 11.86c0 2.09.55 4.14 1.6 5.95L0 24l6.35-1.66a11.84 11.84 0 0 0 5.67 1.45h.01c6.54 0 11.87-5.33 11.87-11.87 0-3.17-1.24-6.16-3.38-8.44zm-8.49 18.3h-.01a9.9 9.9 0 0 1-5.05-1.39l-.36-.22-3.77.99 1.01-3.67-.23-.38a9.87 9.87 0 0 1-1.51-5.25c0-5.46 4.44-9.9 9.9-9.9 2.64 0 5.11 1.03 6.98 2.9a9.82 9.82 0 0 1 2.9 6.99c0 5.46-4.45 9.9-9.9 9.9zm5.43-7.42c-.3-.15-1.77-.87-2.05-.97-.27-.1-.47-.15-.66.15-.2.3-.76.97-.94 1.16-.17.2-.35.22-.64.08-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.74-1.64-2.03-.17-.3-.02-.46.13-.61.13-.13.3-.35.44-.52.15-.18.2-.3.3-.5.1-.2.05-.38-.02-.53-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.66-.51h-.56c-.2 0-.52.07-.79.38-.27.3-1.04 1.01-1.04 2.47s1.06 2.86 1.2 3.06c.15.2 2.08 3.18 5.04 4.46.71.3 1.27.49 1.7.62.71.22 1.35.19 1.86.11.57-.09 1.77-.72 2.02-1.41.25-.7.25-1.3.18-1.42-.08-.12-.27-.2-.57-.35z"
+                  /></svg
+              ></a>
+            </div>
+            <div class="footer-store-badges">
+              <a
+                href="https://apps.apple.com/app/ardena"
+                class="footer-store-badge footer-store-badge--appstore"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Download on the App Store"
+              >
+                <img
+                  src="/assets/appstore.png"
+                  alt=""
+                  class="footer-store-badge-img"
+                  width="135"
+                  height="40"
+                  decoding="async"
+                />
+              </a>
+              <a
+                href="https://play.google.com/store/apps/details?id=xyz.ardena"
+                class="footer-store-badge"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Get it on Google Play"
+              >
+                <img
+                  src="/assets/play.png"
+                  alt=""
+                  class="footer-store-badge-img"
+                  width="135"
+                  height="40"
+                  decoding="async"
+                />
+              </a>
+            </div>
+          </div>
+        </div>
+        <hr class="footer-divider" />
+        <div class="footer-bottom">
+          <p class="footer-copyright">
+            &copy; 2026 ardena. All rights reserved.
+          </p>
+          <div class="footer-legal">
+            <a href="/terms">Terms & Conditions</a>
+            <a href="/privacy">Privacy Policy</a>
+            <a href="/legal">Legal</a>
+            <a href="/insurance">Insurance & Protection</a>
+            <a href="/delete-account">Delete Account & Data</a>
+          </div>
+        </div>
+      </div>
     </footer>
 
-    <a href="https://linktr.ee/ardenaPlatforms" class="linktree-float" target="_blank" rel="noopener noreferrer" aria-label="Ardena platforms on Linktree">
-        <img src="/assets/linktreelogo.png" alt="" class="linktree-float-icon" width="24" height="24" decoding="async" fetchpriority="low">
-        <span class="linktree-float-text">Linktree</span>
+    <a
+      href="https://linktr.ee/ardenaPlatforms"
+      class="linktree-float"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Ardena platforms on Linktree"
+    >
+      <img
+        src="/assets/linktreelogo.png"
+        alt=""
+        class="linktree-float-icon"
+        width="24"
+        height="24"
+        decoding="async"
+        fetchpriority="low"
+      />
+      <span class="linktree-float-text">Linktree</span>
     </a>
 
     <!-- Vercel Speed Insights: events flush when you switch tab or leave the page (not only on load) -->
     <script>
-      window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
+      window.si =
+        window.si ||
+        function () {
+          (window.siq = window.siq || []).push(arguments);
+        };
     </script>
-    <script defer src="/_vercel/speed-insights/script.js" data-sdkn="@vercel/speed-insights" data-sdkv="2.0.0"></script>
+    <script
+      defer
+      src="/_vercel/speed-insights/script.js"
+      data-sdkn="@vercel/speed-insights"
+      data-sdkv="2.0.0"
+    ></script>
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
