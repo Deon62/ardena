@@ -39,6 +39,7 @@
 .delete-hero,
 .insurance-hero,
 .legal-hub-hero,
+.privacy-hero,
 .terms-hero,
 .page-header,
 .apps-hero {
@@ -4776,6 +4777,79 @@ body {
   color: #57534e;
 }
 
+/* Privacy Policy – privacy.jpg right; cool dark fade on left (industrial grey) */
+.privacy-hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 0;
+  padding-top: 70px;
+  padding-bottom: 0;
+  box-sizing: border-box;
+  background-color: #2a2826;
+  background-image: url("/assets/privacy.jpg");
+  background-size: cover;
+  background-position: 80% center;
+  background-repeat: no-repeat;
+  text-align: left;
+}
+
+.privacy-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(
+    90deg,
+    rgba(28, 26, 24, 0.97) 0%,
+    rgba(28, 26, 24, 0.9) 18%,
+    rgba(28, 26, 24, 0.52) 40%,
+    rgba(28, 26, 24, 0.16) 54%,
+    transparent 70%
+  );
+}
+
+.privacy-hero-container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  text-align: left;
+}
+
+.privacy-hero-inner {
+  max-width: 28rem;
+  margin: 0;
+  padding: 0.5rem 0;
+  text-align: left;
+}
+
+.privacy-hero-title {
+  margin: 0 0 0.85rem;
+  font-size: 2.125rem;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+  color: #ffffff;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.35);
+}
+
+.privacy-hero-lead {
+  margin: 0;
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.92);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
 /* Team page hero – pure cream background, no SVG, no boxes/grid */
 .team-hero {
   min-height: 100vh;
@@ -6933,7 +7007,8 @@ body {
 
   .delete-hero,
   .insurance-hero,
-  .legal-hub-hero {
+  .legal-hub-hero,
+  .privacy-hero {
     min-height: 100vh;
     padding-top: 100px;
     padding-bottom: 0;
@@ -6971,6 +7046,7 @@ body {
   .delete-hero .delete-hero-container,
   .insurance-hero .insurance-hero-container,
   .legal-hub-hero .legal-hub-hero-container,
+  .privacy-hero .privacy-hero-container,
   .terms-hero .terms-hero-container {
     width: 100%;
     box-sizing: border-box;
@@ -7084,6 +7160,34 @@ body {
   }
 
   .legal-hub-hero-lead {
+    font-size: 1rem;
+  }
+
+  .privacy-hero {
+    background-position: 72% center;
+  }
+
+  .privacy-hero::after {
+    background: linear-gradient(
+      90deg,
+      rgba(28, 26, 24, 0.98) 0%,
+      rgba(28, 26, 24, 0.92) 30%,
+      rgba(28, 26, 24, 0.58) 52%,
+      rgba(28, 26, 24, 0.22) 70%,
+      transparent 88%
+    );
+  }
+
+  .privacy-hero-inner {
+    max-width: 100%;
+    padding: 0.35rem 0;
+  }
+
+  .privacy-hero-title {
+    font-size: 1.65rem;
+  }
+
+  .privacy-hero-lead {
     font-size: 1rem;
   }
 
@@ -7252,6 +7356,7 @@ body {
   .delete-hero,
   .insurance-hero,
   .legal-hub-hero,
+  .privacy-hero,
   .terms-hero,
   .page-header,
   .problems-section,
