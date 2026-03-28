@@ -1599,10 +1599,10 @@ body {
   line-height: 1.3;
 }
 
-/* Homepage: county / city SEO links */
+/* Homepage: county / city cards (same imagery + row behavior as /location) */
 .home-locations-section {
   padding: 4rem 0;
-  background: #ffffff;
+  background: var(--background-light);
 }
 
 @media (min-width: 900px) {
@@ -1616,40 +1616,8 @@ body {
   margin: 0 auto;
 }
 
-.home-locations-grid {
-  list-style: none;
-  padding: 0;
-  margin: 2rem 0 0;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
-}
-
-@media (min-width: 640px) {
-  .home-locations-grid {
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1.25rem;
-  }
-}
-
-.home-locations-grid a {
-  display: block;
-  padding: 1rem 1.15rem;
-  border-radius: 12px;
-  border: 1px solid var(--border-color);
-  background: var(--background-light);
-  color: var(--text-primary);
-  font-weight: 600;
-  font-size: 0.95rem;
-  text-decoration: none;
-  text-align: center;
-  transition: border-color 0.2s ease, background 0.2s ease, color 0.2s ease;
-}
-
-.home-locations-grid a:hover {
-  border-color: var(--primary-color);
-  background: rgba(34, 197, 94, 0.06);
-  color: var(--primary-dark);
+.home-locations-inner .location-launch-row {
+  margin-top: 2rem;
 }
 
 .features .feature-description {
