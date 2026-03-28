@@ -3,7 +3,9 @@
   "private": true,
   "scripts": {
     "optimize:hero": "node scripts/optimize-hero-image.js",
-    "optimize:images": "node scripts/optimize-images.js"
+    "optimize:images": "node scripts/optimize-images.js",
+    "footer:locations": "node scripts/add-location-nav.js",
+    "footer:locations:dry": "node scripts/add-location-nav.js --dry-run --verbose"
   },
   "devDependencies": {
     "sharp": "^0.33.5"
