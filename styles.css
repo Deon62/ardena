@@ -5165,28 +5165,13 @@ body {
   margin-bottom: 0.5rem;
 }
 
-/* Right section image block – tilted “card” effect */
+/* Right section – clean image, no decorative backdrop */
 .delete-right-image-block {
-  position: relative;
   max-width: 420px;
 }
 
-.delete-right-shape {
-  position: absolute;
-  top: 12px;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 122, 255, 0.12);
-  border-radius: 12px;
-  transform: translate(-12px, 12px);
-  z-index: 0;
-}
-
 .delete-right-image {
-  position: relative;
-  z-index: 1;
-  border-radius: 12px;
+  border-radius: 8px;
   overflow: hidden;
 }
 
@@ -5194,7 +5179,7 @@ body {
   display: block;
   width: 100%;
   height: auto;
-  border-radius: 12px;
+  border-radius: 8px;
   object-fit: cover;
 }
 
@@ -5204,9 +5189,6 @@ body {
   }
   .delete-right-image-block {
     max-width: 100%;
-  }
-  .delete-right-shape {
-    transform: translate(-8px, 8px);
   }
 }
 
@@ -5226,29 +5208,12 @@ body {
 }
 
 .delete-app-image-block {
-  position: relative;
   max-width: 380px;
 }
 
-/* Protruding shape: blue block behind the image, extends out for layered effect */
-.delete-app-shape {
-  position: absolute;
-  top: 12px;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  min-height: 200px;
-  background: rgba(0, 122, 255, 0.12);
-  border-radius: 16px;
-  transform: translate(20px, 20px);
-  z-index: 0;
-}
-
 .delete-app-illustration {
-  position: relative;
-  z-index: 1;
   display: block;
-  border-radius: 12px;
+  border-radius: 8px;
   overflow: hidden;
 }
 
@@ -5257,7 +5222,7 @@ body {
   width: 100%;
   max-width: 320px;
   height: auto;
-  border-radius: 12px;
+  border-radius: 8px;
 }
 
 .delete-app-text h2 {
@@ -5287,10 +5252,6 @@ body {
   }
   .delete-app-image-block {
     max-width: 100%;
-  }
-  .delete-app-shape {
-    transform: translate(12px, 12px);
-    min-height: 160px;
   }
 }
 
