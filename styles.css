@@ -37,6 +37,7 @@
 .host-page-hero,
 .legal-hero,
 .delete-hero,
+.insurance-hero,
 .page-header,
 .apps-hero {
   opacity: 1 !important;
@@ -4560,6 +4561,79 @@ body {
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 
+/* Insurance page hero – insure.jpg right; navy fade on left (matches photo wall #1a2b4b) */
+.insurance-hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 0;
+  padding-top: 70px;
+  padding-bottom: 0;
+  box-sizing: border-box;
+  background-color: #1a2b4b;
+  background-image: url("/assets/insure.jpg");
+  background-size: cover;
+  background-position: 84% center;
+  background-repeat: no-repeat;
+  text-align: left;
+}
+
+.insurance-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(
+    90deg,
+    rgba(26, 43, 75, 0.98) 0%,
+    rgba(26, 43, 75, 0.9) 20%,
+    rgba(26, 43, 75, 0.52) 40%,
+    rgba(26, 43, 75, 0.16) 54%,
+    transparent 70%
+  );
+}
+
+.insurance-hero-container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  text-align: left;
+}
+
+.insurance-hero-inner {
+  max-width: 28rem;
+  margin: 0;
+  padding: 0.5rem 0;
+  text-align: left;
+}
+
+.insurance-hero-title {
+  margin: 0 0 0.85rem;
+  font-size: 2.125rem;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+  color: #ffffff;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
+}
+
+.insurance-hero-lead {
+  margin: 0;
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.93);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
 /* Team page hero – pure cream background, no SVG, no boxes/grid */
 .team-hero {
   min-height: 100vh;
@@ -6715,7 +6789,8 @@ body {
     margin-top: 0;
   }
 
-  .delete-hero {
+  .delete-hero,
+  .insurance-hero {
     min-height: 100vh;
     padding-top: 100px;
     padding-bottom: 0;
@@ -6738,7 +6813,8 @@ body {
     text-align: center;
   }
 
-  .delete-hero .delete-hero-container {
+  .delete-hero .delete-hero-container,
+  .insurance-hero .insurance-hero-container {
     width: 100%;
     box-sizing: border-box;
     display: flex;
@@ -6796,6 +6872,34 @@ body {
       rgba(6, 6, 8, 0.2) 72%,
       transparent 88%
     );
+  }
+
+  .insurance-hero {
+    background-position: 76% center;
+  }
+
+  .insurance-hero::after {
+    background: linear-gradient(
+      90deg,
+      rgba(26, 43, 75, 0.99) 0%,
+      rgba(26, 43, 75, 0.92) 30%,
+      rgba(26, 43, 75, 0.58) 52%,
+      rgba(26, 43, 75, 0.22) 70%,
+      transparent 88%
+    );
+  }
+
+  .insurance-hero-inner {
+    max-width: 100%;
+    padding: 0.35rem 0;
+  }
+
+  .insurance-hero-title {
+    font-size: 1.65rem;
+  }
+
+  .insurance-hero-lead {
+    font-size: 1rem;
   }
 
   .delete-hero-inner {
@@ -6952,6 +7056,7 @@ body {
   .host-page-hero,
   .legal-hero,
   .delete-hero,
+  .insurance-hero,
   .page-header,
   .problems-section,
   .differentiators-section,
