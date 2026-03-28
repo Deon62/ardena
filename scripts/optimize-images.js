@@ -10,10 +10,6 @@ const ASSETS = path.join(__dirname, '..', 'assets');
 
 const images = [
   { name: 'landing.jpg', opts: { quality: 82, format: 'jpeg' } },
-  { name: 'vehicle.jpg', opts: { quality: 82, format: 'jpeg' } },
-  { name: 'location.jpg', opts: { quality: 82, format: 'jpeg' } },
-  { name: 'availability.jpg', opts: { quality: 82, format: 'jpeg' } },
-  { name: 'price.jpg', opts: { quality: 82, format: 'jpeg' } },
 ];
 
 (async () => {
