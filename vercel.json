@@ -18,7 +18,15 @@
     { "source": "/apply", "destination": "/apply.html" },
     { "source": "/reset-password", "destination": "/reset-password.html" },
     { "source": "/host-interest", "destination": "/host-interest.html" },
-    { "source": "/host-interest/", "destination": "/host-interest.html" }
+    { "source": "/host-interest/", "destination": "/host-interest.html" },
+    { "source": "/car-rental-nairobi", "destination": "/car-rental-nairobi.html" },
+    { "source": "/car-rental-nairobi/", "destination": "/car-rental-nairobi.html" },
+    { "source": "/car-rental-mombasa", "destination": "/car-rental-mombasa.html" },
+    { "source": "/car-rental-mombasa/", "destination": "/car-rental-mombasa.html" },
+    { "source": "/car-rental-kisumu", "destination": "/car-rental-kisumu.html" },
+    { "source": "/car-rental-kisumu/", "destination": "/car-rental-kisumu.html" },
+    { "source": "/car-rental-nakuru", "destination": "/car-rental-nakuru.html" },
+    { "source": "/car-rental-nakuru/", "destination": "/car-rental-nakuru.html" }
   ],
   "headers": [
     {
