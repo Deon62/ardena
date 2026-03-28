@@ -4777,7 +4777,7 @@ body {
   color: #57534e;
 }
 
-/* Privacy Policy – privacy.jpg right; cool dark fade on left (industrial grey) */
+/* Privacy Policy – no image; cool slate palette (sign / concrete mood) */
 .privacy-hero {
   position: relative;
   min-height: 100vh;
@@ -4786,35 +4786,25 @@ body {
   justify-content: flex-start;
   margin-top: 0;
   padding-top: 70px;
-  padding-bottom: 0;
+  padding-bottom: 2.5rem;
   box-sizing: border-box;
-  background-color: #2a2826;
-  background-image: url("/assets/privacy.jpg");
-  background-size: cover;
-  background-position: 80% center;
-  background-repeat: no-repeat;
+  background: #eceef3;
+  border-bottom: 1px solid rgba(51, 65, 85, 0.12);
   text-align: left;
 }
 
-.privacy-hero::after {
+.privacy-hero::before {
   content: "";
   position: absolute;
-  inset: 0;
-  z-index: 1;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: #1e293b;
   pointer-events: none;
-  background: linear-gradient(
-    90deg,
-    rgba(28, 26, 24, 0.97) 0%,
-    rgba(28, 26, 24, 0.9) 18%,
-    rgba(28, 26, 24, 0.52) 40%,
-    rgba(28, 26, 24, 0.16) 54%,
-    transparent 70%
-  );
 }
 
 .privacy-hero-container {
-  position: relative;
-  z-index: 2;
   width: 100%;
   margin: 0 auto;
   box-sizing: border-box;
@@ -4826,28 +4816,36 @@ body {
 }
 
 .privacy-hero-inner {
-  max-width: 28rem;
+  max-width: 38rem;
   margin: 0;
-  padding: 0.5rem 0;
+  padding: 0.25rem 0 0.25rem 1.25rem;
+  border-left: 3px solid #475569;
   text-align: left;
 }
 
-.privacy-hero-title {
-  margin: 0 0 0.85rem;
-  font-size: 2.125rem;
+.privacy-hero-label {
+  margin: 0 0 0.65rem;
+  font-size: 0.6875rem;
   font-weight: 600;
-  letter-spacing: -0.03em;
-  line-height: 1.2;
-  color: #ffffff;
-  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.35);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #64748b;
+}
+
+.privacy-hero-title {
+  margin: 0 0 0.65rem;
+  font-size: clamp(1.85rem, 4.2vw, 2.65rem);
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  line-height: 1.15;
+  color: #0f172a;
 }
 
 .privacy-hero-lead {
   margin: 0;
-  font-size: 1.0625rem;
-  line-height: 1.65;
-  color: rgba(255, 255, 255, 0.92);
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #475569;
 }
 
 /* Team page hero – pure cream background, no SVG, no boxes/grid */
@@ -7007,8 +7005,7 @@ body {
 
   .delete-hero,
   .insurance-hero,
-  .legal-hub-hero,
-  .privacy-hero {
+  .legal-hub-hero {
     min-height: 100vh;
     padding-top: 100px;
     padding-bottom: 0;
@@ -7020,7 +7017,8 @@ body {
     margin-top: 0;
   }
 
-  .terms-hero {
+  .terms-hero,
+  .privacy-hero {
     min-height: 100vh;
     padding-top: 100px;
     padding-bottom: 2rem;
@@ -7163,32 +7161,13 @@ body {
     font-size: 1rem;
   }
 
-  .privacy-hero {
-    background-position: 72% center;
-  }
-
-  .privacy-hero::after {
-    background: linear-gradient(
-      90deg,
-      rgba(28, 26, 24, 0.98) 0%,
-      rgba(28, 26, 24, 0.92) 30%,
-      rgba(28, 26, 24, 0.58) 52%,
-      rgba(28, 26, 24, 0.22) 70%,
-      transparent 88%
-    );
-  }
-
   .privacy-hero-inner {
+    padding-left: 1rem;
     max-width: 100%;
-    padding: 0.35rem 0;
   }
 
   .privacy-hero-title {
     font-size: 1.65rem;
-  }
-
-  .privacy-hero-lead {
-    font-size: 1rem;
   }
 
   .terms-hero-inner {
