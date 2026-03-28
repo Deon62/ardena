@@ -1652,12 +1652,6 @@ body {
   color: var(--primary-dark);
 }
 
-/* City landing pages: allow hero subtitle to wrap */
-.location-page-hero .page-subtitle {
-  white-space: normal;
-  max-width: 36rem;
-}
-
 .features .feature-description {
   font-size: 1rem;
   line-height: 1.7;
@@ -4963,6 +4957,23 @@ body {
 /* Location page – same hero layout as insurance; hero photo */
 .location-hero.insurance-hero {
   background-image: url("/assets/locationnn.jpg");
+}
+
+/* City SEO pages – same hero as location page; background matches location cards */
+.city-hero-nairobi.insurance-hero {
+  background-image: url("/assets/nairobi.jpg");
+}
+
+.city-hero-nakuru.insurance-hero {
+  background-image: url("/assets/nakuru.jpg");
+}
+
+.city-hero-mombasa.insurance-hero {
+  background-image: url("/assets/coast.jpg");
+}
+
+.city-hero-kisumu.insurance-hero {
+  background-image: url("/assets/kisumuu.jpg");
 }
 
 /* Location page – launch cities row (sharp-edged images) */
