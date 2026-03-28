@@ -36,6 +36,7 @@
 .about-hero,
 .host-page-hero,
 .legal-hero,
+.delete-hero,
 .page-header,
 .apps-hero {
   opacity: 1 !important;
@@ -4485,6 +4486,80 @@ body {
   margin: 0.75rem auto 0;
 }
 
+/* Delete account hero – image biased right; left copy on a seamless dark fade (no card) */
+.delete-hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 0;
+  padding-top: 70px;
+  padding-bottom: 0;
+  box-sizing: border-box;
+  background-color: #0a0a0a;
+  background-image: url("/assets/delete.jpg");
+  background-size: cover;
+  background-position: 86% center;
+  background-repeat: no-repeat;
+  text-align: left;
+}
+
+/* Vignette on the left only: reads as shadow from the same scene, not a floating panel */
+.delete-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(
+    90deg,
+    rgba(6, 6, 8, 0.97) 0%,
+    rgba(6, 6, 8, 0.88) 18%,
+    rgba(6, 6, 8, 0.5) 38%,
+    rgba(6, 6, 8, 0.18) 52%,
+    transparent 68%
+  );
+}
+
+.delete-hero-container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  text-align: left;
+}
+
+.delete-hero-inner {
+  max-width: 28rem;
+  margin: 0;
+  padding: 0.5rem 0;
+  text-align: left;
+}
+
+.delete-hero-title {
+  margin: 0 0 0.85rem;
+  font-size: 2.125rem;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+  color: #ffffff;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.35);
+}
+
+.delete-hero-lead {
+  margin: 0;
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.93);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
 /* Team page hero – pure cream background, no SVG, no boxes/grid */
 .team-hero {
   min-height: 100vh;
@@ -6640,6 +6715,18 @@ body {
     margin-top: 0;
   }
 
+  .delete-hero {
+    min-height: 100vh;
+    padding-top: 100px;
+    padding-bottom: 0;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 0;
+  }
+
   .legal-hero .container,
   .page-header .container {
     width: 100%;
@@ -6649,6 +6736,16 @@ body {
     align-items: center;
     justify-content: center;
     text-align: center;
+  }
+
+  .delete-hero .delete-hero-container {
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    text-align: left;
   }
 
   .help-hero .container,
@@ -6684,6 +6781,34 @@ body {
 
   .legal-hero-box {
     padding: 1.5rem 2rem;
+  }
+
+  .delete-hero {
+    background-position: 78% center;
+  }
+
+  .delete-hero::after {
+    background: linear-gradient(
+      90deg,
+      rgba(6, 6, 8, 0.98) 0%,
+      rgba(6, 6, 8, 0.9) 32%,
+      rgba(6, 6, 8, 0.55) 55%,
+      rgba(6, 6, 8, 0.2) 72%,
+      transparent 88%
+    );
+  }
+
+  .delete-hero-inner {
+    max-width: 100%;
+    padding: 0.35rem 0;
+  }
+
+  .delete-hero-title {
+    font-size: 1.65rem;
+  }
+
+  .delete-hero-lead {
+    font-size: 1rem;
   }
 
   .legal-section h2 {
@@ -6826,6 +6951,7 @@ body {
   .about-hero,
   .host-page-hero,
   .legal-hero,
+  .delete-hero,
   .page-header,
   .problems-section,
   .differentiators-section,
