@@ -910,12 +910,170 @@ body {
   min-height: 100vh;
 }
 
+/* Host apply form only (not partnership request): split layout, photo = full-height left pane */
+.host-interest-page:not(.partner-request-page) {
+  background: #f1f5f9;
+}
+
+.host-interest-page:not(.partner-request-page) .host-interest-main--split .host-interest-card {
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  padding: 0;
+}
+
+.host-interest-main--split {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: flex-start;
+  min-height: 100vh;
+  min-height: 100dvh;
+  padding: 0;
+}
+
+.host-interest-visual {
+  display: none;
+}
+
+.host-interest-page:not(.partner-request-page) .host-interest-main--split .host-interest-visual {
+  display: block;
+  flex: 1 1 50%;
+  min-width: 0;
+  min-height: 100vh;
+  min-height: 100dvh;
+  margin: 0;
+  padding: 0;
+  background-color: #0f172a;
+  background-image: url("/assets/hostapply.jpg");
+  background-size: cover;
+  background-position: left center;
+  background-repeat: no-repeat;
+}
+
+.host-interest-page:not(.partner-request-page)
+  .host-interest-main--split
+  .host-interest-shell {
+  flex: 1 1 50%;
+  min-width: 0;
+  max-width: none;
+  min-height: 100vh;
+  min-height: 100dvh;
+  padding: clamp(1.75rem, 4vw, 3rem);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.host-interest-page:not(.partner-request-page)
+  .host-interest-main--split
+  .host-interest-brand {
+  justify-content: center;
+  align-self: stretch;
+  width: 100%;
+  margin-bottom: 1.5rem;
+}
+
+.host-interest-page:not(.partner-request-page)
+  .host-interest-main--split
+  .host-interest-logo {
+  height: 32px;
+  width: auto;
+}
+
+.host-interest-page:not(.partner-request-page) .host-interest-field input,
+.host-interest-page:not(.partner-request-page) .host-interest-field textarea {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid rgba(15, 23, 42, 0.22);
+  border-radius: 0;
+  padding: 0.65rem 0;
+  box-shadow: none;
+  transition: border-color 0.2s ease;
+}
+
+.host-interest-page:not(.partner-request-page) .host-interest-field textarea {
+  min-height: 6.5rem;
+  line-height: 1.5;
+  resize: vertical;
+}
+
+.host-interest-page:not(.partner-request-page) .host-interest-field input:focus,
+.host-interest-page:not(.partner-request-page) .host-interest-field textarea:focus,
+.host-interest-page:not(.partner-request-page) .host-interest-field input:focus-visible,
+.host-interest-page:not(.partner-request-page) .host-interest-field textarea:focus-visible {
+  outline: none;
+  border-bottom-color: rgba(234, 88, 12, 0.85);
+}
+
+.host-interest-page:not(.partner-request-page) .host-interest-field input:-webkit-autofill,
+.host-interest-page:not(.partner-request-page) .host-interest-field input:-webkit-autofill:hover,
+.host-interest-page:not(.partner-request-page) .host-interest-field input:-webkit-autofill:focus {
+  -webkit-text-fill-color: #111827;
+  box-shadow:
+    0 0 0 1000px #f1f5f9 inset,
+    inset 0 -2px 0 0 rgba(15, 23, 42, 0.22);
+  transition: background-color 9999s ease-out;
+}
+
+.host-interest-page:not(.partner-request-page) .host-interest-field input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.host-interest-page:not(.partner-request-page) .host-interest-field input[type="number"]::-webkit-outer-spin-button,
+.host-interest-page:not(.partner-request-page) .host-interest-field input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.host-interest-page:not(.partner-request-page) .host-interest-success-modal {
+  background: rgba(6, 14, 22, 0.58);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+@media (max-width: 768px) {
+  .host-interest-page:not(.partner-request-page) .host-interest-main--split {
+    flex-direction: column;
+    min-height: auto;
+  }
+
+  .host-interest-page:not(.partner-request-page)
+    .host-interest-main--split
+    .host-interest-visual {
+    flex: 0 0 auto;
+    width: 100%;
+    min-height: 38vh;
+    height: 38vh;
+    max-height: 300px;
+    background-position: center center;
+  }
+
+  .host-interest-page:not(.partner-request-page)
+    .host-interest-main--split
+    .host-interest-shell {
+    flex: 1 1 auto;
+    width: 100%;
+    min-height: auto;
+    padding: 1.5rem 1rem 2.5rem;
+  }
+}
+
 .host-interest-main {
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 2rem 1rem;
+}
+
+.host-interest-main.host-interest-main--split {
+  padding: 0;
+  align-items: stretch;
+  justify-content: flex-start;
 }
 
 .host-interest-shell {
@@ -971,12 +1129,14 @@ body {
 }
 
 .host-interest-form {
-  display: grid;
+  display: flex;
+  flex-direction: column;
   gap: 0.95rem;
 }
 
 .host-interest-field {
-  display: grid;
+  display: flex;
+  flex-direction: column;
   gap: 0.4rem;
 }
 
@@ -1145,7 +1305,8 @@ body {
   border-color: #0f172a;
 }
 
-.partner-wizard-form {
+.partner-wizard-form,
+.host-interest-wizard-form {
   gap: 0.75rem;
 }
 
@@ -1167,16 +1328,34 @@ body {
   transition: width 0.25s ease;
 }
 
-.partner-wizard-form .partner-step {
+.partner-wizard-form .partner-step,
+.host-interest-wizard-form .host-step {
   min-height: 138px;
   justify-content: center;
 }
 
-.partner-wizard-form .partner-step[hidden] {
+.partner-wizard-form .partner-step[hidden],
+.host-interest-wizard-form .host-step[hidden] {
   display: none !important;
 }
 
-.partner-wizard-form .partner-step label {
+.host-interest-wizard-form .host-step:not([hidden]) {
+  animation: hostWizardStepIn 0.3s ease forwards;
+}
+
+@keyframes hostWizardStepIn {
+  from {
+    opacity: 0;
+    transform: translateX(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.partner-wizard-form .partner-step label,
+.host-interest-wizard-form .host-step label {
   font-size: 1.03rem;
 }
 
@@ -1216,17 +1395,96 @@ body {
 }
 
 .partner-wizard-actions #partner-next-btn,
-.partner-wizard-actions #partner-submit-btn {
+.partner-wizard-actions #partner-submit-btn,
+.host-wizard-actions #host-next-btn,
+.host-wizard-actions #host-submit-btn {
   justify-self: end;
 }
 
-.partner-wizard-actions #partner-prev-btn {
+.partner-wizard-actions #partner-prev-btn,
+.host-wizard-actions #host-prev-btn {
   justify-self: start;
 }
 
-.partner-wizard-form .host-interest-submit {
+.partner-wizard-form .host-interest-submit,
+.host-interest-wizard-form .host-interest-submit {
   margin-top: 0;
   width: auto;
+}
+
+.host-wizard-step-hint {
+  margin: 0 0 0.75rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #64748b;
+}
+
+.host-interest-page:not(.partner-request-page) .host-interest-wizard-form .partner-wizard-progress-fill {
+  background: linear-gradient(90deg, #111827, #c2410c);
+}
+
+.host-interest-page:not(.partner-request-page) .host-wizard-actions .partner-wizard-btn {
+  border-color: #111827;
+  color: #111827;
+}
+
+.host-interest-page:not(.partner-request-page) .host-wizard-actions .partner-wizard-btn--primary {
+  background: #111827;
+  border-color: #111827;
+  color: #ffffff;
+}
+
+.host-interest-page:not(.partner-request-page) .host-wizard-actions .partner-wizard-btn--primary:hover {
+  background: #000000;
+}
+
+.host-interest-page:not(.partner-request-page) .host-wizard-actions .partner-wizard-btn--secondary:hover {
+  background: rgba(17, 24, 39, 0.08);
+}
+
+.host-interest-page:not(.partner-request-page) .host-wizard-actions {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.65rem;
+  width: 100%;
+  margin-top: 0.35rem;
+}
+
+.host-interest-page:not(.partner-request-page) .host-wizard-actions #host-next-btn,
+.host-interest-page:not(.partner-request-page) .host-wizard-actions #host-submit-btn {
+  margin-left: auto;
+}
+
+.host-interest-page:not(.partner-request-page) .host-interest-wizard-form .host-interest-submit {
+  border-radius: 0;
+}
+
+.host-interest-page:not(.partner-request-page) .host-interest-success-card {
+  border-radius: 0;
+}
+
+.host-interest-page:not(.partner-request-page) .host-interest-success-ok {
+  margin-top: 1.35rem;
+  border: 1px solid #111827;
+  border-radius: 0;
+  background: #111827;
+  color: #ffffff;
+  padding: 0.78rem 1.85rem;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.host-interest-page:not(.partner-request-page) .host-interest-success-ok:hover {
+  background: #000000;
 }
 
 .partner-request-page .host-interest-logo {
