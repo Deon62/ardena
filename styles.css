@@ -4960,6 +4960,186 @@ body {
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 }
 
+/* Location page – same hero layout as insurance; hero photo */
+.location-hero.insurance-hero {
+  background-image: url("/assets/locationnn.jpg");
+}
+
+/* Location page – launch cities row (sharp-edged images) */
+.location-launch-section {
+  padding: 4rem 0 5rem;
+  background: var(--background-light);
+}
+
+/* Taller block so launch row + intro read as ~one full viewport below the hero */
+.location-launch-section--tall {
+  min-height: min(96vh, 1040px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: clamp(2.5rem, 5vh, 4.5rem);
+  padding-bottom: clamp(2.5rem, 5vh, 4.5rem);
+  box-sizing: border-box;
+}
+
+.location-launch-section--tall .location-launch-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1;
+  min-height: 0;
+}
+
+.location-launch-section--tall .location-launch-media {
+  aspect-ratio: 3 / 4;
+  min-height: clamp(280px, 52vh, 640px);
+}
+
+.location-launch-section--tall .location-launch-name {
+  margin-top: 0.85rem;
+  font-size: 1.05rem;
+}
+
+.location-launch-intro {
+  max-width: 40rem;
+  margin-bottom: 2.25rem;
+}
+
+.location-launch-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: var(--text-secondary);
+  margin: 0 0 0.5rem;
+}
+
+.location-launch-heading {
+  margin: 0 0 0.75rem;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  color: var(--text-primary);
+}
+
+.location-launch-lead {
+  margin: 0;
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: var(--text-secondary);
+}
+
+.location-launch-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 1rem;
+  width: 100%;
+  align-items: stretch;
+}
+
+.location-launch-item {
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+  transition: opacity 0.2s ease;
+}
+
+.location-launch-item:hover {
+  opacity: 0.92;
+}
+
+.location-launch-media {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: 0;
+  background: #e8eaef;
+}
+
+.location-launch-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0;
+  border: none;
+}
+
+.location-launch-name {
+  margin-top: 0.65rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+}
+
+.location-faq-section {
+  padding-top: 3rem;
+  padding-bottom: 4.5rem;
+}
+
+.location-faq-section .section-title {
+  margin-bottom: 2.5rem;
+}
+
+@media (max-width: 899px) {
+  .location-launch-section:not(.location-launch-section--tall) {
+    padding: 3rem 0 4rem;
+  }
+
+  .location-launch-section--tall {
+    min-height: min(92vh, 900px);
+    padding-top: clamp(2rem, 4vh, 3.5rem);
+    padding-bottom: clamp(2rem, 4vh, 3.5rem);
+  }
+
+  .location-launch-section--tall .location-launch-media {
+    min-height: clamp(260px, 45vh, 520px);
+  }
+
+  .location-launch-heading {
+    font-size: 1.65rem;
+  }
+
+  .location-launch-row {
+    overflow-x: auto;
+    overflow-y: hidden;
+    flex-wrap: nowrap;
+    gap: 0.85rem;
+    padding-bottom: 0.5rem;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .location-launch-item {
+    flex: 0 0 min(78vw, 300px);
+    scroll-snap-align: start;
+  }
+}
+
+@media (max-width: 767px) {
+  .location-launch-row {
+    margin-left: -1.5rem;
+    margin-right: -1.5rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 899px) {
+  .location-launch-row {
+    margin-left: -2rem;
+    margin-right: -2rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
 /* Legal hub page – legal.jpg right; warm cream fade on left (matches bokeh), dark type */
 .legal-hub-hero {
   position: relative;

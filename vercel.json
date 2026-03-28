@@ -26,7 +26,9 @@
     { "source": "/car-rental-kisumu", "destination": "/car-rental-kisumu.html" },
     { "source": "/car-rental-kisumu/", "destination": "/car-rental-kisumu.html" },
     { "source": "/car-rental-nakuru", "destination": "/car-rental-nakuru.html" },
-    { "source": "/car-rental-nakuru/", "destination": "/car-rental-nakuru.html" }
+    { "source": "/car-rental-nakuru/", "destination": "/car-rental-nakuru.html" },
+    { "source": "/location", "destination": "/location.html" },
+    { "source": "/location/", "destination": "/location.html" }
   ],
   "headers": [
     {
