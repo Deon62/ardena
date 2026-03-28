@@ -5018,37 +5018,36 @@ body {
     font-size: 1.65rem;
   }
 
+  /* Stack cities vertically on small screens (home + /location)—no horizontal carousel */
   .location-launch-row {
-    overflow-x: auto;
-    overflow-y: hidden;
+    flex-direction: column;
     flex-wrap: nowrap;
-    gap: 0.85rem;
-    padding-bottom: 0.5rem;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
+    align-items: stretch;
+    gap: 1.5rem;
+    overflow: visible;
+    padding-bottom: 0;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
+    scroll-snap-type: none;
   }
 
   .location-launch-item {
-    flex: 0 0 min(78vw, 300px);
-    scroll-snap-align: start;
+    flex: 0 0 auto;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    scroll-snap-align: none;
   }
-}
 
-@media (max-width: 767px) {
-  .location-launch-row {
-    margin-left: -1.5rem;
-    margin-right: -1.5rem;
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
+  .location-launch-section--tall {
+    min-height: 0;
   }
-}
 
-@media (min-width: 768px) and (max-width: 899px) {
-  .location-launch-row {
-    margin-left: -2rem;
-    margin-right: -2rem;
-    padding-left: 2rem;
-    padding-right: 2rem;
+  .location-launch-section--tall .location-launch-media {
+    aspect-ratio: 16 / 9;
+    min-height: 0;
   }
 }
 
