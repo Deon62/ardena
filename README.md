@@ -131,7 +131,7 @@ The home page hero uses `assets/landing.jpg`. To load it faster:
 For questions about this website, contact:
 - Email: support@oparides.com
 - Phone: +254 7022 48 984
-- Website: ardena.xyz
+- Website: ardena.co.ke
 
 ## License
 

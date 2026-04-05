@@ -10,7 +10,7 @@ function getApiBase() {
   if (host === "localhost" || host === "127.0.0.1") {
     return "http://localhost:8001";
   }
-  return "https://api.ardena.xyz";
+  return "https://api.ardena.co.ke";
 }
 
 // Mobile Navigation Toggle
@@ -560,7 +560,7 @@ document.addEventListener("DOMContentLoaded", () => {
         showMessage(
           err && err.message
             ? err.message
-            : "Something went wrong. Please try again or email support@ardena.xyz.",
+            : "Something went wrong. Please try again or email support@ardena.co.ke.",
           "error",
         );
         if (submitBtn) {
