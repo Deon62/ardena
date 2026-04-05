@@ -271,6 +271,61 @@
           />
         </picture>
         <div class="hero-overlay"></div>
+        <div
+          class="easter-falling-stars"
+          id="easterStarsLayer"
+          aria-hidden="true"
+        ></div>
+
+        <style>
+          .easter-falling-stars {
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+            pointer-events: none;
+          }
+
+          .easter-star {
+            position: absolute;
+            top: -35px;
+            left: var(--left);
+            font-size: var(--size);
+            color: #f59e0b;
+            opacity: 0;
+            text-shadow: 0 0 10px rgba(245, 158, 11, 0.45);
+            filter: drop-shadow(0 0 6px rgba(245, 158, 11, 0.35));
+            animation: easterStarFall var(--dur) ease-in-out var(--delay) both;
+            pointer-events: none;
+            will-change: top, opacity, transform;
+          }
+
+          @keyframes easterStarFall {
+            0% {
+              opacity: 0;
+              transform: translateX(-50%) translateY(0) scale(0.65)
+                rotate(0deg);
+            }
+            12% {
+              opacity: 1;
+            }
+            70% {
+              opacity: 1;
+            }
+            100% {
+              opacity: 0;
+              top: 110%;
+              transform: translateX(-50%) translateY(0) scale(1.05)
+                rotate(26deg);
+            }
+          }
+
+          @media (prefers-reduced-motion: reduce) {
+            .easter-star {
+              animation: none !important;
+              opacity: 0 !important;
+            }
+          }
+        </style>
         <div class="container">
           <div class="hero-content">
             <h1 class="hero-title">Own your start</h1>
@@ -832,6 +887,96 @@
       data-sdkn="@vercel/speed-insights"
       data-sdkv="2.0.0"
     ></script>
+
+    <!-- One-time Easter hero stars -->
+    <script>
+      (function () {
+        const starsLayer = document.getElementById("easterStarsLayer");
+        if (!starsLayer) return;
+
+        // Show the star effect only for Easter weekend:
+        // Friday Apr 3, 2026 through Monday Apr 6, 2026 (UTC window).
+        const now = new Date();
+        const year = now.getUTCFullYear();
+        const holidayStart = new Date(Date.UTC(year, 3, 3, 0, 0, 0, 0)); // Apr 3
+        const holidayEnd = new Date(
+          Date.UTC(year, 3, 6, 23, 59, 59, 999)
+        ); // Apr 6
+
+        const showStars =
+          now.getTime() >= holidayStart.getTime() &&
+          now.getTime() <= holidayEnd.getTime();
+        if (!showStars) return;
+
+        const prefersReduced =
+          window.matchMedia &&
+          window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+        const header = document.querySelector(".header");
+        const topPx =
+          header && header.getBoundingClientRect
+            ? header.getBoundingClientRect().height + 12
+            : 92;
+        // Prevent stars from appearing behind the fixed header.
+        starsLayer.style.top = `${topPx}px`;
+
+        if (prefersReduced) {
+          return;
+        }
+
+        const totalMs = 5000; // flow duration
+        const spawnEveryMs = 45; // more stars
+        const start = performance.now();
+
+        function spawnStar() {
+          const star = document.createElement("span");
+          star.className = "easter-star";
+          star.textContent = "✦";
+
+          const left = Math.random() * 86 + 7; // 7%..93%
+          star.style.setProperty("--left", `${left}%`);
+
+          const size = Math.random() * 14 + 22; // 22..36px
+          star.style.setProperty("--size", `${size}px`);
+
+          const dur = Math.random() * 1800 + 2400; // 2400..4200ms
+          star.style.setProperty("--dur", `${dur}ms`);
+
+          const delay = Math.random() * 200;
+          star.style.setProperty("--delay", `${delay}ms`);
+
+          // More blue stars than gold stars.
+          const isBlue = Math.random() < 0.65;
+          if (isBlue) {
+            star.style.color = "#60a5fa";
+            star.style.textShadow = "0 0 10px rgba(96,165,250,0.6)";
+            star.style.filter = "drop-shadow(0 0 6px rgba(96,165,250,0.45))";
+          } else {
+            star.style.color = "#f59e0b";
+            star.style.textShadow = "0 0 10px rgba(245,158,11,0.45)";
+            star.style.filter = "drop-shadow(0 0 6px rgba(245,158,11,0.35))";
+          }
+
+          starsLayer.appendChild(star);
+
+          star.addEventListener("animationend", () => {
+            star.remove();
+          });
+        }
+
+        const intervalId = setInterval(() => {
+          if (performance.now() - start > totalMs) {
+            clearInterval(intervalId);
+            return;
+          }
+          spawnStar();
+        }, spawnEveryMs);
+
+        setTimeout(() => {
+          starsLayer.innerHTML = "";
+        }, 5200); // let stars finish the last bit after flow ends
+      })();
+    </script>
     <script src="script.js"></script>
   </body>
 </html>
