@@ -1027,6 +1027,7 @@ body {
 
 .host-interest-page:not(.partner-request-page) .host-interest-field input[type="number"] {
   -moz-appearance: textfield;
+  appearance: textfield;
 }
 
 .host-interest-page:not(.partner-request-page) .host-interest-field input[type="number"]::-webkit-outer-spin-button,
@@ -5698,6 +5699,48 @@ body {
   color: var(--text-secondary);
   font-weight: 400;
   margin: 0;
+}
+
+/* Two-column layout for privacy policy - Masonry style */
+.help-cards--two-column {
+  display: flex;
+  gap: 3rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.help-cards--two-column .help-column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+@media (min-width: 1200px) {
+  .help-cards--two-column {
+    gap: 4rem;
+  }
+  
+  .help-cards--two-column .help-column {
+    gap: 2.5rem;
+  }
+}
+
+@media (max-width: 968px) {
+  .help-cards--two-column {
+    flex-direction: column;
+    gap: 1.25rem;
+    max-width: 100%;
+  }
+  
+  .help-cards--two-column .help-column {
+    gap: 1.25rem;
+  }
+}
+
+.help-cards--two-column .help-card {
+  margin: 0;
+  width: 100%;
 }
 
 /* Help socials - same sharp-edged card style as Finances & Earnings */
