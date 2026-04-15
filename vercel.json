@@ -28,7 +28,9 @@
     { "source": "/car-rental-nakuru", "destination": "/car-rental-nakuru.html" },
     { "source": "/car-rental-nakuru/", "destination": "/car-rental-nakuru.html" },
     { "source": "/location", "destination": "/location.html" },
-    { "source": "/location/", "destination": "/location.html" }
+    { "source": "/location/", "destination": "/location.html" },
+    { "source": "/applications", "destination": "/applications.html" },
+    { "source": "/applications/", "destination": "/applications.html" }
   ],
   "headers": [
     {
