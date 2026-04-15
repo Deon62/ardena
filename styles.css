@@ -1934,6 +1934,22 @@ body {
   overflow: hidden;
 }
 
+.partners-section .hero-traction {
+  margin-top: 3rem;
+}
+
+.partners-section .traction-number {
+  color: #0d1b2a;
+}
+
+.partners-section .traction-label {
+  color: rgba(13, 27, 42, 0.65);
+}
+
+.partners-section .traction-stat + .traction-stat {
+  border-left-color: rgba(13, 27, 42, 0.2);
+}
+
 .partners-marquee {
   overflow: hidden;
   width: 100%;
