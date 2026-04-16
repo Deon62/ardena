@@ -171,6 +171,100 @@
             </div>
         </section>
 
+        <!-- Google Play Tester Signup -->
+        <section class="apps-section apps-tester-section" aria-labelledby="tester-title">
+            <div class="container">
+                <div class="apps-tester-grid">
+
+                    <!-- Left: copy -->
+                    <div class="apps-tester-copy">
+                        <div class="apps-tester-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="currentColor" width="28" height="28"><path d="M3.18 23.76a2.07 2.07 0 0 0 2.12-.14l11.44-6.48-2.8-2.82zM.5 1.18C.19 1.5 0 2.01 0 2.7v18.6c0 .69.19 1.2.5 1.52l.08.08L10.42 13v-.24L.58 1.1zM19.37 9.86l-3.07-1.74-3.1 3.13 3.1 3.13 3.1-1.76c.88-.5.88-1.32-.03-1.76zM5.3.38 16.74 6.86l-2.8 2.82L3.18.24A2.13 2.13 0 0 1 5.3.38z"/></svg>
+                        </div>
+                        <h2 id="tester-title" class="apps-tester-title">Prefer Google Play?</h2>
+                        <p class="apps-tester-desc">We're currently in internal testing on the Play Store. Drop us the Google account email you use on Google Play and we'll send you a tester invite — install ardena straight from the store, no APK needed.</p>
+                        <ul class="apps-tester-perks">
+                            <li>Install directly from Google Play</li>
+                            <li>Automatic updates as we ship</li>
+                            <li>Early access before public launch</li>
+                        </ul>
+                    </div>
+
+                    <!-- Right: form / success -->
+                    <div class="apps-tester-form-wrap">
+                        <form
+                            id="testerForm"
+                            class="apps-tester-form"
+                            action="https://formspree.io/f/mpqkpjqg"
+                            method="POST"
+                            novalidate
+                        >
+                            <label for="tester-email" class="apps-tester-label">Google Play email address</label>
+                            <p class="apps-tester-hint">Use the exact email linked to your Google Play account.</p>
+                            <div class="apps-tester-input-row">
+                                <input
+                                    type="email"
+                                    id="tester-email"
+                                    name="email"
+                                    class="apps-tester-input"
+                                    placeholder="you@gmail.com"
+                                    required
+                                    autocomplete="email"
+                                >
+                            </div>
+                            <button type="submit" class="apps-tester-btn" id="testerSubmit">Request tester invite</button>
+                        </form>
+
+                        <!-- Custom success state (hidden until submit) -->
+                        <div id="testerSuccess" class="apps-tester-success" aria-live="polite" hidden>
+                            <div class="apps-tester-success-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><polyline points="20 6 9 17 4 12"/></svg>
+                            </div>
+                            <h3 class="apps-tester-success-title">You're on the list!</h3>
+                            <p class="apps-tester-success-text">We've received your email. Once we add you as a tester on Google Play you'll get an invite link from Google — usually within a day or two.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <script>
+            (function () {
+                var form = document.getElementById('testerForm');
+                var btn  = document.getElementById('testerSubmit');
+                var success = document.getElementById('testerSuccess');
+                if (!form) return;
+                form.addEventListener('submit', function (e) {
+                    e.preventDefault();
+                    var email = form.querySelector('input[type="email"]').value.trim();
+                    if (!email) return;
+                    btn.disabled = true;
+                    btn.textContent = 'Sending…';
+                    fetch(form.action, {
+                        method: 'POST',
+                        headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ email: email })
+                    })
+                    .then(function (res) {
+                        if (res.ok) {
+                            form.hidden = true;
+                            success.hidden = false;
+                        } else {
+                            btn.disabled = false;
+                            btn.textContent = 'Request tester invite';
+                            alert('Something went wrong — please try again.');
+                        }
+                    })
+                    .catch(function () {
+                        btn.disabled = false;
+                        btn.textContent = 'Request tester invite';
+                        alert('Network error — please check your connection and try again.');
+                    });
+                });
+            })();
+        </script>
+
     </main>
 
     <footer class="footer">
