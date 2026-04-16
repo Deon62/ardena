@@ -63,3 +63,13 @@
   from = "/reset-password"
   to = "/reset-password.html"
   status = 200
+
+[[redirects]]
+  from = "/applications"
+  to = "/applications.html"
+  status = 200
+
+[[redirects]]
+  from = "/applications/"
+  to = "/applications.html"
+  status = 200
