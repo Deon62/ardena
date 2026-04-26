@@ -10,7 +10,7 @@ function getApiBase() {
   if (host === "localhost" || host === "127.0.0.1") {
     return "http://localhost:8001";
   }
-  return "https://api.ardena.co.ke";
+  return "https://api.ardena.xyz";
 }
 
 // Mobile Navigation Toggle
