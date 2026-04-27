@@ -1,3 +1,7 @@
 # Cache images and assets for 1 year (immutable)
 /assets/*
   Cache-Control: public, max-age=31536000, immutable
+
+# Apple Pay domain verification
+/.well-known/apple-developer-merchantid-domain-association
+  Content-Type: text/plain
