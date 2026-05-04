@@ -3304,6 +3304,63 @@ body {
   transform: translateY(-1px);
 }
 
+/* Partners logo strip */
+.partnerships-partners {
+  padding: 4.5rem 0 5rem;
+  background: #0d0d0d;
+}
+
+.partnerships-partners-title {
+  text-align: center;
+  font-size: 0.95rem;
+  font-weight: 400;
+  color: #6b7280;
+  margin: 0 0 2.75rem;
+  letter-spacing: 0.01em;
+}
+
+.partnerships-partners-logos {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.partnerships-partner-item {
+  background: #161616;
+  border: 1px solid #222222;
+  border-radius: 8px;
+  padding: 2rem 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.2s ease;
+}
+
+.partnerships-partner-item:hover {
+  border-color: #333333;
+}
+
+.partnerships-partner-logo {
+  height: 36px;
+  width: auto;
+  max-width: 140px;
+  object-fit: contain;
+}
+
+@media (max-width: 480px) {
+  .partnerships-partners-logos {
+    flex-direction: column;
+    align-items: center;
+  }
+  .partnerships-partner-item {
+    width: 100%;
+    max-width: 280px;
+    padding: 1.75rem 2rem;
+  }
+}
+
 @media (max-width: 640px) {
   .join-team-card {
     flex-direction: column;
