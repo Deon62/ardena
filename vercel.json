@@ -31,7 +31,9 @@
     { "source": "/location", "destination": "/location.html" },
     { "source": "/location/", "destination": "/location.html" },
     { "source": "/applications", "destination": "/applications.html" },
-    { "source": "/applications/", "destination": "/applications.html" }
+    { "source": "/applications/", "destination": "/applications.html" },
+    { "source": "/dojah-partnership", "destination": "/dojah-partnership.html" },
+    { "source": "/dojah-partnership/", "destination": "/dojah-partnership.html" }
   ],
   "headers": [
     {

@@ -5242,6 +5242,36 @@ body {
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 }
 
+/* Dojah partnership page hero */
+.dojah-partnership-hero.insurance-hero {
+  background: linear-gradient(135deg, #0a0f1e 0%, #0f172a 60%, #111827 100%);
+}
+
+.dojah-partnership-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  margin-bottom: 1.5rem;
+}
+
+.dojah-badge-logo {
+  height: 32px;
+  width: auto;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+}
+
+.dojah-badge-logo--dojah {
+  height: 28px;
+}
+
+.dojah-badge-times {
+  font-size: 1.25rem;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.35);
+  line-height: 1;
+}
+
 /* Location page – same hero layout as insurance; hero photo */
 .location-hero.insurance-hero {
   background-image: url("/assets/locationnn.jpg");
