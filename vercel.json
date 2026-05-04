@@ -1,5 +1,6 @@
 {
   "rewrites": [
+    { "source": "/.well-known/apple-developer-merchantid-domain-association", "destination": "/apple-developer-merchantid-domain-association" },
     { "source": "/", "destination": "/index.html" },
     { "source": "/about", "destination": "/about.html" },
     { "source": "/host", "destination": "/host.html" },
@@ -38,7 +39,7 @@
       "headers": [
         {
           "key": "Content-Type",
-          "value": "application/json"
+          "value": "text/plain"
         }
       ]
     },
