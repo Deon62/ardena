@@ -156,6 +156,78 @@ function showHelpFormMessage(message, type) {
   }
 }
 
+// Delete Account Form Handling
+const deleteAccountForm = document.getElementById("deleteAccountForm");
+const deleteFormMessage = document.getElementById("deleteFormMessage");
+
+if (deleteAccountForm) {
+  deleteAccountForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    // Get form data
+    const formData = new FormData(deleteAccountForm);
+    const data = Object.fromEntries(formData);
+
+    // Simple validation
+    if (!data.username || !data.email || !data.password) {
+      showDeleteFormMessage("Please fill in all required fields.", "error");
+      return;
+    }
+
+    // Email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(data.email)) {
+      showDeleteFormMessage("Please enter a valid email address.", "error");
+      return;
+    }
+
+    // Submit to Formspree
+    fetch("https://formspree.io/f/xovkloaq", {
+      method: "POST",
+      body: formData,
+      headers: {
+        Accept: "application/json",
+      },
+    })
+      .then((response) => {
+        if (response.ok) {
+          showDeleteFormMessage(
+            "Your deletion request has been submitted successfully. We will process it shortly.",
+            "success",
+          );
+          deleteAccountForm.reset();
+        } else {
+          showDeleteFormMessage(
+            "Sorry, there was an error submitting your request. Please try again.",
+            "error",
+          );
+        }
+      })
+      .catch((error) => {
+        showDeleteFormMessage(
+          "Sorry, there was an error submitting your request. Please try again.",
+          "error",
+        );
+      });
+  });
+}
+
+function showDeleteFormMessage(message, type) {
+  if (deleteFormMessage) {
+    deleteFormMessage.textContent = message;
+    deleteFormMessage.className = `form-message ${type}`;
+    deleteFormMessage.style.display = "block";
+
+    // Scroll to message
+    deleteFormMessage.scrollIntoView({ behavior: "smooth", block: "nearest" });
+
+    // Hide message after 5 seconds
+    setTimeout(() => {
+      deleteFormMessage.style.display = "none";
+    }, 5000);
+  }
+}
+
 // Smooth scroll for anchor links
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   anchor.addEventListener("click", function (e) {
